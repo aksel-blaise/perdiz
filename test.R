@@ -59,7 +59,7 @@ scree_plot(pca.outlines)
 # plot pca by site
 plot_PCA(pca.outlines, 
          morphospace_position = "range",
-         ~trinomial, zoom = 1.25)
+         ~trinomial, zoom = 1.3)
 
 # plot pca by raw material
 plot_PCA(pca.outlines, 
