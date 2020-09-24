@@ -1,4 +1,3 @@
-```{r load.packages, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # load packages
 library(here)
 library(wesanderson)
@@ -14,11 +13,7 @@ att.data <- read.csv("perdiz.csv", header = TRUE, as.is = TRUE)
 att.data$type <- as.factor(att.data$type)
 att.data$trinomial <- as.factor(att.data$trinomial)
 att.data$raw.mat <- as.factor(att.data$raw.mat)
-```
 
-## Generate outlines
-
-```{r outlines + attributes, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # generate outlines
 outlines <- jpg.list %>%
   import_jpg()
@@ -32,23 +27,16 @@ norm.outlines <- data.out %>%
   coo_scale() %>%
   coo_align() %>% 
   coo_center()
-```
 
-## Pile and mosaics
-
-```{r stack.panel, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # outline pile
 pile(norm.outlines)
 
+panel(norm.outlines, names = TRUE)
 # mosaic of individual specimens from the different sites
 mosaic(norm.outlines, ~trinomial)
 # mosaic of individual specimens rendered from different materials
 mosaic(norm.outlines, ~raw.mat)
-```
 
-## Calibrate harmonic + EFA
-
-```{r cal.harm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # calibrate how many harmonics needed
 calibrate_harmonicpower_efourier(norm.outlines, 
                                  nb.h = 30)
@@ -64,11 +52,7 @@ efa.outlines <- efourier(norm.outlines,
 
 # use efa.outlines for pca
 pca.outlines <- PCA(efa.outlines)
-```
 
-## PCA
-
-```{r pca.plot, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # pca 
 scree_plot(pca.outlines)
 
@@ -90,11 +74,7 @@ boxplot(pca.outlines, ~raw.mat, nax = 1:5)
 
 # mean shape + 2sd for the first 10 pcs
 PCcontrib(pca.outlines, nax = 1:5)
-```
 
-## MANOVA + MANOVA_PW
-
-```{r manova, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # manova
 
 # shape difference between sites?
@@ -106,18 +86,15 @@ MANOVA_PW(pca.outlines, 'trinomial')
 MANOVA(pca.outlines, 'raw.mat')
 # which differ?
 MANOVA_PW(pca.outlines, 'raw.mat')
-```
 
-## Mean shapes
-
-```{r ms1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # mean shapes
 
 # site
 ms.2 <- MSHAPES(efa.outlines, ~trinomial)
-plot_MSHAPES(ms.2, size = 0.75)
+plot_MSHAPES(ms.2, size = 0.8)
 
 # raw material
 ms.3 <- MSHAPES(efa.outlines, ~raw.mat)
 plot_MSHAPES(ms.3, size = 0.75)
-```
+
+#end of code

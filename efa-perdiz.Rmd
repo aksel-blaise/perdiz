@@ -1,5 +1,5 @@
 ---
-title: "Perdiz point shape as a function of site/raw material?"
+title: "Perdiz point shape as a function of site?"
 author: "Robert Z. Selden, Jr."
 date: "9/24/2020"
 output: html_document

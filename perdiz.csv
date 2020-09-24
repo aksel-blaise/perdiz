@@ -1,6 +1,4 @@
 spec,trinomial,site,unit,type,raw.mat
-489,41cp20,BJ Horton,B15,perdiz,quartzite
-490,41cp20,BJ Horton,B4P5Pt6,perdiz,quartzite
 553,41cp12,Johns,B15,perdiz,quartzite
 554,41cp12,Johns,B18,perdiz,quartzite
 555,41cp12,Johns,B7,perdiz,quartzite
@@ -10,6 +8,11 @@ spec,trinomial,site,unit,type,raw.mat
 562,41cp12,Johns,B7,perdiz,quartzite
 565,41cp12,Johns,B15,perdiz,chert
 591,41cp12,Johns,B16-6,perdiz,chert
+665,41cp12,Johns,B14,perdiz,quartzite
+489,41cp20,BJ Horton,B15,perdiz,quartzite
+490,41cp20,BJ Horton,B4P5Pt6,perdiz,quartzite
+677,41cp20,BJ Horton,B4-1,perdiz,chert
+678,41cp20,BJ Horton,B2-P3,perdiz,quartzite
 598,41cp5,Tuck Carpenter,B21-8,perdiz,jasper
 645,41cp5,Tuck Carpenter,B41-1,perdiz,jasper
 646,41cp5,Tuck Carpenter,B41-2,perdiz,jasper
@@ -28,9 +31,6 @@ spec,trinomial,site,unit,type,raw.mat
 659,41cp5,Tuck Carpenter,B16-2,perdiz,chert
 660,41cp5,Tuck Carpenter,B23-16,perdiz,chert
 661,41cp5,Tuck Carpenter,B23-13,perdiz,chert
-665,41cp12,Johns,B14,perdiz,quartzite
-677,41cp20,BJ Horton,B4-1,perdiz,chert
-678,41cp20,BJ Horton,B2-P3,perdiz,quartzite
 na49-1,41na49,Washington Square,NAGPRA,perdiz,s.wd
 na49-10,41na49,Washington Square,NAGPRA,perdiz,s.wd
 na49-11,41na49,Washington Square,NAGPRA,perdiz,s.wd
