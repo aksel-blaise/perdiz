@@ -164,7 +164,7 @@ outlines <- jpg.list %>%
     ## [ 107 / 108 ]  sy43-5.jpg
     ## [ 108 / 108 ]  sy43-6.jpg
 
-    ## Done in 12.9 secs
+    ## Done in 12.3 secs
 
 ``` r
 # add attributes
