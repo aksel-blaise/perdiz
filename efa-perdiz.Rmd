@@ -1,8 +1,8 @@
 ---
-title: "Perdiz point shape as a function of site?"
+title: "Perdiz point shape as a function of site/raw material?"
 author: "Robert Z. Selden, Jr."
-date: "9/24/2020"
-output: html_document
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: github_document
 ---
 
 ```{r setup, include=FALSE}

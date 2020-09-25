@@ -1,6 +1,5 @@
 # load packages
 library(here)
-library(wesanderson)
 library(Momocs)
 
 # read images
@@ -64,7 +63,7 @@ plot_PCA(pca.outlines,
 # plot pca by raw material
 plot_PCA(pca.outlines, 
          morphospace_position = "range",
-         ~raw.mat, zoom = 1.25)
+         ~raw.mat, zoom = 1.3)
 
 # contribution of each pc
 # by site
