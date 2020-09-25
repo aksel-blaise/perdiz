@@ -21,7 +21,7 @@ outlines <- jpg.list %>%
 data.out <- Out(outlines, 
                 fac = att.data)
 
-# scale, align, rotate, and center specimens
+# scale, align, and center specimens
 norm.outlines <- data.out %>% 
   coo_scale() %>%
   coo_align() %>% 
@@ -71,7 +71,7 @@ boxplot(pca.outlines, ~trinomial, nax = 1:5)
 # by raw material
 boxplot(pca.outlines, ~raw.mat, nax = 1:5)
 
-# mean shape + 2sd for the first 10 pcs
+# mean shape + 2sd for the first 5 pcs
 PCcontrib(pca.outlines, nax = 1:5)
 
 # manova
