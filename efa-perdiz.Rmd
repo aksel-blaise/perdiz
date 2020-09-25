@@ -1,5 +1,5 @@
 ---
-title: "Perdiz point shape as a function of site/raw material?"
+title: "Perdiz arrow point shape as a function of site, raw material, and/or mortuary context?"
 author: "Robert Z. Selden, Jr."
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: github_document
@@ -16,7 +16,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r load.packages, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # load packages
 library(here)
-library(wesanderson)
 library(Momocs)
 
 # read images
@@ -26,7 +25,7 @@ jpg.list <- list.files(here("/img.perdiz"), full.names = TRUE)
 att.data <- read.csv("perdiz.csv", header = TRUE, as.is = TRUE)
 
 # attribute to factor
-att.data$type <- as.factor(att.data$type)
+att.data$context <- as.factor(att.data$context)
 att.data$trinomial <- as.factor(att.data$trinomial)
 att.data$raw.mat <- as.factor(att.data$raw.mat)
 ```
@@ -59,6 +58,8 @@ pile(norm.outlines)
 mosaic(norm.outlines, ~trinomial)
 # mosaic of individual specimens rendered from different materials
 mosaic(norm.outlines, ~raw.mat)
+# mosaic of individual specimens from contexts (mortuary/not)
+mosaic(norm.outlines, ~context)
 ```
 
 ## Calibrate harmonic + EFA
@@ -90,18 +91,25 @@ scree_plot(pca.outlines)
 # plot pca by site
 plot_PCA(pca.outlines, 
          morphospace_position = "range",
-         ~trinomial, zoom = 1.25)
+         ~trinomial, zoom = 1)
 
 # plot pca by raw material
 plot_PCA(pca.outlines, 
          morphospace_position = "range",
-         ~raw.mat, zoom = 1.25)
+         ~raw.mat, zoom = 1)
+
+# plot pca by context
+plot_PCA(pca.outlines, 
+         morphospace_position = "range",
+         ~context, zoom = 1)
 
 # contribution of each pc
 # by site
 boxplot(pca.outlines, ~trinomial, nax = 1:5)
 # by raw material
 boxplot(pca.outlines, ~raw.mat, nax = 1:5)
+# by raw material
+boxplot(pca.outlines, ~context, nax = 1:5)
 
 # mean shape + 2sd for the first 10 pcs
 PCcontrib(pca.outlines, nax = 1:5)
@@ -121,6 +129,9 @@ MANOVA_PW(pca.outlines, 'trinomial')
 MANOVA(pca.outlines, 'raw.mat')
 # which differ?
 MANOVA_PW(pca.outlines, 'raw.mat')
+
+# shape difference by context?
+MANOVA(pca.outlines, 'context')
 ```
 
 ## Mean shapes
@@ -135,4 +146,8 @@ plot_MSHAPES(ms.2, size = 0.75)
 # raw material
 ms.3 <- MSHAPES(efa.outlines, ~raw.mat)
 plot_MSHAPES(ms.3, size = 0.75)
+
+# context
+ms.4 <- MSHAPES(efa.outlines, ~context)
+plot_MSHAPES(ms.4, size = 0.75)
 ```
