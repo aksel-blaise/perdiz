@@ -9,7 +9,7 @@ jpg.list <- list.files(here("/img.perdiz"), full.names = TRUE)
 att.data <- read.csv("perdiz.csv", header = TRUE, as.is = TRUE)
 
 # attribute to factor
-att.data$type <- as.factor(att.data$type)
+att.data$context <- as.factor(att.data$context)
 att.data$trinomial <- as.factor(att.data$trinomial)
 att.data$raw.mat <- as.factor(att.data$raw.mat)
 
@@ -31,10 +31,13 @@ norm.outlines <- data.out %>%
 pile(norm.outlines)
 
 panel(norm.outlines, names = TRUE)
-# mosaic of individual specimens from the different sites
+# mosaic - sites
 mosaic(norm.outlines, ~trinomial)
-# mosaic of individual specimens rendered from different materials
+# mosaic - raw materials
 mosaic(norm.outlines, ~raw.mat)
+# mosaic - mortuary context (yes/no)
+mosaic(norm.outlines, ~context)
+
 
 # calibrate how many harmonics needed
 calibrate_harmonicpower_efourier(norm.outlines, 
@@ -58,18 +61,25 @@ scree_plot(pca.outlines)
 # plot pca by site
 plot_PCA(pca.outlines, 
          morphospace_position = "range",
-         ~trinomial, zoom = 1.3)
+         ~trinomial, zoom = 1.1)
 
 # plot pca by raw material
 plot_PCA(pca.outlines, 
          morphospace_position = "range",
-         ~raw.mat, zoom = 1.3)
+         ~raw.mat, zoom = 1.1)
+
+# plot pca by context
+plot_PCA(pca.outlines, 
+         morphospace_position = "range",
+         ~context, zoom = 1.1)
 
 # contribution of each pc
 # by site
 boxplot(pca.outlines, ~trinomial, nax = 1:5)
 # by raw material
 boxplot(pca.outlines, ~raw.mat, nax = 1:5)
+# by context
+boxplot(pca.outlines, ~context, nax = 1:5)
 
 # mean shape + 2sd for the first 5 pcs
 PCcontrib(pca.outlines, nax = 1:5)

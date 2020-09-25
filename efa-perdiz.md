@@ -13,7 +13,7 @@ Robert Z. Selden, Jr.
 library(here)
 ```
 
-    ## here() starts at D:/github/perdiz
+    ## here() starts at C:/Users/selde/Desktop/github/perdiz
 
 ``` r
 library(Momocs)
@@ -144,7 +144,7 @@ outlines <- jpg.list %>%
     ## [ 87 / 88 ]  sy43-5.jpg
     ## [ 88 / 88 ]  sy43-6.jpg
 
-    ## Done in 10.3 secs
+    ## Done in 13 secs
 
 ``` r
 # add attributes
@@ -594,7 +594,7 @@ scree_plot(pca.outlines)
 # plot pca by site
 plot_PCA(pca.outlines, 
          morphospace_position = "range",
-         ~trinomial, zoom = 1.25)
+         ~trinomial, zoom = 1)
 ```
 
 <img src="efa-perdiz_files/figure-gfm/pca.plot-2.png" width="100%" />
@@ -603,7 +603,7 @@ plot_PCA(pca.outlines,
 # plot pca by raw material
 plot_PCA(pca.outlines, 
          morphospace_position = "range",
-         ~raw.mat, zoom = 1.25)
+         ~raw.mat, zoom = 1)
 ```
 
 <img src="efa-perdiz_files/figure-gfm/pca.plot-3.png" width="100%" />
@@ -612,7 +612,7 @@ plot_PCA(pca.outlines,
 # plot pca by context
 plot_PCA(pca.outlines, 
          morphospace_position = "range",
-         ~context, zoom = 1.25)
+         ~context, zoom = 1)
 ```
 
 <img src="efa-perdiz_files/figure-gfm/pca.plot-4.png" width="100%" />
