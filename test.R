@@ -9,7 +9,7 @@ jpg.list <- list.files(here("/img.perdiz"), full.names = TRUE)
 att.data <- read.csv("perdiz.csv", header = TRUE, as.is = TRUE)
 
 # attribute to factor
-att.data$type <- as.factor(att.data$type)
+att.data$context <- as.factor(att.data$context)
 att.data$trinomial <- as.factor(att.data$trinomial)
 att.data$raw.mat <- as.factor(att.data$raw.mat)
 
@@ -35,6 +35,8 @@ panel(norm.outlines, names = TRUE)
 mosaic(norm.outlines, ~trinomial)
 # mosaic of individual specimens rendered from different materials
 mosaic(norm.outlines, ~raw.mat)
+# mosaic of individual specimens rendered from different materials
+mosaic(norm.outlines, ~context)
 
 # calibrate how many harmonics needed
 calibrate_harmonicpower_efourier(norm.outlines, 
@@ -58,12 +60,17 @@ scree_plot(pca.outlines)
 # plot pca by site
 plot_PCA(pca.outlines, 
          morphospace_position = "range",
-         ~trinomial, zoom = 1.3)
+         ~trinomial, zoom = 1)
 
 # plot pca by raw material
 plot_PCA(pca.outlines, 
          morphospace_position = "range",
-         ~raw.mat, zoom = 1.3)
+         ~raw.mat, zoom = 1)
+
+# plot pca by raw material
+plot_PCA(pca.outlines, 
+         morphospace_position = "range",
+         ~context, zoom = 1)
 
 # contribution of each pc
 # by site
