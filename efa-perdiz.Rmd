@@ -54,6 +54,7 @@ norm.outlines <- data.out %>%
 # outline pile
 pile(norm.outlines)
 
+panel(norm.outlines, names = TRUE)
 # mosaic of individual specimens from the different sites
 mosaic(norm.outlines, ~trinomial)
 # mosaic of individual specimens rendered from different materials
