@@ -96,6 +96,9 @@ MANOVA(pca.outlines, 'raw.mat')
 # which differ?
 MANOVA_PW(pca.outlines, 'raw.mat')
 
+# shape difference between context?
+MANOVA(pca.outlines, 'context')
+
 # mean shapes
 
 # site
@@ -106,4 +109,7 @@ plot_MSHAPES(ms.2, size = 0.8)
 ms.3 <- MSHAPES(efa.outlines, ~raw.mat)
 plot_MSHAPES(ms.3, size = 0.75)
 
+# context
+ms.4 <- MSHAPES(efa.outlines, ~context)
+plot_MSHAPES(ms.4, size = 0.75)
 #end of code
