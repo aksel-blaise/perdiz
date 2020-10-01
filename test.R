@@ -21,7 +21,7 @@ outlines <- jpg.list %>%
 data.out <- Out(outlines, 
                 fac = att.data)
 
-# scale, align, and center specimens
+# scale, align, rotate, and center specimens
 norm.outlines <- data.out %>% 
   coo_scale() %>%
   coo_align() %>% 
@@ -31,13 +31,12 @@ norm.outlines <- data.out %>%
 pile(norm.outlines)
 
 panel(norm.outlines, names = TRUE)
-# mosaic - sites
+# mosaic of individual specimens from the different sites
 mosaic(norm.outlines, ~trinomial)
-# mosaic - raw materials
+# mosaic of individual specimens rendered from different materials
 mosaic(norm.outlines, ~raw.mat)
-# mosaic - mortuary context (yes/no)
+# mosaic of individual specimens from contexts (mortuary/not)
 mosaic(norm.outlines, ~context)
-
 
 # calibrate how many harmonics needed
 calibrate_harmonicpower_efourier(norm.outlines, 
@@ -61,27 +60,27 @@ scree_plot(pca.outlines)
 # plot pca by site
 plot_PCA(pca.outlines, 
          morphospace_position = "range",
-         ~trinomial, zoom = 1.1)
+         ~trinomial, zoom = 1.2)
 
 # plot pca by raw material
 plot_PCA(pca.outlines, 
          morphospace_position = "range",
-         ~raw.mat, zoom = 1.1)
+         ~raw.mat, zoom = 1.2)
 
 # plot pca by context
 plot_PCA(pca.outlines, 
          morphospace_position = "range",
-         ~context, zoom = 1.1)
+         ~context, zoom = 1.2)
 
 # contribution of each pc
 # by site
 boxplot(pca.outlines, ~trinomial, nax = 1:5)
 # by raw material
 boxplot(pca.outlines, ~raw.mat, nax = 1:5)
-# by context
+# by raw material
 boxplot(pca.outlines, ~context, nax = 1:5)
 
-# mean shape + 2sd for the first 5 pcs
+# mean shape + 2sd for the first 10 pcs
 PCcontrib(pca.outlines, nax = 1:5)
 
 # manova
@@ -96,14 +95,14 @@ MANOVA(pca.outlines, 'raw.mat')
 # which differ?
 MANOVA_PW(pca.outlines, 'raw.mat')
 
-# shape difference between context?
+# shape difference by context?
 MANOVA(pca.outlines, 'context')
 
 # mean shapes
 
 # site
 ms.2 <- MSHAPES(efa.outlines, ~trinomial)
-plot_MSHAPES(ms.2, size = 0.8)
+plot_MSHAPES(ms.2, size = 0.75)
 
 # raw material
 ms.3 <- MSHAPES(efa.outlines, ~raw.mat)
@@ -112,4 +111,3 @@ plot_MSHAPES(ms.3, size = 0.75)
 # context
 ms.4 <- MSHAPES(efa.outlines, ~context)
 plot_MSHAPES(ms.4, size = 0.75)
-#end of code
