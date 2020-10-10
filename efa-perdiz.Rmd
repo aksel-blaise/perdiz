@@ -11,6 +11,29 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Elliptical Fourier Analysis
 
+## Chronology for incised Caddo types
+
+```{r typetemporal, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# load ggplot2
+library(ggplot2)
+# gantt chart of relative dates for perdiz arrow points
+temp<-data.frame(Site = c('Tuck Carpenter', 'Johns', 'Pine Tree Mound', 'Washington Square Mound', 'Spradley', 'Jack Walton', 'Redwine', 'Old Timers', 'Sybs Site'),
+                 Date_Range_CE = c(1430,1430,1300,1238,1650,1200,1300,1400,1400), # in years CE
+                 end = c(1500,1600,1650,1445,1725,1400,1454,1680,1575) # in years CE
+)
+# reorder types by beginning of relative date range
+temp$Site <- factor(temp$Site, levels = temp$Site[order(temp$Date_Range_CE)])
+# arrange figure
+type.time <- ggplot(temp, aes(x = Date_Range_CE, xend = end, y = factor(Site, 
+       levels = rev(levels(factor(Site)))), yend = Site, color = Site)) +
+  geom_segment(size = 1.5) +
+  scale_colour_discrete() +
+  theme(legend.position = "none") +
+  labs(y = "Site", x = "Date Range CE")
+# render figure
+type.time
+```
+
 ## Load packages + data
 
 ```{r load.packages, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
