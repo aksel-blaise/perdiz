@@ -2,9 +2,34 @@ Perdiz arrow point shape as a function of site, raw material, and/or
 mortuary context?
 ================
 Robert Z. Selden, Jr.
-01 October, 2020
+10 October, 2020
 
 # Elliptical Fourier Analysis
+
+## Chronology for incised Caddo types
+
+``` r
+# load ggplot2
+library(ggplot2)
+# gantt chart of relative dates for perdiz arrow points
+temp<-data.frame(Site = c('Tuck Carpenter', 'Johns', 'Pine Tree Mound', 'Washington Square Mound', 'Spradley', 'Jack Walton', 'Redwine', 'Old Timers', 'Sybs Site'),
+                 Date_Range_CE = c(1430,1430,1300,1238,1650,1200,1300,1400,1400), # in years CE
+                 end = c(1500,1600,1650,1445,1725,1400,1454,1680,1575) # in years CE
+)
+# reorder types by beginning of relative date range
+temp$Site <- factor(temp$Site, levels = temp$Site[order(temp$Date_Range_CE)])
+# arrange figure
+type.time <- ggplot(temp, aes(x = Date_Range_CE, xend = end, y = factor(Site, 
+       levels = rev(levels(factor(Site)))), yend = Site, color = Site)) +
+  geom_segment(size = 1.5) +
+  scale_colour_discrete() +
+  theme(legend.position = "none") +
+  labs(y = "Site", x = "Date Range CE")
+# render figure
+type.time
+```
+
+<img src="efa-perdiz_files/figure-gfm/typetemporal-1.png" width="100%" />
 
 ## Load packages + data
 
@@ -13,17 +38,11 @@ Robert Z. Selden, Jr.
 library(here)
 ```
 
-    ## here() starts at D:/github/perdiz
+    ## here() starts at E:/github/perdiz
 
 ``` r
 library(Momocs)
 ```
-
-    ## 
-    ##   Momocs is now retired and will no longer be maintained.
-    ##   It is superseded by Momocs2 and more generally MomX ecosystem:
-    ## 
-    ##              <   https://momx.github.io   >
 
     ## 
     ## Attaching package: 'Momocs'
@@ -180,7 +199,7 @@ outlines <- jpg.list %>%
     ## [ 123 / 124 ]  sy43-5.jpg
     ## [ 124 / 124 ]  sy43-6.jpg
 
-    ## Done in 16.4 secs
+    ## Done in 14.5 secs
 
 ``` r
 # add attributes
