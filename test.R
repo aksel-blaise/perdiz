@@ -52,8 +52,6 @@ silicified <- s.wd %>%
   coo_rotate() %>% 
   coo_center()
 
-stack(silicified, title = "Silicified Wood", xy.axis = TRUE, centroid = FALSE)
-
 ## chert
 chert <- filter(norm.outlines, 
                raw.mat %in% c("chert"))
@@ -63,8 +61,6 @@ chert <- chert %>%
   coo_align() %>%
   coo_rotate() %>% 
   coo_center()
-
-stack(chert, title = "Chert", xy.axis = TRUE, centroid = FALSE)
 
 ## jasper
 jasper <- filter(norm.outlines, 
@@ -76,8 +72,6 @@ jasper <- jasper %>%
   coo_rotate() %>% 
   coo_center()
 
-stack(jasper, title = "Jasper", xy.axis = TRUE, centroid = FALSE)
-
 ## quartzite
 quartzite <- filter(norm.outlines, 
                  raw.mat %in% c("quartzite"))
@@ -87,8 +81,6 @@ quartzite <- quartzite %>%
   coo_align() %>%
   coo_rotate() %>% 
   coo_center()
-
-stack(quartzite, title = "Quartzite", xy.axis = TRUE, centroid = FALSE)
 
 # render figure
 par(mfrow=c(2, 2))
