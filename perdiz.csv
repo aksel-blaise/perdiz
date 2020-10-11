@@ -1,125 +1,122 @@
-spec,trinomial,site,unit,context,type,raw.mat
-553,41cp12,Johns,B15,mort,perdiz,quartzite
-554,41cp12,Johns,B18,mort,perdiz,quartzite
-555,41cp12,Johns,B7,mort,perdiz,quartzite
-556,41cp12,Johns,B19-6,mort,perdiz,chert
-558,41cp12,Johns,B6,mort,perdiz,quartzite
-559,41cp12,Johns,B14,mort,perdiz,quartzite
-562,41cp12,Johns,B7,mort,perdiz,quartzite
-565,41cp12,Johns,B15,mort,perdiz,chert
-591,41cp12,Johns,B16-6,mort,perdiz,chert
-665,41cp12,Johns,B14,mort,perdiz,quartzite
-489,41cp20,BJ Horton,B15,mort,perdiz,quartzite
-490,41cp20,BJ Horton,B4P5Pt6,mort,perdiz,quartzite
-677,41cp20,BJ Horton,B4-1,mort,perdiz,chert
-678,41cp20,BJ Horton,B2-P3,mort,perdiz,quartzite
-598,41cp5,Tuck Carpenter,B21-8,mort,perdiz,jasper
-645,41cp5,Tuck Carpenter,B41-1,mort,perdiz,jasper
-646,41cp5,Tuck Carpenter,B41-2,mort,perdiz,jasper
-647,41cp5,Tuck Carpenter,B24-1,mort,perdiz,quartzite
-648,41cp5,Tuck Carpenter,B24-4,mort,perdiz,jasper
-649,41cp5,Tuck Carpenter,B18-7,mort,perdiz,quartzite
-650,41cp5,Tuck Carpenter,B18-5,mort,perdiz,jasper
-651,41cp5,Tuck Carpenter,B18-4,mort,perdiz,jasper
-652,41cp5,Tuck Carpenter,B18-8,mort,perdiz,jasper
-653,41cp5,Tuck Carpenter,B45-2,mort,perdiz,jasper
-654,41cp5,Tuck Carpenter,B86,mort,perdiz,chert
-655,41cp5,Tuck Carpenter,B40-4,mort,perdiz,chert
-656,41cp5,Tuck Carpenter,B40-3,mort,perdiz,jasper
-657,41cp5,Tuck Carpenter,B40-5,mort,perdiz,jasper
-658,41cp5,Tuck Carpenter,B30-1,mort,perdiz,chert
-659,41cp5,Tuck Carpenter,B16-2,mort,perdiz,chert
-660,41cp5,Tuck Carpenter,B23-16,mort,perdiz,chert
-661,41cp5,Tuck Carpenter,B23-13,mort,perdiz,chert
-na49-1,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd
-na49-10,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd
-na49-11,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd
-na49-12,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd
-na49-13,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd
-na49-14,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd
-na49-2,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd
-na49-3,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd
-na49-4,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd
-na49-5,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd
-na49-7,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd
-na49-8,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd
-na49-9,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd
-na49-616,41na49,Washington Square,n218w162,not.mort,perdiz,s.wd
-na49-271,41na49,Washington Square,n226w101,not.mort,perdiz,s.wd
-na49-187,41na49,Washington Square,n225w100,not.mort,perdiz,s.wd
-na49-734,41na49,Washington Square,n236w107,not.mort,perdiz,chert
-na49-176,41na49,Washington Square,n240w95,not.mort,perdiz,chert
-na49-149,41na49,Washington Square,n240w90,not.mort,perdiz,chert
-na49-33,41na49,Washington Square,n230w102,not.mort,perdiz,chert
-na49-137,41na49,Washington Square,n227w103,not.mort,perdiz,chert
-na49-195,41na49,Washington Square,n227w104,not.mort,perdiz,chert
-na49-587,41na49,Washington Square,n219w163,not.mort,perdiz,chert
-sy280-1,41sy280,,,not.mort,perdiz,s.wd
-sy280-2,41sy280,,,not.mort,perdiz,s.wd
-sy280-3,41sy280,,,not.mort,perdiz,s.wd
-sy43-1,41sy43,,,not.mort,perdiz,s.wd
-sy43-2,41sy43,,,not.mort,perdiz,s.wd
-sy43-3,41sy43,,,not.mort,perdiz,s.wd
-sy43-4,41sy43,,,not.mort,perdiz,s.wd
-sy43-5,41sy43,,,not.mort,perdiz,s.wd
-sy43-6,41sy43,,,not.mort,perdiz,s.wd
-hs15-fig7.1r,41hs15,,,not.mort,perdiz,chert
-hs15-fig7.1t,41hs15,,,not.mort,perdiz,chert
-hs15-fig7.1u,41hs15,,,not.mort,perdiz,chert
-hs15-fig7.1v,41hs15,,,not.mort,perdiz,chert
-hs15-fig7.1w,41hs15,,,not.mort,perdiz,chert
-hs15-fig7.1x,41hs15,,,not.mort,perdiz,chert
-hs15-fig7.2b,41hs15,,,mort,perdiz,chert
-hs15-fig7.2c,41hs15,,,mort,perdiz,chert
-hs15-fig7.2d,41hs15,,,mort,perdiz,chert
-hs15-fig7.2e,41hs15,,,mort,perdiz,chert
-hs15-fig7.2f,41hs15,,,mort,perdiz,chert
-hs15-fig7.2g,41hs15,,,mort,perdiz,chert
-hs15-fig7.2m,41hs15,,,mort,perdiz,chert
-hs15-fig7.2o,41hs15,,,mort,perdiz,chert
-hs15-fig7.2q,41hs15,,,mort,perdiz,chert
-hs15-fig7.2r,41hs15,,,mort,perdiz,chert
-hs15-fig7.3a,41hs15,,,mort,perdiz,chert
-hs15-fig7.3b,41hs15,,,mort,perdiz,chert
-hs15-fig7.3d,41hs15,,,mort,perdiz,chert
-hs15-fig7.3e,41hs15,,,mort,perdiz,chert
-hs15-fig7.3f,41hs15,,,mort,perdiz,chert
-hs15-fig7.3g,41hs15,,,mort,perdiz,chert
-hs15-fig7.3h,41hs15,,,mort,perdiz,chert
-hs15-fig7.3i,41hs15,,,mort,perdiz,chert
-hs15-fig7.3j,41hs15,,,mort,perdiz,chert
-hs15-fig7.3k,41hs15,,,mort,perdiz,chert
-hs15-fig7.3l,41hs15,,,mort,perdiz,chert
-hs15-fig7.3m,41hs15,,,mort,perdiz,chert
-hs15-fig7.3n,41hs15,,,mort,perdiz,chert
-hs15-fig7.3o,41hs15,,,mort,perdiz,chert
-hs15-fig7.3p,41hs15,,,mort,perdiz,chert
-hs15-fig7.3q,41hs15,,,mort,perdiz,chert
-hs15-fig7.3r,41hs15,,,mort,perdiz,chert
-hs15-fig7.3s,41hs15,,,mort,perdiz,chert
-hs15-fig7.3t,41hs15,,,mort,perdiz,chert
-hs15-fig7.3u,41hs15,,,mort,perdiz,chert
-hs15-fig7.3v,41hs15,,,mort,perdiz,chert
-hs15-fig7.3w,41hs15,,,mort,perdiz,chert
-hs15-fig7.3x,41hs15,,,mort,perdiz,chert
-hs15-fig7.3y,41hs15,,,mort,perdiz,chert
-hs15-fig7.3z,41hs15,,,mort,perdiz,chert
-hs15-fig7.3aa,41hs15,,,mort,perdiz,chert
-hs15-fig7.3bb,41hs15,,,mort,perdiz,chert
-hs15-fig7.3cc,41hs15,,,mort,perdiz,chert
-na206-fig12a,41na206,,,not.mort,perdiz,s.wd
-na206-fig12b,41na206,,,not.mort,perdiz,s.wd
-na206-fig12c,41na206,,,not.mort,perdiz,chert
-na206-fig12d,41na206,,,not.mort,perdiz,s.wd
-na206-fig12f,41na206,,,not.mort,perdiz,chert
-na206-fig12g,41na206,,,not.mort,perdiz,chert
-sa135-fig15a,41sa135,,,not.mort,perdiz,chert
-sa135-fig15b,41sa135,,,not.mort,perdiz,chert
-sa135-fig15c,41sa135,,,not.mort,perdiz,chert
-sa135-fig15g,41sa135,,,not.mort,perdiz,chert
-sm193-fig1e,41sm193,,,not.mort,perdiz,chert
-sm193-fig2a,41sm193,,,not.mort,perdiz,chert
-sm193-fig2b,41sm193,,,not.mort,perdiz,chert
-sm193-fig2e,41sm193,,,not.mort,perdiz,chert
-sm193-fig2f,41sm193,,,not.mort,perdiz,chert
-sm193-fig2g,41sm193,,,not.mort,perdiz,chert
+spec,trinomial,site,unit,context,type,raw.mat,temporal
+553,41cp12,Johns,B15,mort,perdiz,quartzite,LC
+554,41cp12,Johns,B18,mort,perdiz,quartzite,LC
+555,41cp12,Johns,B7,mort,perdiz,quartzite,LC
+556,41cp12,Johns,B19-6,mort,perdiz,chert,LC
+558,41cp12,Johns,B6,mort,perdiz,quartzite,LC
+559,41cp12,Johns,B14,mort,perdiz,quartzite,LC
+562,41cp12,Johns,B7,mort,perdiz,quartzite,LC
+565,41cp12,Johns,B15,mort,perdiz,chert,LC
+591,41cp12,Johns,B16-6,mort,perdiz,chert,LC
+665,41cp12,Johns,B14,mort,perdiz,quartzite,LC
+489,41cp20,BJ Horton,B15,mort,perdiz,quartzite,LC
+490,41cp20,BJ Horton,B4P5Pt6,mort,perdiz,quartzite,LC
+677,41cp20,BJ Horton,B4-1,mort,perdiz,chert,LC
+678,41cp20,BJ Horton,B2-P3,mort,perdiz,quartzite,LC
+598,41cp5,Tuck Carpenter,B21-8,mort,perdiz,jasper,LC
+645,41cp5,Tuck Carpenter,B41-1,mort,perdiz,jasper,LC
+646,41cp5,Tuck Carpenter,B41-2,mort,perdiz,jasper,LC
+647,41cp5,Tuck Carpenter,B24-1,mort,perdiz,quartzite,LC
+648,41cp5,Tuck Carpenter,B24-4,mort,perdiz,jasper,LC
+649,41cp5,Tuck Carpenter,B18-7,mort,perdiz,quartzite,LC
+650,41cp5,Tuck Carpenter,B18-5,mort,perdiz,jasper,LC
+651,41cp5,Tuck Carpenter,B18-4,mort,perdiz,jasper,LC
+652,41cp5,Tuck Carpenter,B18-8,mort,perdiz,jasper,LC
+653,41cp5,Tuck Carpenter,B45-2,mort,perdiz,jasper,LC
+654,41cp5,Tuck Carpenter,B86,mort,perdiz,chert,LC
+655,41cp5,Tuck Carpenter,B40-4,mort,perdiz,chert,LC
+656,41cp5,Tuck Carpenter,B40-3,mort,perdiz,jasper,LC
+657,41cp5,Tuck Carpenter,B40-5,mort,perdiz,jasper,LC
+658,41cp5,Tuck Carpenter,B30-1,mort,perdiz,chert,LC
+659,41cp5,Tuck Carpenter,B16-2,mort,perdiz,chert,LC
+660,41cp5,Tuck Carpenter,B23-16,mort,perdiz,chert,LC
+661,41cp5,Tuck Carpenter,B23-13,mort,perdiz,chert,LC
+na49-1,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd,MC
+na49-10,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd,MC
+na49-11,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd,MC
+na49-12,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd,MC
+na49-13,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd,MC
+na49-14,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd,MC
+na49-2,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd,MC
+na49-3,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd,MC
+na49-4,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd,MC
+na49-5,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd,MC
+na49-7,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd,MC
+na49-8,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd,MC
+na49-9,41na49,Washington Square,NAGPRA,mort,perdiz,s.wd,MC
+na49-616,41na49,Washington Square,n218w162,not.mort,perdiz,s.wd,MC
+na49-271,41na49,Washington Square,n226w101,not.mort,perdiz,s.wd,MC
+na49-187,41na49,Washington Square,n225w100,not.mort,perdiz,s.wd,MC
+na49-734,41na49,Washington Square,n236w107,not.mort,perdiz,chert,MC
+na49-176,41na49,Washington Square,n240w95,not.mort,perdiz,chert,MC
+na49-149,41na49,Washington Square,n240w90,not.mort,perdiz,chert,MC
+na49-33,41na49,Washington Square,n230w102,not.mort,perdiz,chert,MC
+na49-137,41na49,Washington Square,n227w103,not.mort,perdiz,chert,MC
+na49-195,41na49,Washington Square,n227w104,not.mort,perdiz,chert,MC
+na49-587,41na49,Washington Square,n219w163,not.mort,perdiz,chert,MC
+sy280-1,41sy280,,,not.mort,perdiz,s.wd,LC
+sy280-2,41sy280,,,not.mort,perdiz,s.wd,LC
+sy280-3,41sy280,,,not.mort,perdiz,s.wd,LC
+sy43-1,41sy43,,,not.mort,perdiz,s.wd,LC
+sy43-2,41sy43,,,not.mort,perdiz,s.wd,LC
+sy43-3,41sy43,,,not.mort,perdiz,s.wd,LC
+sy43-4,41sy43,,,not.mort,perdiz,s.wd,LC
+sy43-5,41sy43,,,not.mort,perdiz,s.wd,LC
+sy43-6,41sy43,,,not.mort,perdiz,s.wd,LC
+hs15-fig7.1r,41hs15,,,not.mort,perdiz,chert,LC
+hs15-fig7.1t,41hs15,,,not.mort,perdiz,chert,LC
+hs15-fig7.1u,41hs15,,,not.mort,perdiz,chert,LC
+hs15-fig7.1v,41hs15,,,not.mort,perdiz,chert,LC
+hs15-fig7.1w,41hs15,,,not.mort,perdiz,chert,LC
+hs15-fig7.1x,41hs15,,,not.mort,perdiz,chert,LC
+hs15-fig7.2b,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.2c,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.2d,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.2e,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.2f,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.2g,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.2m,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.2o,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.2q,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.2r,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3a,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3b,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3d,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3e,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3f,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3g,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3h,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3i,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3j,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3k,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3l,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3m,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3n,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3o,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3p,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3q,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3r,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3s,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3t,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3u,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3w,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3x,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3y,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3z,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3aa,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3bb,41hs15,,,mort,perdiz,chert,LC
+hs15-fig7.3cc,41hs15,,,mort,perdiz,chert,LC
+na206-fig12a,41na206,,,not.mort,perdiz,s.wd,HC
+na206-fig12b,41na206,,,not.mort,perdiz,s.wd,HC
+na206-fig12d,41na206,,,not.mort,perdiz,s.wd,HC
+na206-fig12f,41na206,,,not.mort,perdiz,chert,HC
+na206-fig12g,41na206,,,not.mort,perdiz,chert,HC
+sa135-fig15b,41sa135,,,not.mort,perdiz,chert,MC
+sa135-fig15c,41sa135,,,not.mort,perdiz,chert,MC
+sa135-fig15g,41sa135,,,not.mort,perdiz,chert,MC
+sm193-fig1e,41sm193,,,not.mort,perdiz,chert,MC
+sm193-fig2a,41sm193,,,not.mort,perdiz,chert,MC
+sm193-fig2b,41sm193,,,not.mort,perdiz,chert,MC
+sm193-fig2e,41sm193,,,not.mort,perdiz,chert,MC
+sm193-fig2f,41sm193,,,not.mort,perdiz,chert,MC
+sm193-fig2g,41sm193,,,not.mort,perdiz,chert,MC
