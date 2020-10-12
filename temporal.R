@@ -2,7 +2,7 @@
 library(ggplot2)
 # gantt chart of relative dates for perdiz arrow points
 temp<-data.frame(Site = c('Tuck Carpenter', 'Johns', 'BJ Horton', 'Pine Tree Mound', 'Washington Square Mound', 'Spradley', 'Jack Walton', 'Redwine', 'Old Timers', 'Sybs Site'),
-                 Date_Range_CE = c(1430,1430,1500,1300,1238,1650,1200,1300,1400,1400), # in years CE
+                 Date_Range_CE = c(1430,1430,1500,1300,1238,1680,1200,1300,1400,1400), # in years CE
                  end = c(1500,1600,1550,1650,1445,1725,1400,1454,1680,1575) # in years CE
 )
 # reorder types by beginning of relative date range
