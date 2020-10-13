@@ -18,7 +18,8 @@ site <- as.factor(data$trinomial) # site
 #comparison tables
 r.tab <- table(raw, con)
 ftable(r.tab)
-summary(r.tab)
+summary(r.tab) # zeros in table
+chisq.test(r.tab, simulate.p.value = TRUE) # simulate p-value
 
 # effect size
 cramersV(r.tab)
@@ -42,7 +43,8 @@ PlotXTabs(data, context, raw.mat, plottype = "percent") # as percentages
 #comparison tables
 r.tab2 <- table(raw, temp)
 ftable(r.tab2)
-summary(r.tab2)
+summary(r.tab2) # zeros in table
+chisq.test(r.tab2, simulate.p.value = TRUE) # simulate p-value
 
 # effect size
 cramersV(r.tab2)
@@ -66,7 +68,8 @@ PlotXTabs(data, temporal, raw.mat, plottype = "percent") # as percentages
 #comparison tables
 r.tab3 <- table(raw, site)
 ftable(r.tab3)
-summary(r.tab3)
+summary(r.tab3) # zeros in table
+chisq.test(r.tab3, simulate.p.value = TRUE) # simulate p-value
 
 # effect size
 cramersV(r.tab3)
