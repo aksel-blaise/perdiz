@@ -45,7 +45,7 @@ sig <- .05 # significance level
 sigAdj <- sig/(nrow(r.tab)*ncol(r.tab))
 sigAdj
 # z value
-qnorm(sigAdj/2)
+qnorm(sigAdj/2) # above pos/below neg = significant
 
 # effect size
 cramersV(r.tab)
@@ -81,7 +81,7 @@ sig <- .05 # significance level
 sigAdj <- sig/(nrow(r.tab2)*ncol(r.tab2))
 sigAdj
 # z value
-qnorm(sigAdj/2)
+qnorm(sigAdj/2) # above pos/below neg = significant
 
 # effect size
 cramersV(r.tab2)
@@ -118,7 +118,7 @@ sig <- .05 # significance level
 sigAdj <- sig/(nrow(r.tab3)*ncol(r.tab3))
 sigAdj
 # z value
-qnorm(sigAdj/2)
+qnorm(sigAdj/2) # above pos/below neg = significant
 
 # effect size
 cramersV(r.tab3)
