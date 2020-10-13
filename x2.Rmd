@@ -18,9 +18,9 @@ library(here)
 library(CGPfunctions)
 library(lsr)
 
-
 # read attribute data
 data <- as.data.frame(read.csv("perdiz.csv", header = TRUE, as.is = TRUE))
+knitr::kable(data, format = "simple")
 
 # variables as factors
 raw <- as.factor(data$raw.mat) # raw material

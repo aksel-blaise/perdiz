@@ -394,11 +394,1236 @@ library(here)</code></pre>
 ##   dfbetas.influence.merMod        car</code></pre>
 <pre class="r"><code>library(lsr)
 
-
 # read attribute data
 data &lt;- as.data.frame(read.csv(&quot;perdiz.csv&quot;, header = TRUE, as.is = TRUE))
-
-# variables as factors
+knitr::kable(data, format = &quot;simple&quot;)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">spec</th>
+<th align="left">trinomial</th>
+<th align="left">site</th>
+<th align="left">unit</th>
+<th align="left">context</th>
+<th align="left">type</th>
+<th align="left">raw.mat</th>
+<th align="left">temporal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">553</td>
+<td align="left">41cp12</td>
+<td align="left">Johns</td>
+<td align="left">B15</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">quartzite</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">554</td>
+<td align="left">41cp12</td>
+<td align="left">Johns</td>
+<td align="left">B18</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">quartzite</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">555</td>
+<td align="left">41cp12</td>
+<td align="left">Johns</td>
+<td align="left">B7</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">quartzite</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">556</td>
+<td align="left">41cp12</td>
+<td align="left">Johns</td>
+<td align="left">B19-6</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">558</td>
+<td align="left">41cp12</td>
+<td align="left">Johns</td>
+<td align="left">B6</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">quartzite</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">559</td>
+<td align="left">41cp12</td>
+<td align="left">Johns</td>
+<td align="left">B14</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">quartzite</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">562</td>
+<td align="left">41cp12</td>
+<td align="left">Johns</td>
+<td align="left">B7</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">quartzite</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">565</td>
+<td align="left">41cp12</td>
+<td align="left">Johns</td>
+<td align="left">B15</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">591</td>
+<td align="left">41cp12</td>
+<td align="left">Johns</td>
+<td align="left">B16-6</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">665</td>
+<td align="left">41cp12</td>
+<td align="left">Johns</td>
+<td align="left">B14</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">quartzite</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">489</td>
+<td align="left">41cp20</td>
+<td align="left">BJ Horton</td>
+<td align="left">B15</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">quartzite</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">490</td>
+<td align="left">41cp20</td>
+<td align="left">BJ Horton</td>
+<td align="left">B4P5Pt6</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">quartzite</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">677</td>
+<td align="left">41cp20</td>
+<td align="left">BJ Horton</td>
+<td align="left">B4-1</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">678</td>
+<td align="left">41cp20</td>
+<td align="left">BJ Horton</td>
+<td align="left">B2-P3</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">quartzite</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">598</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B21-8</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">jasper</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">645</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B41-1</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">jasper</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">646</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B41-2</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">jasper</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">647</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B24-1</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">quartzite</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">648</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B24-4</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">jasper</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">649</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B18-7</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">quartzite</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">650</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B18-5</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">jasper</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">651</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B18-4</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">jasper</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">652</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B18-8</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">jasper</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">653</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B45-2</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">jasper</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">654</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B86</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">655</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B40-4</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">656</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B40-3</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">jasper</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">657</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B40-5</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">jasper</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">658</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B30-1</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">659</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B16-2</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">660</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B23-16</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">661</td>
+<td align="left">41cp5</td>
+<td align="left">Tuck Carpenter</td>
+<td align="left">B23-13</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">na49-1</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">NAGPRA</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">MC</td>
+</tr>
+<tr class="even">
+<td align="left">na49-10</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">NAGPRA</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">MC</td>
+</tr>
+<tr class="odd">
+<td align="left">na49-11</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">NAGPRA</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">MC</td>
+</tr>
+<tr class="even">
+<td align="left">na49-12</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">NAGPRA</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">MC</td>
+</tr>
+<tr class="odd">
+<td align="left">na49-13</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">NAGPRA</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">MC</td>
+</tr>
+<tr class="even">
+<td align="left">na49-14</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">NAGPRA</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">MC</td>
+</tr>
+<tr class="odd">
+<td align="left">na49-2</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">NAGPRA</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">MC</td>
+</tr>
+<tr class="even">
+<td align="left">na49-3</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">NAGPRA</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">MC</td>
+</tr>
+<tr class="odd">
+<td align="left">na49-4</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">NAGPRA</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">MC</td>
+</tr>
+<tr class="even">
+<td align="left">na49-5</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">NAGPRA</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">MC</td>
+</tr>
+<tr class="odd">
+<td align="left">na49-7</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">NAGPRA</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">MC</td>
+</tr>
+<tr class="even">
+<td align="left">na49-8</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">NAGPRA</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">MC</td>
+</tr>
+<tr class="odd">
+<td align="left">na49-9</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">NAGPRA</td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">MC</td>
+</tr>
+<tr class="even">
+<td align="left">na49-616</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">n218w162</td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">MC</td>
+</tr>
+<tr class="odd">
+<td align="left">na49-271</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">n226w101</td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">MC</td>
+</tr>
+<tr class="even">
+<td align="left">na49-187</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">n225w100</td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">MC</td>
+</tr>
+<tr class="odd">
+<td align="left">na49-734</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">n236w107</td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">MC</td>
+</tr>
+<tr class="even">
+<td align="left">na49-176</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">n240w95</td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">MC</td>
+</tr>
+<tr class="odd">
+<td align="left">na49-149</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">n240w90</td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">MC</td>
+</tr>
+<tr class="even">
+<td align="left">na49-33</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">n230w102</td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">MC</td>
+</tr>
+<tr class="odd">
+<td align="left">na49-137</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">n227w103</td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">MC</td>
+</tr>
+<tr class="even">
+<td align="left">na49-195</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">n227w104</td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">MC</td>
+</tr>
+<tr class="odd">
+<td align="left">na49-587</td>
+<td align="left">41na49</td>
+<td align="left">Washington Square</td>
+<td align="left">n219w163</td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">MC</td>
+</tr>
+<tr class="even">
+<td align="left">sy280-1</td>
+<td align="left">41sy280</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">sy280-2</td>
+<td align="left">41sy280</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">sy280-3</td>
+<td align="left">41sy280</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">sy43-1</td>
+<td align="left">41sy43</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">sy43-2</td>
+<td align="left">41sy43</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">sy43-3</td>
+<td align="left">41sy43</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">sy43-4</td>
+<td align="left">41sy43</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">sy43-5</td>
+<td align="left">41sy43</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">sy43-6</td>
+<td align="left">41sy43</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.1r</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.1t</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.1u</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.1v</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.1w</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.1x</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.2b</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.2c</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.2d</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.2e</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.2f</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.2g</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.2m</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.2o</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.2q</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.2r</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.3a</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.3b</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.3d</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.3e</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.3f</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.3g</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.3h</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.3i</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.3j</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.3k</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.3l</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.3m</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.3n</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.3o</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.3p</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.3q</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.3r</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.3s</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.3t</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.3u</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.3w</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.3x</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.3y</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.3z</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.3aa</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">hs15-fig7.3bb</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="odd">
+<td align="left">hs15-fig7.3cc</td>
+<td align="left">41hs15</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">LC</td>
+</tr>
+<tr class="even">
+<td align="left">na206-fig12a</td>
+<td align="left">41na206</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">HC</td>
+</tr>
+<tr class="odd">
+<td align="left">na206-fig12b</td>
+<td align="left">41na206</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">HC</td>
+</tr>
+<tr class="even">
+<td align="left">na206-fig12d</td>
+<td align="left">41na206</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">s.wd</td>
+<td align="left">HC</td>
+</tr>
+<tr class="odd">
+<td align="left">na206-fig12f</td>
+<td align="left">41na206</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">HC</td>
+</tr>
+<tr class="even">
+<td align="left">na206-fig12g</td>
+<td align="left">41na206</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">HC</td>
+</tr>
+<tr class="odd">
+<td align="left">sa135-fig15b</td>
+<td align="left">41sa135</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">MC</td>
+</tr>
+<tr class="even">
+<td align="left">sa135-fig15c</td>
+<td align="left">41sa135</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">MC</td>
+</tr>
+<tr class="odd">
+<td align="left">sa135-fig15g</td>
+<td align="left">41sa135</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">MC</td>
+</tr>
+<tr class="even">
+<td align="left">sm193-fig1e</td>
+<td align="left">41sm193</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">MC</td>
+</tr>
+<tr class="odd">
+<td align="left">sm193-fig2a</td>
+<td align="left">41sm193</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">MC</td>
+</tr>
+<tr class="even">
+<td align="left">sm193-fig2b</td>
+<td align="left">41sm193</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">MC</td>
+</tr>
+<tr class="odd">
+<td align="left">sm193-fig2e</td>
+<td align="left">41sm193</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">MC</td>
+</tr>
+<tr class="even">
+<td align="left">sm193-fig2f</td>
+<td align="left">41sm193</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">MC</td>
+</tr>
+<tr class="odd">
+<td align="left">sm193-fig2g</td>
+<td align="left">41sm193</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">not.mort</td>
+<td align="left">perdiz</td>
+<td align="left">chert</td>
+<td align="left">MC</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># variables as factors
 raw &lt;- as.factor(data$raw.mat) # raw material
 con &lt;- as.factor(data$context) # burial context
 temp &lt;- as.factor(data$temporal) # temporal period
@@ -429,7 +1654,7 @@ ftable(r.tab)</code></pre>
 ##  replicates)
 ## 
 ## data:  r.tab
-## X-squared = 16.381, df = NA, p-value = 0.001499</code></pre>
+## X-squared = 16.381, df = NA, p-value = 0.0009995</code></pre>
 <pre class="r"><code>chisq.test(r.tab, correct = FALSE, simulate.p.value = TRUE)$stdres # residuals</code></pre>
 <pre><code>##            con
 ## raw               mort   not.mort
@@ -443,7 +1668,7 @@ sigAdj &lt;- sig/(nrow(r.tab)*ncol(r.tab))
 sigAdj</code></pre>
 <pre><code>## [1] 0.00625</code></pre>
 <pre class="r"><code># z value
-qnorm(sigAdj/2)</code></pre>
+qnorm(sigAdj/2) # above pos/below neg = significant</code></pre>
 <pre><code>## [1] -2.734369</code></pre>
 <pre class="r"><code># effect size
 cramersV(r.tab)</code></pre>
@@ -515,7 +1740,7 @@ ftable(r.tab2)</code></pre>
 ##  replicates)
 ## 
 ## data:  r.tab2
-## X-squared = 29.195, df = NA, p-value = 0.0004998</code></pre>
+## X-squared = 29.195, df = NA, p-value = 0.001499</code></pre>
 <pre class="r"><code>chisq.test(r.tab2, correct = FALSE, simulate.p.value = TRUE)$stdres # residuals</code></pre>
 <pre><code>##            temp
 ## raw                 HC         LC         MC
@@ -529,7 +1754,7 @@ sigAdj &lt;- sig/(nrow(r.tab2)*ncol(r.tab2))
 sigAdj</code></pre>
 <pre><code>## [1] 0.004166667</code></pre>
 <pre class="r"><code># z value
-qnorm(sigAdj/2)</code></pre>
+qnorm(sigAdj/2) # above pos/below neg = significant</code></pre>
 <pre><code>## [1] -2.86526</code></pre>
 <pre class="r"><code># effect size
 cramersV(r.tab2)</code></pre>
@@ -621,7 +1846,7 @@ sigAdj &lt;- sig/(nrow(r.tab3)*ncol(r.tab3))
 sigAdj</code></pre>
 <pre><code>## [1] 0.00125</code></pre>
 <pre class="r"><code># z value
-qnorm(sigAdj/2)</code></pre>
+qnorm(sigAdj/2) # above pos/below neg = significant</code></pre>
 <pre><code>## [1] -3.227218</code></pre>
 <pre class="r"><code># effect size
 cramersV(r.tab3)</code></pre>
