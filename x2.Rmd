@@ -43,7 +43,7 @@ sig <- .05 # significance level
 # adjust for multiple testing with Bonferroni
 sig.adj <- sig/(nrow(r.tab)*ncol(r.tab))
 # z value
-qnorm(sig.adj/2) # above pos/below neg in above residuals = significant
+qnorm(sig.adj/2) # above Z in residuals = significant
 
 # effect size
 cramersV(r.tab)
@@ -78,7 +78,7 @@ sig <- .05 # significance level
 # adjust for multiple testing with Bonferroni
 sig.adj <- sig/(nrow(r.tab2)*ncol(r.tab2))
 # z value
-qnorm(sig.adj/2) # above pos/below neg in above residuals = significant
+qnorm(sig.adj/2) # above Z in residuals = significant
 
 # effect size
 cramersV(r.tab2)
@@ -114,7 +114,7 @@ sig <- .05 # significance level
 # adjust for multiple testing with Bonferroni
 sig.adj <- sig/(nrow(r.tab3)*ncol(r.tab3))
 # z value
-qnorm(sig.adj/2) # above pos/below neg in above residuals = significant
+qnorm(sig.adj/2) # above Z in residuals = significant
 
 # effect size
 cramersV(r.tab3)
