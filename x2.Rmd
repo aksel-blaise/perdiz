@@ -20,7 +20,6 @@ library(lsr)
 
 # read attribute data
 data <- as.data.frame(read.csv("perdiz.csv", header = TRUE, as.is = TRUE))
-knitr::kable(data, format = "simple")
 
 # variables as factors
 raw <- as.factor(data$raw.mat) # raw material
@@ -34,18 +33,17 @@ site <- as.factor(data$trinomial) # site
 ```{r x2.raw.mort, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 #####
 ## raw material by burial context
-#comparison tables
-r.tab <- table(raw, con)
-ftable(r.tab)
+# tables
+r.tab <- table(raw, con) # table of raw material by burial context
+ftable(r.tab) # flat contingency table
 summary(r.tab) # zeros in table
 chisq.test(r.tab, correct = FALSE, simulate.p.value = TRUE) # simulate p-value
 chisq.test(r.tab, correct = FALSE, simulate.p.value = TRUE)$stdres # residuals
 sig <- .05 # significance level
 # adjust for multiple testing with Bonferroni
-sigAdj <- sig/(nrow(r.tab)*ncol(r.tab))
-sigAdj
+sig.adj <- sig/(nrow(r.tab)*ncol(r.tab))
 # z value
-qnorm(sigAdj/2) # above pos/below neg = significant
+qnorm(sig.adj/2) # above pos/below neg in above residuals = significant
 
 # effect size
 cramersV(r.tab)
@@ -70,30 +68,29 @@ PlotXTabs(data, context, raw.mat, plottype = "percent") # as percentages
 ```{r x2.raw.temp, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 #####
 ## raw material by temporal period
-#comparison tables
-r.tab2 <- table(raw, temp)
-ftable(r.tab2)
+# tables
+r.tab2 <- table(raw, temp) # table of raw material by temporal period
+ftable(r.tab2) # flat contingency table
 summary(r.tab2) # zeros in table
 chisq.test(r.tab2, simulate.p.value = TRUE) # simulate p-value
 chisq.test(r.tab2, correct = FALSE, simulate.p.value = TRUE)$stdres # residuals
 sig <- .05 # significance level
 # adjust for multiple testing with Bonferroni
-sigAdj <- sig/(nrow(r.tab2)*ncol(r.tab2))
-sigAdj
+sig.adj <- sig/(nrow(r.tab2)*ncol(r.tab2))
 # z value
-qnorm(sigAdj/2) # above pos/below neg = significant
+qnorm(sig.adj/2) # above pos/below neg in above residuals = significant
 
 # effect size
 cramersV(r.tab2)
 
 # number of observations
 margin.table(r.tab2,1) # raw material
-margin.table(r.tab2,2) # mortuary/no
+margin.table(r.tab2,2) # temporal period
 
 # percentages
 prop.table(r.tab2)
 prop.table(r.tab2,1) # perc by raw.mat (read l/r)
-prop.table(r.tab2,2) # perc by mortuary/no (read top to bottom)
+prop.table(r.tab2,2) # perc by temporal period (read top to bottom)
 
 # plot cross tabs
 PlotXTabs(data, temporal, raw.mat) # side by side
@@ -102,35 +99,34 @@ PlotXTabs(data, temporal, raw.mat, plottype = "percent") # as percentages
 
 ```
 
-### Comparison of raw material by site (trinomial)
+### Comparison of raw material by site
 
 ```{r x2.raw.site, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 #####
 ## raw material by site
-#comparison tables
-r.tab3 <- table(raw, site)
-ftable(r.tab3)
+# tables
+r.tab3 <- table(raw, site) #table of raw material by site
+ftable(r.tab3) # flat contingency table
 summary(r.tab3) # zeros in table
 chisq.test(r.tab3, simulate.p.value = TRUE) # simulate p-value
 chisq.test(r.tab3, correct = FALSE, simulate.p.value = TRUE)$stdres # residuals
 sig <- .05 # significance level
 # adjust for multiple testing with Bonferroni
-sigAdj <- sig/(nrow(r.tab3)*ncol(r.tab3))
-sigAdj
+sig.adj <- sig/(nrow(r.tab3)*ncol(r.tab3))
 # z value
-qnorm(sigAdj/2) # above pos/below neg = significant
+qnorm(sig.adj/2) # above pos/below neg in above residuals = significant
 
 # effect size
 cramersV(r.tab3)
 
 # number of observations
 margin.table(r.tab3,1) # raw material
-margin.table(r.tab3,2) # mortuary/no
+margin.table(r.tab3,2) # site
 
 # percentages
 prop.table(r.tab3)
 prop.table(r.tab3,1) # perc by raw.mat (read l/r)
-prop.table(r.tab3,2) # perc by mortuary/no (read top to bottom)
+prop.table(r.tab3,2) # perc by site (read top to bottom)
 
 # plot cross tabs
 PlotXTabs(data, trinomial, raw.mat) # side by side
