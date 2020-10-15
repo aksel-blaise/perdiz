@@ -15,6 +15,8 @@ att.data$context <- as.factor(att.data$context)
 att.data$temporal <- as.factor(att.data$temporal)
 att.data$trinomial <- as.factor(att.data$trinomial)
 att.data$raw.mat <- as.factor(att.data$raw.mat)
+att.data$contemp <- as.factor(att.data$contemp)
+att.data$contempraw <- as.factor(att.data$contempraw)
 
 #####
 # generate outlines
@@ -89,17 +91,6 @@ stack(chert, title = "Chert", xy.axis = TRUE, centroid = FALSE)
 stack(jasper, title = "Jasper", xy.axis = TRUE, centroid = FALSE)
 stack(quartzite, title = "Quartzite", xy.axis = TRUE, centroid = FALSE)
 
-##### 
-
-# mosaic of individual specimens from the different sites
-mosaic(norm.outlines, ~trinomial)
-# mosaic of individual specimens rendered from different materials
-mosaic(norm.outlines, ~raw.mat)
-# mosaic of individual specimens from contexts (mortuary/not)
-mosaic(norm.outlines, ~context)
-# mosaic of individual specimens from temporal
-mosaic(norm.outlines, ~temporal)
-
 #####
 # calibrate how many harmonics needed
 calibrate_harmonicpower_efourier(norm.outlines, 
@@ -141,6 +132,16 @@ plot_PCA(pca.outlines,
          morphospace_position = "range",
          ~temporal, zoom = 1)
 
+# plot pca by contemp
+plot_PCA(pca.outlines, 
+         morphospace_position = "range",
+         ~contemp, zoom = 1.2)
+
+# plot pca by contempraw
+plot_PCA(pca.outlines, 
+         morphospace_position = "range",
+         ~contempraw, zoom = 1.2)
+
 # contribution of each pc
 # by site
 boxplot(pca.outlines, ~trinomial, nax = 1:5)
@@ -150,6 +151,10 @@ boxplot(pca.outlines, ~raw.mat, nax = 1:5)
 boxplot(pca.outlines, ~context, nax = 1:5)
 # by temporal
 boxplot(pca.outlines, ~temporal, nax = 1:5)
+# by contemp
+boxplot(pca.outlines, ~contemp, nax = 1:5)
+# by contempraw
+boxplot(pca.outlines, ~contempraw, nax = 1:5)
 
 # mean shape + 2sd for the first 10 pcs
 PCcontrib(pca.outlines, nax = 1:5)
@@ -175,6 +180,16 @@ MANOVA(pca.outlines, 'temporal')
 # which differ?
 MANOVA_PW(pca.outlines, 'temporal')
 
+# shape difference by contemp?
+MANOVA(pca.outlines, 'contemp')
+# which differ?
+MANOVA_PW(pca.outlines, 'contemp')
+
+# shape difference by contempraw?
+MANOVA(pca.outlines, 'contempraw')
+# which differ?
+MANOVA_PW(pca.outlines, 'contempraw')
+
 #####
 # mean shapes
 
@@ -193,3 +208,11 @@ plot_MSHAPES(ms.4, size = 0.75)
 # temporal
 ms.5 <- MSHAPES(efa.outlines, ~temporal)
 plot_MSHAPES(ms.5, size = 0.75)
+
+# contemp
+ms.5 <- MSHAPES(efa.outlines, ~contemp)
+plot_MSHAPES(ms.5, size = 0.75)
+
+# contempraw
+ms.6 <- MSHAPES(efa.outlines, ~contempraw)
+plot_MSHAPES(ms.6, size = 0.75)

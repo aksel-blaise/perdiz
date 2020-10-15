@@ -1,0 +1,46 @@
+# load packaged
+library(ggplot2)
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(ggrepel)
+library(ggspatial)
+library(maps)
+library(tools)
+world <- ne_countries(scale = "medium", returnclass = "sf")
+class(world)
+states <- st_as_sf(map("state", plot = FALSE, fill = TRUE))
+head(states)
+states <- cbind(states, st_coordinates(st_centroid(states)))
+states$ID <- toTitleCase(states$ID)
+head(states)
+archcentroids <- data.frame(arch = c("Camp County", "Harrison County", "Nacogdoches County", "San Augustine County", "Smith County", "Shelby County"), 
+                            lat = c(32.97, 32.55, 31.61, 31.4, 32.38, 31.79), 
+                            lng = c(-94.98, -94.37, -94.61, -94.18, -95.27, -94.14))
+states$nudge_x <- -0.55
+states$nudge_x[states$ID == "Texas"] <- 0.5
+states$nudge_x[states$ID == "Mississippi"] <- -0.1
+states$nudge_x[states$ID == "Alabama"] <- -0.15
+states$nudge_y <- -0.01
+states$nudge_y[states$ID == "Louisiana"] <- 0.25
+# plot map
+ggplot(data = world) +
+  geom_sf(fill = "#FFFFCC") +
+  geom_sf(data = states, fill = NA) + 
+  geom_text(data = states, aes(X, Y, label = ID), nudge_x = states$nudge_x, 
+            nudge_y = states$nudge_y, fontface = "italic", size = 3.5) +
+  geom_text_repel(data = archcentroids, aes(x = lng, y = lat, label = arch), 
+                  fontface = "bold", 
+                  nudge_x = c(1.2, -0.5, -0.35, -1, -.2), 
+                  nudge_y = c(0.1, -0.5, -0.25, -0.5, -0.1), 
+                  color = "#003366", 
+                  size = 3) +
+  coord_sf(xlim = c(-100, -90), ylim = c(29, 36.5), expand = TRUE) +
+  ggtitle("Perdiz Arrow Point Sample Locations", subtitle = "(archaeological site locations redacted)") +
+  annotation_scale(location = "bl", width_hint = 0.3) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.01, "in"), pad_y = unit(0.2, "in"),
+                         style = north_arrow_fancy_orienteering) +
+  theme(panel.grid.major = element_line(color = gray(0.5), linetype = "dashed", 
+                                        size = 0.5), panel.background = element_rect(fill = "aliceblue")) +
+  labs(x = "Longitude", y = "Latitude")
