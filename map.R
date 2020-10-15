@@ -18,11 +18,12 @@ archcentroids <- data.frame(arch = c("Camp County", "Harrison County", "Nacogdoc
                             lat = c(32.97, 32.55, 31.61, 31.4, 32.38, 31.79), 
                             lng = c(-94.98, -94.37, -94.61, -94.18, -95.27, -94.14))
 states$nudge_x <- -0.55
-states$nudge_x[states$ID == "Texas"] <- 0.5
+states$nudge_x[states$ID == "Texas"] <- 2
 states$nudge_x[states$ID == "Mississippi"] <- -0.1
-states$nudge_x[states$ID == "Alabama"] <- -0.15
 states$nudge_y <- -0.01
-states$nudge_y[states$ID == "Louisiana"] <- 0.25
+states$nudge_y[states$ID == "Louisiana"] <- -0.25
+states$nudge_y[states$ID == "Arkansas"] <- -1
+
 # plot map
 ggplot(data = world) +
   geom_sf(fill = "#FFFFCC") +
@@ -31,11 +32,11 @@ ggplot(data = world) +
             nudge_y = states$nudge_y, fontface = "italic", size = 3.5) +
   geom_text_repel(data = archcentroids, aes(x = lng, y = lat, label = arch), 
                   fontface = "bold", 
-                  nudge_x = c(1.2, -0.5, -0.35, -1, -.2), 
-                  nudge_y = c(0.1, -0.5, -0.25, -0.5, -0.1), 
+                  nudge_x = c(0,1,-0.9,-0.6,-0.25,1), 
+                  nudge_y = c(0.5,0,-0.25,-0.5,-0.25,-0), 
                   color = "#003366", 
-                  size = 3) +
-  coord_sf(xlim = c(-100, -90), ylim = c(29, 36.5), expand = TRUE) +
+                  size = 4) +
+  coord_sf(xlim = c(-98, -89), ylim = c(30, 34.5), expand = TRUE) +
   ggtitle("Perdiz Arrow Point Sample Locations", subtitle = "(archaeological site locations redacted)") +
   annotation_scale(location = "bl", width_hint = 0.3) +
   annotation_north_arrow(location = "bl", which_north = "true", 
