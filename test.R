@@ -35,63 +35,6 @@ norm.outlines <- data.out %>%
   coo_center()
 
 #####
-# outline pile
-stack(norm.outlines)
-
-panel(norm.outlines, names = TRUE)
-panel(norm.outlines, fac = 'trinomial')
-
-#####
-# outlines for individual groups
-
-## silicified wood
-s.wd <- filter(norm.outlines, 
-               raw.mat %in% c("s.wd"))
-
-silicified <- s.wd %>% 
-  coo_scale() %>%
-  coo_align() %>%
-  coo_rotate() %>% 
-  coo_center()
-
-## chert
-chert <- filter(norm.outlines, 
-               raw.mat %in% c("chert"))
-
-chert <- chert %>% 
-  coo_scale() %>%
-  coo_align() %>%
-  coo_rotate() %>% 
-  coo_center()
-
-## jasper
-jasper <- filter(norm.outlines, 
-                raw.mat %in% c("jasper"))
-
-jasper <- jasper %>% 
-  coo_scale() %>%
-  coo_align() %>%
-  coo_rotate() %>% 
-  coo_center()
-
-## quartzite
-quartzite <- filter(norm.outlines, 
-                 raw.mat %in% c("quartzite"))
-
-quartzite <- quartzite %>% 
-  coo_scale() %>%
-  coo_align() %>%
-  coo_rotate() %>% 
-  coo_center()
-
-# render figure
-par(mfrow=c(2, 2))
-stack(silicified, title = "Silicified Wood", xy.axis = TRUE, centroid = FALSE)
-stack(chert, title = "Chert", xy.axis = TRUE, centroid = FALSE)
-stack(jasper, title = "Jasper", xy.axis = TRUE, centroid = FALSE)
-stack(quartzite, title = "Quartzite", xy.axis = TRUE, centroid = FALSE)
-
-#####
 # calibrate how many harmonics needed
 calibrate_harmonicpower_efourier(norm.outlines, 
                                  nb.h = 30)
@@ -109,57 +52,45 @@ efa.outlines <- efourier(norm.outlines,
 pca.outlines <- PCA(efa.outlines)
 
 #####
+## exploratory analysis
 # pca 
 scree_plot(pca.outlines)
 
 # plot pca by site
 plot_PCA(pca.outlines, 
-         morphospace_position = "range",
+         morphospace_position = "range_axes",
          ~trinomial, zoom = 1)
 
 # plot pca by raw material
 plot_PCA(pca.outlines, 
-         morphospace_position = "range",
+         morphospace_position = "range_axes",
          ~raw.mat, zoom = 1)
 
 # plot pca by context
 plot_PCA(pca.outlines, 
-         morphospace_position = "range",
+         morphospace_position = "range_axes",
          ~context, zoom = 1)
 
 # plot pca by temporal
 plot_PCA(pca.outlines, 
-         morphospace_position = "range",
-         ~temporal, zoom = 1)
+         morphospace_position = "range_axes",
+         ~temporal, zoom = 1.45)
 
 # plot pca by contemp
 plot_PCA(pca.outlines, 
-         morphospace_position = "range",
+         morphospace_position = "range_axes",
          ~contemp, zoom = 1.2)
 
 # plot pca by contempraw
 plot_PCA(pca.outlines, 
-         morphospace_position = "range",
+         morphospace_position = "range_axes",
          ~contempraw, zoom = 1.2)
-
-# contribution of each pc
-# by site
-boxplot(pca.outlines, ~trinomial, nax = 1:5)
-# by raw material
-boxplot(pca.outlines, ~raw.mat, nax = 1:5)
-# by context
-boxplot(pca.outlines, ~context, nax = 1:5)
-# by temporal
-boxplot(pca.outlines, ~temporal, nax = 1:5)
-# by contemp
-boxplot(pca.outlines, ~contemp, nax = 1:5)
-# by contempraw
-boxplot(pca.outlines, ~contempraw, nax = 1:5)
 
 # mean shape + 2sd for the first 10 pcs
 PCcontrib(pca.outlines, nax = 1:5)
 
 #####
+## confirmatory analysis
 # manova
 
 # shape difference between sites?
@@ -191,7 +122,7 @@ MANOVA(pca.outlines, 'contempraw')
 MANOVA_PW(pca.outlines, 'contempraw')
 
 #####
-# mean shapes
+# calculate mean shapes + comparisons
 
 # site
 ms.2 <- MSHAPES(efa.outlines, ~trinomial)

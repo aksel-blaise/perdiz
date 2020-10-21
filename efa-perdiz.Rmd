@@ -176,6 +176,10 @@ plot_MSHAPES(ms.3, size = 0.75)
 ms.4 <- MSHAPES(efa.outlines, ~context)
 plot_MSHAPES(ms.4, size = 0.75)
 
+# temporal
+ms.5 <- MSHAPES(efa.outlines, ~temporal)
+plot_MSHAPES(ms.5, size = 0.75)
+
 # contemp
 ms.5 <- MSHAPES(efa.outlines, ~contemp)
 plot_MSHAPES(ms.5, size = 0.75)

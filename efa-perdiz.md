@@ -1,5 +1,5 @@
-Perdiz arrow point shape as a function of time, raw material, and/or
-mortuary context?
+Perdiz arrow point shape as a function of site, time, raw material,
+and/or mortuary context?
 ================
 Robert Z. Selden, Jr.
 21 October, 2020
@@ -1498,12 +1498,20 @@ plot_MSHAPES(ms.4, size = 0.75)
 <img src="efa-perdiz_files/figure-gfm/ms1-3.png" width="100%" />
 
 ``` r
+# temporal
+ms.5 <- MSHAPES(efa.outlines, ~temporal)
+plot_MSHAPES(ms.5, size = 0.75)
+```
+
+<img src="efa-perdiz_files/figure-gfm/ms1-4.png" width="100%" />
+
+``` r
 # contemp
 ms.5 <- MSHAPES(efa.outlines, ~contemp)
 plot_MSHAPES(ms.5, size = 0.75)
 ```
 
-<img src="efa-perdiz_files/figure-gfm/ms1-4.png" width="100%" />
+<img src="efa-perdiz_files/figure-gfm/ms1-5.png" width="100%" />
 
 ``` r
 # contempraw
@@ -1511,4 +1519,4 @@ ms.6 <- MSHAPES(efa.outlines, ~contempraw)
 plot_MSHAPES(ms.6, size = 0.75)
 ```
 
-<img src="efa-perdiz_files/figure-gfm/ms1-5.png" width="100%" />
+<img src="efa-perdiz_files/figure-gfm/ms1-6.png" width="100%" />
