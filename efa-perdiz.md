@@ -1,8 +1,8 @@
-Perdiz arrow point shape as a function of site, raw material, and/or
+Perdiz arrow point shape as a function of time, raw material, and/or
 mortuary context?
 ================
 Robert Z. Selden, Jr.
-15 October, 2020
+21 October, 2020
 
 # Elliptical Fourier Analysis
 
@@ -38,6 +38,8 @@ att.data$trinomial <- as.factor(att.data$trinomial)
 att.data$temporal <- as.factor(att.data$temporal)
 att.data$context <- as.factor(att.data$context)
 att.data$raw.mat <- as.factor(att.data$raw.mat)
+att.data$contemp <- as.factor(att.data$contemp)
+att.data$contempraw <- as.factor(att.data$contempraw)
 ```
 
 ## Generate outlines
@@ -172,7 +174,7 @@ outlines <- jpg.list %>%
     ## [ 120 / 121 ]  sy43-5.jpg
     ## [ 121 / 121 ]  sy43-6.jpg
 
-    ## Done in 13 secs
+    ## Done in 13.5 secs
 
 ``` r
 # add attributes
@@ -185,15 +187,6 @@ norm.outlines <- data.out %>%
   coo_align() %>% 
   coo_center()
 ```
-
-## Pile and mosaics
-
-``` r
-# outline pile
-pile(norm.outlines)
-```
-
-<img src="efa-perdiz_files/figure-gfm/stack.panel-1.png" width="100%" />
 
 ## Calibrate harmonic + EFA
 
@@ -854,8 +847,8 @@ scree_plot(pca.outlines)
 ``` r
 # plot pca by site
 plot_PCA(pca.outlines, 
-         morphospace_position = "range",
-         ~trinomial, zoom = 1.2)
+         morphospace_position = "range_axes",
+         ~trinomial, zoom = 1.45)
 ```
 
 <img src="efa-perdiz_files/figure-gfm/pca.plot-2.png" width="100%" />
@@ -863,8 +856,8 @@ plot_PCA(pca.outlines,
 ``` r
 # plot pca by raw material
 plot_PCA(pca.outlines, 
-         morphospace_position = "range",
-         ~raw.mat, zoom = 1.2)
+         morphospace_position = "range_axes",
+         ~raw.mat, zoom = 1.45)
 ```
 
 <img src="efa-perdiz_files/figure-gfm/pca.plot-3.png" width="100%" />
@@ -872,11 +865,38 @@ plot_PCA(pca.outlines,
 ``` r
 # plot pca by context
 plot_PCA(pca.outlines, 
-         morphospace_position = "range",
-         ~context, zoom = 1.2)
+         morphospace_position = "range_axes",
+         ~context, zoom = 1.45)
 ```
 
 <img src="efa-perdiz_files/figure-gfm/pca.plot-4.png" width="100%" />
+
+``` r
+# plot pca by temporal
+plot_PCA(pca.outlines, 
+         morphospace_position = "range_axes",
+         ~temporal, zoom = 1.45)
+```
+
+<img src="efa-perdiz_files/figure-gfm/pca.plot-5.png" width="100%" />
+
+``` r
+# plot pca by contemp
+plot_PCA(pca.outlines, 
+         morphospace_position = "range_axes",
+         ~contemp, zoom = 1.45)
+```
+
+<img src="efa-perdiz_files/figure-gfm/pca.plot-6.png" width="100%" />
+
+``` r
+# plot pca by contempraw
+plot_PCA(pca.outlines, 
+         morphospace_position = "range_axes",
+         ~contempraw, zoom = 1.45)
+```
+
+<img src="efa-perdiz_files/figure-gfm/pca.plot-7.png" width="100%" />
 
 ``` r
 # contribution of each pc
@@ -884,28 +904,49 @@ plot_PCA(pca.outlines,
 boxplot(pca.outlines, ~trinomial, nax = 1:5)
 ```
 
-<img src="efa-perdiz_files/figure-gfm/pca.plot-5.png" width="100%" />
+<img src="efa-perdiz_files/figure-gfm/pca.plot-8.png" width="100%" />
 
 ``` r
 # by raw material
 boxplot(pca.outlines, ~raw.mat, nax = 1:5)
 ```
 
-<img src="efa-perdiz_files/figure-gfm/pca.plot-6.png" width="100%" />
+<img src="efa-perdiz_files/figure-gfm/pca.plot-9.png" width="100%" />
 
 ``` r
-# by raw material
+# by context
 boxplot(pca.outlines, ~context, nax = 1:5)
 ```
 
-<img src="efa-perdiz_files/figure-gfm/pca.plot-7.png" width="100%" />
+<img src="efa-perdiz_files/figure-gfm/pca.plot-10.png" width="100%" />
+
+``` r
+# by temporal
+boxplot(pca.outlines, ~temporal, nax = 1:5)
+```
+
+<img src="efa-perdiz_files/figure-gfm/pca.plot-11.png" width="100%" />
+
+``` r
+# by contemp
+boxplot(pca.outlines, ~contemp, nax = 1:5)
+```
+
+<img src="efa-perdiz_files/figure-gfm/pca.plot-12.png" width="100%" />
+
+``` r
+# by contempraw
+boxplot(pca.outlines, ~contempraw, nax = 1:5)
+```
+
+<img src="efa-perdiz_files/figure-gfm/pca.plot-13.png" width="100%" />
 
 ``` r
 # mean shape + 2sd for the first 10 pcs
 PCcontrib(pca.outlines, nax = 1:5)
 ```
 
-<img src="efa-perdiz_files/figure-gfm/pca.plot-8.png" width="100%" />
+<img src="efa-perdiz_files/figure-gfm/pca.plot-14.png" width="100%" />
 
 ## MANOVA + MANOVA\_PW
 
@@ -1155,6 +1196,279 @@ MANOVA(pca.outlines, 'context')
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
+``` r
+# shape difference by temporal?
+MANOVA(pca.outlines, 'temporal')
+```
+
+    ## PC axes 1 to 17 were retained
+
+    ##            Df Hotelling-Lawley approx F num Df den Df   Pr(>F)   
+    ## fac         2          0.64725   1.9227     34    202 0.003049 **
+    ## Residuals 118                                                    
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
+# which differ?
+MANOVA_PW(pca.outlines, 'temporal')
+```
+
+    ## 'HC' has 5 rows, and 'retain' is set accordingly
+
+    ## PC axes 1 to 5 were retained
+
+    ## HCLC
+
+    ## HCMC
+
+    ## LCMC
+
+    ## $stars.tab
+    ##    HC LC MC 
+    ## HC    ** ***
+    ## LC       -  
+    ## 
+    ## $summary (see also $manovas)
+    ##         Df  Pillai approx F num Df den Df    Pr(>F)
+    ## HC - LC  1 0.18426    3.750      5     83 0.0041318
+    ## HC - MC  1 0.54178    7.331      5     31 0.0001238
+    ## LC - MC  1 0.07371    1.751      5    110 0.1290832
+
+``` r
+# shape difference by contemp?
+MANOVA(pca.outlines, 'contemp')
+```
+
+    ## PC axes 1 to 17 were retained
+
+    ##            Df Hotelling-Lawley approx F num Df den Df    Pr(>F)    
+    ## fac         4           2.2251   3.2232     68    394 3.289e-13 ***
+    ## Residuals 116                                                      
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
+# which differ?
+MANOVA_PW(pca.outlines, 'contemp')
+```
+
+    ## 'MC-Not' has 10 rows, and 'retain' is set accordingly
+
+    ## PC axes 1 to 10 were retained
+
+    ## HC-NotLC-Mort
+
+    ## HC-NotLC-Not
+
+    ## HC-NotMC-Mort
+
+    ## HC-NotMC-Not
+
+    ## LC-MortLC-Not
+
+    ## LC-MortMC-Mort
+
+    ## LC-MortMC-Not
+
+    ## LC-NotMC-Mort
+
+    ## LC-NotMC-Not
+
+    ## MC-MortMC-Not
+
+    ## $stars.tab
+    ##         HC-Not LC-Mort LC-Not MC-Mort MC-Not
+    ## HC-Not         -       ***    **      ***   
+    ## LC-Mort                ***    **      ***   
+    ## LC-Not                        -       -     
+    ## MC-Mort                               -     
+    ## 
+    ## $summary (see also $manovas)
+    ##                   Df Pillai approx F num Df den Df    Pr(>F)
+    ## HC-Not - LC-Mort   1 0.1662   1.4351     10     72 1.827e-01
+    ## HC-Not - LC-Not    1 0.8012   7.2534     10     18 1.582e-04
+    ## HC-Not - MC-Mort   1 0.7029   3.7860     10     16 8.894e-03
+    ## HC-Not - MC-Not    1 0.8787   9.4183     10     13 1.887e-04
+    ## LC-Mort - LC-Not   1 0.4508   5.9928     10     73 1.434e-06
+    ## LC-Mort - MC-Mort  1 0.2674   2.5912     10     71 9.742e-03
+    ## LC-Mort - MC-Not   1 0.4813   6.3094     10     68 9.125e-07
+    ## LC-Not - MC-Mort   1 0.2850   0.6776     10     17 7.309e-01
+    ## LC-Not - MC-Not    1 0.4089   0.9687     10     14 5.081e-01
+    ## MC-Mort - MC-Not   1 0.3968   0.7893     10     12 6.412e-01
+
+``` r
+# shape difference by contempraw?
+MANOVA(pca.outlines, 'contempraw')
+```
+
+    ## PC axes 1 to 17 were retained
+
+    ##            Df Hotelling-Lawley approx F num Df den Df    Pr(>F)    
+    ## fac         9            4.182   2.5481    153    839 < 2.2e-16 ***
+    ## Residuals 111                                                      
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
+# which differ?
+MANOVA_PW(pca.outlines, 'contempraw')
+```
+
+    ## 'HC-N-S' has 3 rows, and 'retain' is set accordingly
+
+    ## PC axes 1 to 3 were retained
+
+    ## HC-N-CHC-N-S
+
+    ## HC-N-CLC-M-C
+
+    ## HC-N-CLC-M-J
+
+    ## HC-N-CLC-M-Q
+
+    ## HC-N-CLC-N-C
+
+    ## HC-N-CLC-N-S
+
+    ## HC-N-CMC-M-S
+
+    ## HC-N-CMC-N-C
+
+    ## HC-N-CMC-N-S
+
+    ## HC-N-SLC-M-C
+
+    ## HC-N-SLC-M-J
+
+    ## HC-N-SLC-M-Q
+
+    ## HC-N-SLC-N-C
+
+    ## HC-N-SLC-N-S
+
+    ## HC-N-SMC-M-S
+
+    ## HC-N-SMC-N-C
+
+    ## HC-N-SMC-N-S
+
+    ## LC-M-CLC-M-J
+
+    ## LC-M-CLC-M-Q
+
+    ## LC-M-CLC-N-C
+
+    ## LC-M-CLC-N-S
+
+    ## LC-M-CMC-M-S
+
+    ## LC-M-CMC-N-C
+
+    ## LC-M-CMC-N-S
+
+    ## LC-M-JLC-M-Q
+
+    ## LC-M-JLC-N-C
+
+    ## LC-M-JLC-N-S
+
+    ## LC-M-JMC-M-S
+
+    ## LC-M-JMC-N-C
+
+    ## LC-M-JMC-N-S
+
+    ## LC-M-QLC-N-C
+
+    ## LC-M-QLC-N-S
+
+    ## LC-M-QMC-M-S
+
+    ## LC-M-QMC-N-C
+
+    ## LC-M-QMC-N-S
+
+    ## LC-N-CLC-N-S
+
+    ## LC-N-CMC-M-S
+
+    ## LC-N-CMC-N-C
+
+    ## LC-N-CMC-N-S
+
+    ## LC-N-SMC-M-S
+
+    ## LC-N-SMC-N-C
+
+    ## LC-N-SMC-N-S
+
+    ## MC-M-SMC-N-C
+
+    ## MC-M-SMC-N-S
+
+    ## MC-N-CMC-N-S
+
+    ## $stars.tab
+    ##        HC-N-C HC-N-S LC-M-C LC-M-J LC-M-Q LC-N-C LC-N-S MC-M-S MC-N-C MC-N-S
+    ## HC-N-C        -      -      *      -      *      ***    **     **     **    
+    ## HC-N-S               *      **     **     **     **     **     ***    *     
+    ## LC-M-C                      *      -      *      ***    ***    **     ***   
+    ## LC-M-J                             -      -      **     -      .      **    
+    ## LC-M-Q                                    *      ***    **     **     ***   
+    ## LC-N-C                                           -      -      -      **    
+    ## LC-N-S                                                  -      -      *     
+    ## MC-M-S                                                         -      *     
+    ## MC-N-C                                                                ***   
+    ## 
+    ## $summary (see also $manovas)
+    ##                 Df  Pillai approx F num Df den Df    Pr(>F)
+    ## HC-N-C - HC-N-S  1 0.44264   2.6473      3     10 1.063e-01
+    ## HC-N-C - LC-M-C  1 0.04837   0.9149      3     54 4.399e-01
+    ## HC-N-C - LC-M-J  1 0.39581   3.7122      3     17 3.206e-02
+    ## HC-N-C - LC-M-Q  1 0.26816   2.3207      3     19 1.078e-01
+    ## HC-N-C - LC-N-C  1 0.55825   5.4760      3     13 1.178e-02
+    ## HC-N-C - LC-N-S  1 0.69055  11.9015      3     16 2.390e-04
+    ## HC-N-C - MC-M-S  1 0.53069   7.5387      3     20 1.451e-03
+    ## HC-N-C - MC-N-C  1 0.63256   8.0338      3     14 2.339e-03
+    ## HC-N-C - MC-N-S  1 0.77090  11.2162      3     10 1.537e-03
+    ## HC-N-S - LC-M-C  1 0.16982   3.1365      3     46 3.429e-02
+    ## HC-N-S - LC-M-J  1 0.79933  11.9500      3      9 1.718e-03
+    ## HC-N-S - LC-M-Q  1 0.66004   7.1189      3     11 6.303e-03
+    ## HC-N-S - LC-N-C  1 0.90854  16.5561      3      5 4.982e-03
+    ## HC-N-S - LC-N-S  1 0.80354  10.9066      3      8 3.365e-03
+    ## HC-N-S - MC-M-S  1 0.67759   8.4067      3     12 2.801e-03
+    ## HC-N-S - MC-N-C  1 0.97076  66.3913      3      6 5.410e-05
+    ## HC-N-S - MC-N-S  1 0.99298  94.2847      3      2 1.051e-02
+    ## LC-M-C - LC-M-J  1 0.15814   3.3187      3     53 2.665e-02
+    ## LC-M-C - LC-M-Q  1 0.09503   1.9253      3     55 1.362e-01
+    ## LC-M-C - LC-N-C  1 0.18799   3.7814      3     49 1.614e-02
+    ## LC-M-C - LC-N-S  1 0.35378   9.4895      3     52 4.210e-05
+    ## LC-M-C - MC-M-S  1 0.26127   6.6018      3     56 6.727e-04
+    ## LC-M-C - MC-N-C  1 0.27075   6.1879      3     50 1.167e-03
+    ## LC-M-C - MC-N-S  1 0.44054  12.0741      3     46 5.916e-06
+    ## LC-M-J - LC-M-Q  1 0.23197   1.8122      3     18 1.810e-01
+    ## LC-M-J - LC-N-C  1 0.27298   1.5019      3     12 2.641e-01
+    ## LC-M-J - LC-N-S  1 0.52023   5.4217      3     15 9.967e-03
+    ## LC-M-J - MC-M-S  1 0.19463   1.5306      3     19 2.390e-01
+    ## LC-M-J - MC-N-C  1 0.43772   3.3734      3     13 5.147e-02
+    ## LC-M-J - MC-N-S  1 0.71889   7.6719      3      9 7.513e-03
+    ## LC-M-Q - LC-N-C  1 0.45770   3.9386      3     14 3.137e-02
+    ## LC-M-Q - LC-N-S  1 0.64990  10.5191      3     17 3.798e-04
+    ## LC-M-Q - MC-M-S  1 0.46380   6.0549      3     21 3.887e-03
+    ## LC-M-Q - MC-N-C  1 0.57196   6.6812      3     15 4.402e-03
+    ## LC-M-Q - MC-N-S  1 0.86095  22.7030      3     11 5.138e-05
+    ## LC-N-C - LC-N-S  1 0.27425   1.3856      3     11 2.986e-01
+    ## LC-N-C - MC-M-S  1 0.05143   0.2711      3     15 8.453e-01
+    ## LC-N-C - MC-N-C  1 0.27134   1.1172      3      9 3.922e-01
+    ## LC-N-C - MC-N-S  1 0.93714  24.8492      3      5 1.972e-03
+    ## LC-N-S - MC-M-S  1 0.15168   1.0728      3     18 3.855e-01
+    ## LC-N-S - MC-N-C  1 0.14589   0.6833      3     12 5.792e-01
+    ## LC-N-S - MC-N-S  1 0.69696   6.1330      3      8 1.805e-02
+    ## MC-M-S - MC-N-C  1 0.13584   0.8383      3     16 4.925e-01
+    ## MC-M-S - MC-N-S  1 0.51586   4.2621      3     12 2.885e-02
+    ## MC-N-C - MC-N-S  1 0.94391  33.6548      3      6 3.779e-04
+
 ## Mean shapes
 
 ``` r
@@ -1182,3 +1496,19 @@ plot_MSHAPES(ms.4, size = 0.75)
 ```
 
 <img src="efa-perdiz_files/figure-gfm/ms1-3.png" width="100%" />
+
+``` r
+# contemp
+ms.5 <- MSHAPES(efa.outlines, ~contemp)
+plot_MSHAPES(ms.5, size = 0.75)
+```
+
+<img src="efa-perdiz_files/figure-gfm/ms1-4.png" width="100%" />
+
+``` r
+# contempraw
+ms.6 <- MSHAPES(efa.outlines, ~contempraw)
+plot_MSHAPES(ms.6, size = 0.75)
+```
+
+<img src="efa-perdiz_files/figure-gfm/ms1-5.png" width="100%" />

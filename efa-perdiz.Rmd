@@ -2,7 +2,7 @@
 title: "Perdiz arrow point shape as a function of time, raw material, and/or mortuary context?"
 author: "Robert Z. Selden, Jr."
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -51,13 +51,6 @@ norm.outlines <- data.out %>%
   coo_center()
 ```
 
-## Pile and mosaics
-
-```{r stack.panel, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# outline pile
-pile(norm.outlines)
-```
-
 ## Calibrate harmonic + EFA
 
 ```{r cal.harm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
@@ -86,28 +79,33 @@ scree_plot(pca.outlines)
 
 # plot pca by site
 plot_PCA(pca.outlines, 
-         morphospace_position = "range",
-         ~trinomial, zoom = 1.2)
+         morphospace_position = "range_axes",
+         ~trinomial, zoom = 1.45)
 
 # plot pca by raw material
 plot_PCA(pca.outlines, 
-         morphospace_position = "range",
-         ~raw.mat, zoom = 1.2)
+         morphospace_position = "range_axes",
+         ~raw.mat, zoom = 1.45)
 
 # plot pca by context
 plot_PCA(pca.outlines, 
-         morphospace_position = "range",
-         ~context, zoom = 1.2)
+         morphospace_position = "range_axes",
+         ~context, zoom = 1.45)
+
+# plot pca by temporal
+plot_PCA(pca.outlines, 
+         morphospace_position = "range_axes",
+         ~temporal, zoom = 1.45)
 
 # plot pca by contemp
 plot_PCA(pca.outlines, 
-         morphospace_position = "range",
-         ~contemp, zoom = 1.2)
+         morphospace_position = "range_axes",
+         ~contemp, zoom = 1.45)
 
 # plot pca by contempraw
 plot_PCA(pca.outlines, 
-         morphospace_position = "range",
-         ~contempraw, zoom = 1.2)
+         morphospace_position = "range_axes",
+         ~contempraw, zoom = 1.45)
 
 # contribution of each pc
 # by site
@@ -116,6 +114,8 @@ boxplot(pca.outlines, ~trinomial, nax = 1:5)
 boxplot(pca.outlines, ~raw.mat, nax = 1:5)
 # by context
 boxplot(pca.outlines, ~context, nax = 1:5)
+# by temporal
+boxplot(pca.outlines, ~temporal, nax = 1:5)
 # by contemp
 boxplot(pca.outlines, ~contemp, nax = 1:5)
 # by contempraw
@@ -142,6 +142,11 @@ MANOVA_PW(pca.outlines, 'raw.mat')
 
 # shape difference by context?
 MANOVA(pca.outlines, 'context')
+
+# shape difference by temporal?
+MANOVA(pca.outlines, 'temporal')
+# which differ?
+MANOVA_PW(pca.outlines, 'temporal')
 
 # shape difference by contemp?
 MANOVA(pca.outlines, 'contemp')
