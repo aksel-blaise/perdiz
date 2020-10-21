@@ -1,5 +1,5 @@
 ---
-title: "Perdiz arrow point shape as a function of time, raw material, and/or mortuary context?"
+title: "Perdiz arrow point shape as a function of site, time, raw material, and/or mortuary context?"
 author: "Robert Z. Selden, Jr."
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: github_document
