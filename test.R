@@ -39,13 +39,13 @@ norm.outlines <- data.out %>%
 calibrate_harmonicpower_efourier(norm.outlines, 
                                  nb.h = 30)
 
-# 11 harmonics needed to capture 99 percent of variation
+# 23 harmonics needed to capture 99.9 percent of variation
 calibrate_reconstructions_efourier(norm.outlines, 
-                                   range = 1:11)
+                                   range = 1:23)
 
-# generate efa outlines with 11 harmonics
+# generate efa outlines with 23 harmonics
 efa.outlines <- efourier(norm.outlines, 
-                         nb.h = 11, 
+                         nb.h = 23, 
                          norm = TRUE)
 
 # use efa.outlines for pca
