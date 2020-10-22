@@ -1,8 +1,7 @@
-Perdiz arrow point shape as a function of site, time, raw material,
-and/or mortuary context?
+An exploratory analysis of Perdiz arrow point morphology
 ================
 Robert Z. Selden, Jr.
-21 October, 2020
+22 October, 2020
 
 # Elliptical Fourier Analysis
 
@@ -174,7 +173,7 @@ outlines <- jpg.list %>%
     ## [ 120 / 121 ]  sy43-5.jpg
     ## [ 121 / 121 ]  sy43-6.jpg
 
-    ## Done in 13.5 secs
+    ## Done in 13.2 secs
 
 ``` r
 # add attributes

@@ -2,7 +2,7 @@
 title: "X^2"
 author: "Robert Z. Selden, Jr."
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}

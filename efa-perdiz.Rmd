@@ -1,8 +1,8 @@
 ---
-title: "Perdiz arrow point shape as a function of site, time, raw material, and/or mortuary context?"
+title: "An exploratory analysis of Perdiz arrow point morphology"
 author: "Robert Z. Selden, Jr."
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: github_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
