@@ -3,7 +3,6 @@ library(here)
 library(CGPfunctions)
 library(lsr)
 
-
 # read attribute data
 data <- as.data.frame(read.csv("perdiz.csv", header = TRUE, as.is = TRUE))
 
@@ -19,7 +18,7 @@ site <- as.factor(data$trinomial) # site
 r.tab <- table(raw, con)
 ftable(r.tab)
 summary(r.tab) # zeros in table
-chisq.test(r.tab, simulate.p.value = TRUE) # simulate p-value
+chisq.test(r.tab, simulate.p.value = TRUE, B = 10000) # simulate p-value
 
 # effect size
 cramersV(r.tab)
