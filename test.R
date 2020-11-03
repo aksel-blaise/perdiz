@@ -59,17 +59,17 @@ scree_plot(pca.outlines)
 # plot pca by site
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
-         ~trinomial, zoom = 1)
+         ~trinomial, zoom = 1.45)
 
 # plot pca by raw material
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
-         ~raw.mat, zoom = 1)
+         ~raw.mat, zoom = 1.45)
 
 # plot pca by context
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
-         ~context, zoom = 1)
+         ~context, zoom = 1.45)
 
 # plot pca by temporal
 plot_PCA(pca.outlines, 
@@ -79,12 +79,12 @@ plot_PCA(pca.outlines,
 # plot pca by contemp
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
-         ~contemp, zoom = 1.2)
+         ~contemp, zoom = 1.45)
 
 # plot pca by contempraw
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
-         ~contempraw, zoom = 1.2)
+         ~contempraw, zoom = 1.45)
 
 # mean shape + 2sd for the first 10 pcs
 PCcontrib(pca.outlines, nax = 1:5)
