@@ -1,0 +1,35 @@
+--- 
+title: "Supplemental materials for: Shape as a function of raw material + context? A preliminary analysis of Perdiz arrow point shape from the southern Caddo area"
+author: "Robert Z. Selden, Jr."
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Shape analysis of Perdiz points."
+---
+
+# Preface {-}
+
+>Reproducibility---the ability to recompute results---and replicability---the chances other experimenters will achieve a consistent result---are two foundational characteristics of successful scientific research [@RN20918].
+
+This volume is written in **Markdown**, and includes all analysis code employed in the study, providing a means for others to reproduce (exactly) those results discussed and expounded upon in the following chapters. The replicable nature of this undertaking provides a means for others to critically assess and evaluate the various analytical components of this study [@RN20915;@RN20916;@RN20917], which is a necessary requirement for the production of reliable knowledge. Typology is the topic of this particular undertaking, and typological assignments provide the requisite foundation for many of the assumptions, inferences, and interpretations that archaeologists regularly make. Diagnostic types---whether functional, decorative, morphological, or chronological [@RN20847]---are of considerable import in formulating archaeological interpretations.
+
+## Primary findings
+
+* first
+* second
+* third
+
+## Acknowledgments
+
+I extend my gratitude to the Caddo Tribe of Oklahoma and the Anthropology and Archaeology Laboratory at Stephen F. Austin State University for the requisite permissions and access needed to generate the 3D scans of the Gahagan bifaces. Thanks to Harry J. Shafer, Jeffrey S. Girard, and Hiram F. (Pete) Gregory for comments on manuscripts associated with stone tool shapes. Thanks also to Dean C. Adams, Michael L. Collyer, Emma Sherratt, Lauren Butaric, and Kersten Bergstrom for their constructive criticisms, comments, and suggestions throughout the development of this research program, and to the editors and anonymous reviewers for their comments and constructive criticisms, which further improved the manuscript.
+
+## Funding
+
+Components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to the author from the National Center for Preservation Technology and Training (NCPTT), and additional grants to the author from the Caddo Tribe of Oklahoma and the National Forests and Grasslands in Texas (15-PA-11081300-033 and 20-PA-11081300-074).
+
+## Data management
+
+The analysis code associated with this project can be accessed through this document or the [GitHub](https://github.com/aksel-blaise/perdiz) repository, which is digitally curated on the Open Science Framework [DOI: 10.17605/OSF.IO/DEJ74](https://osf.io/dej74/).

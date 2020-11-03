@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Elliptical Fourier Analysis | Supplemental materials for: Shape as a function of raw material + context? A preliminary analysis of Perdiz arrow point shape from the southern Caddo area</title>
+  <meta name="description" content="Shape analysis of Perdiz points." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Elliptical Fourier Analysis | Supplemental materials for: Shape as a function of raw material + context? A preliminary analysis of Perdiz arrow point shape from the southern Caddo area" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Shape analysis of Perdiz points." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Elliptical Fourier Analysis | Supplemental materials for: Shape as a function of raw material + context? A preliminary analysis of Perdiz arrow point shape from the southern Caddo area" />
+  
+  <meta name="twitter:description" content="Shape analysis of Perdiz points." />
+  
+
+<meta name="author" content="Robert Z. Selden, Jr." />
+
+
+<meta name="date" content="2020-11-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="chi-squared.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">perdiz</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#primary-findings"><i class="fa fa-check"></i><b>0.1</b> Primary findings</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>0.2</b> Acknowledgments</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#funding"><i class="fa fa-check"></i><b>0.3</b> Funding</a></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#data-management"><i class="fa fa-check"></i><b>0.4</b> Data management</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="spatial.html"><a href="spatial.html"><i class="fa fa-check"></i><b>1</b> Spatial</a></li>
+<li class="chapter" data-level="2" data-path="temporal.html"><a href="temporal.html"><i class="fa fa-check"></i><b>2</b> Temporal</a></li>
+<li class="chapter" data-level="3" data-path="raw-material.html"><a href="raw-material.html"><i class="fa fa-check"></i><b>3</b> Raw material</a></li>
+<li class="chapter" data-level="4" data-path="chi-squared.html"><a href="chi-squared.html"><i class="fa fa-check"></i><b>4</b> Chi-squared</a><ul>
+<li class="chapter" data-level="4.1" data-path="chi-squared.html"><a href="chi-squared.html#comparison-of-raw-material-by-mortuary-context"><i class="fa fa-check"></i><b>4.1</b> Comparison of raw material by mortuary context</a></li>
+<li class="chapter" data-level="4.2" data-path="chi-squared.html"><a href="chi-squared.html#comparison-of-raw-material-by-temporal-period"><i class="fa fa-check"></i><b>4.2</b> Comparison of raw material by temporal period</a></li>
+<li class="chapter" data-level="4.3" data-path="chi-squared.html"><a href="chi-squared.html#comparison-of-raw-material-by-site"><i class="fa fa-check"></i><b>4.3</b> Comparison of raw material by site</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html"><i class="fa fa-check"></i><b>5</b> Elliptical Fourier Analysis</a><ul>
+<li class="chapter" data-level="5.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#load-packages-data"><i class="fa fa-check"></i><b>5.1</b> Load packages + data</a></li>
+<li class="chapter" data-level="5.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#generate-outlines"><i class="fa fa-check"></i><b>5.2</b> Generate outlines</a></li>
+<li class="chapter" data-level="5.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#calibrate-harmonic-efa"><i class="fa fa-check"></i><b>5.3</b> Calibrate harmonic + EFA</a></li>
+<li class="chapter" data-level="5.4" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#pca"><i class="fa fa-check"></i><b>5.4</b> PCA</a></li>
+<li class="chapter" data-level="5.5" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#manova-manova_pw"><i class="fa fa-check"></i><b>5.5</b> MANOVA + MANOVA_PW</a></li>
+<li class="chapter" data-level="5.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes"><i class="fa fa-check"></i><b>5.6</b> Mean shapes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Supplemental materials for: Shape as a function of raw material + context? A preliminary analysis of Perdiz arrow point shape from the southern Caddo area</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="elliptical-fourier-analysis" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Elliptical Fourier Analysis</h1>
+<div id="load-packages-data" class="section level2">
+<h2><span class="header-section-number">5.1</span> Load packages + data</h2>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="elliptical-fourier-analysis.html#cb89-1"></a><span class="co"># load packages</span></span>
+<span id="cb89-2"><a href="elliptical-fourier-analysis.html#cb89-2"></a><span class="kw">library</span>(here)</span>
+<span id="cb89-3"><a href="elliptical-fourier-analysis.html#cb89-3"></a><span class="kw">library</span>(Momocs)</span>
+<span id="cb89-4"><a href="elliptical-fourier-analysis.html#cb89-4"></a></span>
+<span id="cb89-5"><a href="elliptical-fourier-analysis.html#cb89-5"></a><span class="co"># read images</span></span>
+<span id="cb89-6"><a href="elliptical-fourier-analysis.html#cb89-6"></a>jpg.list &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="kw">here</span>(<span class="st">&quot;/img.perdiz&quot;</span>), <span class="dt">full.names =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb89-7"><a href="elliptical-fourier-analysis.html#cb89-7"></a></span>
+<span id="cb89-8"><a href="elliptical-fourier-analysis.html#cb89-8"></a><span class="co"># read attribute data</span></span>
+<span id="cb89-9"><a href="elliptical-fourier-analysis.html#cb89-9"></a>att.data &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;perdiz.csv&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">as.is =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb89-10"><a href="elliptical-fourier-analysis.html#cb89-10"></a></span>
+<span id="cb89-11"><a href="elliptical-fourier-analysis.html#cb89-11"></a><span class="co"># attribute to factor</span></span>
+<span id="cb89-12"><a href="elliptical-fourier-analysis.html#cb89-12"></a>att.data<span class="op">$</span>trinomial &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>trinomial)</span>
+<span id="cb89-13"><a href="elliptical-fourier-analysis.html#cb89-13"></a>att.data<span class="op">$</span>temporal &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>temporal)</span>
+<span id="cb89-14"><a href="elliptical-fourier-analysis.html#cb89-14"></a>att.data<span class="op">$</span>context &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>context)</span>
+<span id="cb89-15"><a href="elliptical-fourier-analysis.html#cb89-15"></a>att.data<span class="op">$</span>raw.mat &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>raw.mat)</span>
+<span id="cb89-16"><a href="elliptical-fourier-analysis.html#cb89-16"></a>att.data<span class="op">$</span>contemp &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>contemp)</span>
+<span id="cb89-17"><a href="elliptical-fourier-analysis.html#cb89-17"></a>att.data<span class="op">$</span>contempraw &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>contempraw)</span></code></pre></div>
+</div>
+<div id="generate-outlines" class="section level2">
+<h2><span class="header-section-number">5.2</span> Generate outlines</h2>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="elliptical-fourier-analysis.html#cb90-1"></a><span class="co"># generate outlines</span></span>
+<span id="cb90-2"><a href="elliptical-fourier-analysis.html#cb90-2"></a>outlines &lt;-<span class="st"> </span>jpg.list <span class="op">%&gt;%</span></span>
+<span id="cb90-3"><a href="elliptical-fourier-analysis.html#cb90-3"></a><span class="st">  </span><span class="kw">import_jpg</span>()</span></code></pre></div>
+<pre><code>## Extracting 121.jpg outlines...</code></pre>
+<pre><code>## [ 1 / 121 ]  489.jpg
+## [ 2 / 121 ]  490.jpg
+## [ 3 / 121 ]  553.jpg
+## [ 4 / 121 ]  554.jpg
+## [ 5 / 121 ]  555.jpg
+## [ 6 / 121 ]  556.jpg
+## [ 7 / 121 ]  558.jpg
+## [ 8 / 121 ]  559.jpg
+## [ 9 / 121 ]  562.jpg
+## [ 10 / 121 ]  565.jpg
+## [ 11 / 121 ]  591.jpg
+## [ 12 / 121 ]  598.jpg
+## [ 13 / 121 ]  645.jpg
+## [ 14 / 121 ]  646.jpg
+## [ 15 / 121 ]  647.jpg
+## [ 16 / 121 ]  648.jpg
+## [ 17 / 121 ]  649.jpg
+## [ 18 / 121 ]  650.jpg
+## [ 19 / 121 ]  651.jpg
+## [ 20 / 121 ]  652.jpg
+## [ 21 / 121 ]  653.jpg
+## [ 22 / 121 ]  654.jpg
+## [ 23 / 121 ]  655.jpg
+## [ 24 / 121 ]  656.jpg
+## [ 25 / 121 ]  657.jpg
+## [ 26 / 121 ]  658.jpg
+## [ 27 / 121 ]  659.jpg
+## [ 28 / 121 ]  660.jpg
+## [ 29 / 121 ]  661.jpg
+## [ 30 / 121 ]  665.jpg
+## [ 31 / 121 ]  677.jpg
+## [ 32 / 121 ]  678.jpg
+## [ 33 / 121 ]  hs15-fig7.1r.jpg
+## [ 34 / 121 ]  hs15-fig7.1t.jpg
+## [ 35 / 121 ]  hs15-fig7.1u.jpg
+## [ 36 / 121 ]  hs15-fig7.1v.jpg
+## [ 37 / 121 ]  hs15-fig7.1w.jpg
+## [ 38 / 121 ]  hs15-fig7.1x.jpg
+## [ 39 / 121 ]  hs15-fig7.2b.jpg
+## [ 40 / 121 ]  hs15-fig7.2c.jpg
+## [ 41 / 121 ]  hs15-fig7.2d.jpg
+## [ 42 / 121 ]  hs15-fig7.2e.jpg
+## [ 43 / 121 ]  hs15-fig7.2f.jpg
+## [ 44 / 121 ]  hs15-fig7.2g.jpg
+## [ 45 / 121 ]  hs15-fig7.2m.jpg
+## [ 46 / 121 ]  hs15-fig7.2o.jpg
+## [ 47 / 121 ]  hs15-fig7.2q.jpg
+## [ 48 / 121 ]  hs15-fig7.2r.jpg
+## [ 49 / 121 ]  hs15-fig7.3a.jpg
+## [ 50 / 121 ]  hs15-fig7.3aa.jpg
+## [ 51 / 121 ]  hs15-fig7.3b.jpg
+## [ 52 / 121 ]  hs15-fig7.3bb.jpg
+## [ 53 / 121 ]  hs15-fig7.3cc.jpg
+## [ 54 / 121 ]  hs15-fig7.3d.jpg
+## [ 55 / 121 ]  hs15-fig7.3e.jpg
+## [ 56 / 121 ]  hs15-fig7.3f.jpg
+## [ 57 / 121 ]  hs15-fig7.3g.jpg
+## [ 58 / 121 ]  hs15-fig7.3h.jpg
+## [ 59 / 121 ]  hs15-fig7.3i.jpg
+## [ 60 / 121 ]  hs15-fig7.3j.jpg
+## [ 61 / 121 ]  hs15-fig7.3k.jpg
+## [ 62 / 121 ]  hs15-fig7.3l.jpg
+## [ 63 / 121 ]  hs15-fig7.3m.jpg
+## [ 64 / 121 ]  hs15-fig7.3n.jpg
+## [ 65 / 121 ]  hs15-fig7.3o.jpg
+## [ 66 / 121 ]  hs15-fig7.3p.jpg
+## [ 67 / 121 ]  hs15-fig7.3q.jpg
+## [ 68 / 121 ]  hs15-fig7.3r.jpg
+## [ 69 / 121 ]  hs15-fig7.3s.jpg
+## [ 70 / 121 ]  hs15-fig7.3t.jpg
+## [ 71 / 121 ]  hs15-fig7.3u.jpg
+## [ 72 / 121 ]  hs15-fig7.3w.jpg
+## [ 73 / 121 ]  hs15-fig7.3x.jpg
+## [ 74 / 121 ]  hs15-fig7.3y.jpg
+## [ 75 / 121 ]  hs15-fig7.3z.jpg
+## [ 76 / 121 ]  na206-fig12a.jpg
+## [ 77 / 121 ]  na206-fig12b.jpg
+## [ 78 / 121 ]  na206-fig12d.jpg
+## [ 79 / 121 ]  na206-fig12f.jpg
+## [ 80 / 121 ]  na206-fig12g.jpg
+## [ 81 / 121 ]  na49-1.jpg
+## [ 82 / 121 ]  na49-10.jpg
+## [ 83 / 121 ]  na49-11.jpg
+## [ 84 / 121 ]  na49-12.jpg
+## [ 85 / 121 ]  na49-13.jpg
+## [ 86 / 121 ]  na49-137.jpg
+## [ 87 / 121 ]  na49-14.jpg
+## [ 88 / 121 ]  na49-149.jpg
+## [ 89 / 121 ]  na49-176.jpg
+## [ 90 / 121 ]  na49-187.jpg
+## [ 91 / 121 ]  na49-195.jpg
+## [ 92 / 121 ]  na49-2.jpg
+## [ 93 / 121 ]  na49-271.jpg
+## [ 94 / 121 ]  na49-3.jpg
+## [ 95 / 121 ]  na49-33.jpg
+## [ 96 / 121 ]  na49-4.jpg
+## [ 97 / 121 ]  na49-5.jpg
+## [ 98 / 121 ]  na49-587.jpg
+## [ 99 / 121 ]  na49-616.jpg
+## [ 100 / 121 ]  na49-7.jpg
+## [ 101 / 121 ]  na49-734.jpg
+## [ 102 / 121 ]  na49-8.jpg
+## [ 103 / 121 ]  na49-9.jpg
+## [ 104 / 121 ]  sa135-fig15b.jpg
+## [ 105 / 121 ]  sa135-fig15c.jpg
+## [ 106 / 121 ]  sa135-fig15g.jpg
+## [ 107 / 121 ]  sm193-fig1e.jpg
+## [ 108 / 121 ]  sm193-fig2a.jpg
+## [ 109 / 121 ]  sm193-fig2b.jpg
+## [ 110 / 121 ]  sm193-fig2e.jpg
+## [ 111 / 121 ]  sm193-fig2f.jpg
+## [ 112 / 121 ]  sm193-fig2g.jpg
+## [ 113 / 121 ]  sy280-1.jpg
+## [ 114 / 121 ]  sy280-2.jpg
+## [ 115 / 121 ]  sy280-3.jpg
+## [ 116 / 121 ]  sy43-1.jpg
+## [ 117 / 121 ]  sy43-2.jpg
+## [ 118 / 121 ]  sy43-3.jpg
+## [ 119 / 121 ]  sy43-4.jpg
+## [ 120 / 121 ]  sy43-5.jpg
+## [ 121 / 121 ]  sy43-6.jpg</code></pre>
+<pre><code>## Done in 16.5 secs</code></pre>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="elliptical-fourier-analysis.html#cb94-1"></a><span class="co"># add attributes</span></span>
+<span id="cb94-2"><a href="elliptical-fourier-analysis.html#cb94-2"></a>data.out &lt;-<span class="st"> </span><span class="kw">Out</span>(outlines, </span>
+<span id="cb94-3"><a href="elliptical-fourier-analysis.html#cb94-3"></a>         <span class="dt">fac =</span> att.data)</span>
+<span id="cb94-4"><a href="elliptical-fourier-analysis.html#cb94-4"></a></span>
+<span id="cb94-5"><a href="elliptical-fourier-analysis.html#cb94-5"></a><span class="co"># scale, align, rotate, and center specimens</span></span>
+<span id="cb94-6"><a href="elliptical-fourier-analysis.html#cb94-6"></a>norm.outlines &lt;-<span class="st"> </span>data.out <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb94-7"><a href="elliptical-fourier-analysis.html#cb94-7"></a><span class="st">  </span><span class="kw">coo_scale</span>() <span class="op">%&gt;%</span></span>
+<span id="cb94-8"><a href="elliptical-fourier-analysis.html#cb94-8"></a><span class="st">  </span><span class="kw">coo_align</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb94-9"><a href="elliptical-fourier-analysis.html#cb94-9"></a><span class="st">  </span><span class="kw">coo_center</span>()</span></code></pre></div>
+</div>
+<div id="calibrate-harmonic-efa" class="section level2">
+<h2><span class="header-section-number">5.3</span> Calibrate harmonic + EFA</h2>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="elliptical-fourier-analysis.html#cb95-1"></a><span class="co"># calibrate how many harmonics needed</span></span>
+<span id="cb95-2"><a href="elliptical-fourier-analysis.html#cb95-2"></a><span class="kw">calibrate_harmonicpower_efourier</span>(norm.outlines, </span>
+<span id="cb95-3"><a href="elliptical-fourier-analysis.html#cb95-3"></a>                                 <span class="dt">nb.h =</span> <span class="dv">30</span>)</span></code></pre></div>
+<pre><code>## $gg</code></pre>
+<p><img src="supp_files/figure-html/cal.harm-1.png" width="100%" /></p>
+<pre><code>## 
+## $q
+##                      h1       h2       h3       h4       h5       h6       h7       h8       h9      h10      h11
+## 489           72.808791 83.78198 95.17554 95.58620 96.94914 97.61501 97.95870 98.99222 99.27944 99.61408 99.66292
+## 490           64.114719 71.74229 80.72420 89.12673 91.89527 97.25527 97.89054 98.43317 98.90168 99.21067 99.26009
+## 553           60.227643 67.66112 78.47978 88.42469 91.97133 97.96056 98.60926 99.03073 99.36751 99.44516 99.53735
+## 554           40.784025 62.70509 71.02441 88.80778 92.02025 97.18926 98.19496 98.35599 98.99227 99.07903 99.18155
+## 555           71.883368 75.67063 83.98654 89.34967 91.27061 96.88514 98.02617 99.22945 99.34429 99.35722 99.65024
+## 556           40.131674 62.71068 66.15981 84.78732 88.45546 94.74772 96.20115 97.07108 98.32436 98.35603 98.48074
+## 558           63.012149 77.73567 90.06870 90.36598 91.90045 93.94937 94.75257 97.47642 98.23127 99.15827 99.24117
+## 559           37.440231 60.66242 71.29934 86.72881 90.17083 96.07668 97.22067 97.71586 98.44616 98.50390 98.65258
+## 562           60.694645 69.96634 77.12798 87.14123 90.12571 96.20471 97.29606 98.57226 99.03098 99.22437 99.49559
+## 565           64.493270 80.33025 89.87705 90.69617 92.26710 94.75796 95.81031 98.49869 99.02328 99.61277 99.62274
+## 591           32.410597 64.36665 71.82945 90.72323 94.12426 97.00883 98.55887 98.61906 98.76021 99.38794 99.56447
+## 598           54.095190 69.79342 80.21895 91.62848 93.17747 97.30424 98.48432 98.73772 99.23659 99.27576 99.30295
+## 645           37.430706 61.77266 70.12401 88.30539 92.41149 97.17813 98.23178 98.46989 98.73442 98.95378 99.08073
+## 646           48.472059 67.04623 73.39793 90.58139 94.34818 96.89540 98.59301 98.84265 99.02189 99.39947 99.48570
+## 647           63.962317 66.40189 73.20076 87.28925 92.34106 97.84810 98.43246 98.57160 99.16726 99.23451 99.33657
+## 648           51.661887 60.75373 67.73491 84.11689 90.80362 96.67577 97.48979 97.90301 98.89001 98.98484 99.05226
+## 649           13.198214 67.02359 73.20792 91.32686 96.27920 97.08839 97.94181 98.50792 98.74961 99.32895 99.45088
+## 650           62.500557 67.69024 73.36673 89.73518 94.63252 98.08290 98.54933 98.77696 99.31998 99.46525 99.56771
+## 651           25.861992 55.85938 68.03343 87.64255 92.73702 96.70377 98.18765 98.36471 98.70513 99.13669 99.30682
+## 652           22.576477 60.60679 68.19757 89.37573 93.98487 96.56320 97.92897 98.12207 98.20926 99.08563 99.26329
+## 653           53.506327 62.33004 70.77582 88.94387 93.68013 97.88528 98.55523 98.78018 99.26962 99.35380 99.44214
+## 654           44.031205 66.31590 73.29146 91.93527 95.20683 97.46861 98.89531 98.97063 99.04404 99.48813 99.58569
+## 655           53.169643 60.43443 64.83868 83.34328 89.55824 96.76372 97.87205 98.10188 99.14485 99.17562 99.18710
+## 656           57.110466 63.11221 68.16400 82.60450 87.07412 95.61119 97.38995 98.24966 99.07245 99.19652 99.44583
+## 657           44.153580 55.01196 61.02296 82.80466 87.94802 95.93126 97.01850 97.71437 98.65702 98.74675 98.81958
+## 658           61.749011 65.60642 71.58815 87.75926 93.23432 98.24621 98.52779 98.82481 99.43320 99.46738 99.50607
+## 659           50.938090 63.91895 68.76493 86.94809 89.69221 95.89946 97.42615 98.12618 99.17514 99.18318 99.26235
+## 660           44.673501 62.32531 67.80680 90.92520 94.83023 96.73639 98.51319 98.64637 98.72393 99.36060 99.56113
+## 661           48.318800 59.00113 64.26505 85.67911 90.52577 96.55592 97.60929 98.05560 98.94426 98.98235 99.00026
+## 665           72.904144 75.33543 80.78979 88.20015 91.08371 97.41274 98.34543 99.00547 99.29183 99.36726 99.57786
+## 677           43.622937 58.91874 66.48334 89.42983 93.54165 96.83488 98.47343 98.69266 98.80843 99.14402 99.27266
+## 678           70.247711 71.42578 81.10140 86.84716 90.52952 96.31749 98.02421 99.25218 99.33627 99.38623 99.56052
+## hs15-fig7.1r  55.819696 71.01458 82.22449 93.28097 95.42506 98.12675 98.89801 99.14445 99.46216 99.53570 99.57104
+## hs15-fig7.1t  11.961633 61.26533 63.25710 82.65330 89.87322 94.63257 96.26673 96.30559 97.05405 97.37965 97.68537
+##                    h12      h13      h14      h15      h16      h17      h18      h19      h20      h21      h22
+## 489           99.67257 99.74548 99.77200 99.80462 99.82192 99.82341 99.85272 99.87865 99.91085 99.92286 99.94669
+## 490           99.39885 99.47944 99.54422 99.59587 99.62522 99.63711 99.71079 99.75015 99.75947 99.78940 99.82367
+## 553           99.61913 99.67585 99.71820 99.75627 99.77140 99.78933 99.81395 99.83675 99.88522 99.89000 99.92227
+## 554           99.65220 99.70881 99.74345 99.82060 99.82265 99.84003 99.88827 99.89508 99.90968 99.92937 99.94159
+## 555           99.70336 99.74050 99.84641 99.86700 99.89300 99.92314 99.94175 99.96739 99.96955 99.97635 99.97732
+## 556           98.91994 99.09404 99.22256 99.33403 99.42302 99.55630 99.59933 99.63249 99.66365 99.69817 99.72227
+## 558           99.41253 99.50428 99.56908 99.72318 99.74806 99.78242 99.84868 99.86327 99.88367 99.90459 99.90700
+## 559           99.15941 99.41700 99.61239 99.65349 99.69833 99.74681 99.79044 99.80719 99.82695 99.87185 99.89070
+## 562           99.52488 99.55208 99.75261 99.77378 99.82801 99.85958 99.86190 99.88385 99.89866 99.90624 99.93707
+## 565           99.65681 99.75540 99.77200 99.81405 99.84130 99.86763 99.88482 99.92366 99.94140 99.95881 99.96587
+## 591           99.69590 99.74709 99.77566 99.78641 99.87133 99.87713 99.88817 99.92076 99.92919 99.94188 99.95569
+## 598           99.50219 99.52999 99.55235 99.69048 99.74154 99.75481 99.81876 99.87467 99.87899 99.89069 99.90750
+## 645           99.40631 99.44517 99.47290 99.55845 99.56258 99.59820 99.71182 99.76571 99.83101 99.88606 99.91024
+## 646           99.57729 99.68552 99.70816 99.72993 99.80558 99.82420 99.83787 99.86296 99.89529 99.89981 99.94561
+## 647           99.54623 99.61790 99.66645 99.73749 99.75055 99.76713 99.77742 99.84435 99.86703 99.88193 99.92977
+## 648           99.30660 99.42561 99.52725 99.64522 99.65408 99.70820 99.73725 99.76721 99.84772 99.86568 99.89290
+## 649           99.48496 99.54428 99.68207 99.72057 99.77413 99.79398 99.81656 99.84928 99.87351 99.88844 99.90363
+## 650           99.71114 99.72319 99.74218 99.76137 99.77677 99.79153 99.81017 99.88066 99.88864 99.92889 99.95128
+## 651           99.42507 99.45162 99.50142 99.52530 99.60766 99.64903 99.71442 99.72953 99.80386 99.82414 99.83815
+## 652           99.35190 99.43444 99.46619 99.51808 99.67351 99.77700 99.78891 99.84286 99.85576 99.90064 99.93449
+## 653           99.64394 99.65243 99.71399 99.78507 99.82541 99.84104 99.87795 99.89456 99.89757 99.90810 99.92429
+## 654           99.67358 99.74212 99.75227 99.76880 99.82519 99.84526 99.85335 99.87885 99.89331 99.91234 99.93124
+## 655           99.55622 99.62697 99.74582 99.74946 99.76780 99.77633 99.81093 99.85482 99.87491 99.91767 99.92153
+## 656           99.52592 99.55966 99.75749 99.77316 99.80910 99.81796 99.84004 99.84539 99.89515 99.90107 99.90748
+## 657           99.36470 99.57875 99.72769 99.75758 99.77069 99.78894 99.81597 99.84526 99.85987 99.87213 99.90453
+## 658           99.77579 99.82474 99.84460 99.85641 99.86427 99.86832 99.91702 99.93080 99.94344 99.95814 99.95937
+## 659           99.62159 99.66360 99.70855 99.81597 99.83027 99.84733 99.86700 99.87883 99.88528 99.90467 99.91397
+## 660           99.71252 99.74223 99.74241 99.75423 99.80213 99.82431 99.83041 99.85408 99.87850 99.89197 99.91011
+## 661           99.45111 99.52906 99.58658 99.67788 99.69162 99.70964 99.76618 99.81364 99.85320 99.88166 99.88563
+## 665           99.63159 99.67359 99.78074 99.78648 99.80747 99.84066 99.85990 99.86897 99.90740 99.90987 99.92833
+## 677           99.54711 99.57613 99.60539 99.62761 99.71459 99.77934 99.78599 99.82397 99.84851 99.87206 99.93771
+## 678           99.60291 99.61013 99.70996 99.78256 99.78790 99.85325 99.87332 99.89596 99.90323 99.92267 99.93005
+## hs15-fig7.1r  99.80852 99.81966 99.83328 99.86366 99.89921 99.91493 99.93284 99.94710 99.95105 99.96148 99.96554
+## hs15-fig7.1t  97.91528 98.48375 98.83771 99.21834 99.50807 99.68327 99.76898 99.80679 99.87681 99.89649 99.91383
+##                    h23      h24      h25      h26      h27      h28 h29
+## 489           99.96596 99.98339 99.98504 99.99251 99.99371 99.99574 100
+## 490           99.86219 99.92748 99.93455 99.96848 99.98226 99.99078 100
+## 553           99.92644 99.93262 99.94819 99.97288 99.98151 99.98828 100
+## 554           99.94846 99.96047 99.97359 99.97812 99.98289 99.98863 100
+## 555           99.98256 99.98329 99.99026 99.99125 99.99440 99.99454 100
+## 556           99.73924 99.75857 99.78090 99.83743 99.87875 99.97544 100
+## 558           99.92415 99.93280 99.97915 99.98029 99.98517 99.99161 100
+## 559           99.93852 99.94821 99.96116 99.97516 99.98627 99.99001 100
+## 562           99.94290 99.95298 99.95893 99.97706 99.97944 99.99213 100
+## 565           99.98508 99.98571 99.98634 99.99102 99.99496 99.99815 100
+## 591           99.96000 99.96944 99.97262 99.98283 99.98986 99.99933 100
+## 598           99.93148 99.94348 99.97319 99.97965 99.99165 99.99538 100
+## 645           99.91251 99.92711 99.93754 99.94735 99.96603 99.96636 100
+## 646           99.94999 99.95108 99.96046 99.96673 99.97721 99.98563 100
+## 647           99.95002 99.95551 99.97231 99.97771 99.97981 99.99703 100
+## 648           99.92611 99.92919 99.94981 99.96239 99.98568 99.99734 100
+## 649           99.90763 99.93084 99.94448 99.96397 99.97705 99.98854 100
+## 650           99.95697 99.95804 99.97550 99.97808 99.98663 99.99276 100
+## 651           99.86617 99.91585 99.92272 99.96878 99.97907 99.98814 100
+## 652           99.93964 99.94659 99.96045 99.96570 99.97796 99.97914 100
+## 653           99.94213 99.94952 99.96145 99.96616 99.97349 99.98101 100
+## 654           99.94158 99.94476 99.95093 99.97372 99.98650 99.99498 100
+## 655           99.93546 99.95328 99.96402 99.97827 99.98215 99.98870 100
+## 656           99.93264 99.93569 99.95801 99.96491 99.98486 99.99717 100
+## 657           99.93306 99.95702 99.97221 99.97408 99.99000 99.99282 100
+## 658           99.96680 99.97460 99.98321 99.98500 99.99520 99.99921 100
+## 659           99.94898 99.95854 99.96858 99.97314 99.98438 99.99169 100
+## 660           99.92247 99.94037 99.95445 99.97124 99.97581 99.98600 100
+## 661           99.89367 99.91834 99.93786 99.95715 99.98864 99.99733 100
+## 665           99.94610 99.95185 99.96528 99.97796 99.98729 99.99499 100
+## 677           99.93980 99.94562 99.95115 99.96424 99.97163 99.99565 100
+## 678           99.94635 99.95250 99.96118 99.96790 99.97532 99.98628 100
+## hs15-fig7.1r  99.96772 99.97470 99.97645 99.98369 99.99021 99.99572 100
+## hs15-fig7.1t  99.93949 99.94055 99.95409 99.95671 99.96860 99.98282 100
+##  [ reached getOption(&quot;max.print&quot;) -- omitted 87 rows ]
+## 
+## $minh
+##   90%   95%   99% 99.9% 
+##     6     7    11    23</code></pre>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="elliptical-fourier-analysis.html#cb98-1"></a><span class="co"># 11 harmonics needed to capture 99 percent of variation</span></span>
+<span id="cb98-2"><a href="elliptical-fourier-analysis.html#cb98-2"></a><span class="kw">calibrate_reconstructions_efourier</span>(norm.outlines, </span>
+<span id="cb98-3"><a href="elliptical-fourier-analysis.html#cb98-3"></a>                                   <span class="dt">range =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">11</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/cal.harm-2.png" width="100%" /></p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="elliptical-fourier-analysis.html#cb99-1"></a><span class="co"># generate efa outlines with 11 harmonics</span></span>
+<span id="cb99-2"><a href="elliptical-fourier-analysis.html#cb99-2"></a>efa.outlines &lt;-<span class="st"> </span><span class="kw">efourier</span>(norm.outlines, </span>
+<span id="cb99-3"><a href="elliptical-fourier-analysis.html#cb99-3"></a>                         <span class="dt">nb.h =</span> <span class="dv">11</span>, </span>
+<span id="cb99-4"><a href="elliptical-fourier-analysis.html#cb99-4"></a>                         <span class="dt">norm =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb99-5"><a href="elliptical-fourier-analysis.html#cb99-5"></a></span>
+<span id="cb99-6"><a href="elliptical-fourier-analysis.html#cb99-6"></a><span class="co"># use efa.outlines for pca</span></span>
+<span id="cb99-7"><a href="elliptical-fourier-analysis.html#cb99-7"></a>pca.outlines &lt;-<span class="st"> </span><span class="kw">PCA</span>(efa.outlines)</span></code></pre></div>
+</div>
+<div id="pca" class="section level2">
+<h2><span class="header-section-number">5.4</span> PCA</h2>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="elliptical-fourier-analysis.html#cb100-1"></a><span class="co"># pca </span></span>
+<span id="cb100-2"><a href="elliptical-fourier-analysis.html#cb100-2"></a><span class="kw">scree_plot</span>(pca.outlines)</span></code></pre></div>
+<p><img src="supp_files/figure-html/pca.plot-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="elliptical-fourier-analysis.html#cb101-1"></a><span class="co"># plot pca by site</span></span>
+<span id="cb101-2"><a href="elliptical-fourier-analysis.html#cb101-2"></a><span class="kw">plot_PCA</span>(pca.outlines, </span>
+<span id="cb101-3"><a href="elliptical-fourier-analysis.html#cb101-3"></a>         <span class="dt">morphospace_position =</span> <span class="st">&quot;range_axes&quot;</span>,</span>
+<span id="cb101-4"><a href="elliptical-fourier-analysis.html#cb101-4"></a>         <span class="op">~</span>trinomial, <span class="dt">zoom =</span> <span class="fl">1.45</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/pca.plot-2.png" width="100%" /></p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="elliptical-fourier-analysis.html#cb102-1"></a><span class="co"># plot pca by raw material</span></span>
+<span id="cb102-2"><a href="elliptical-fourier-analysis.html#cb102-2"></a><span class="kw">plot_PCA</span>(pca.outlines, </span>
+<span id="cb102-3"><a href="elliptical-fourier-analysis.html#cb102-3"></a>         <span class="dt">morphospace_position =</span> <span class="st">&quot;range_axes&quot;</span>,</span>
+<span id="cb102-4"><a href="elliptical-fourier-analysis.html#cb102-4"></a>         <span class="op">~</span>raw.mat, <span class="dt">zoom =</span> <span class="fl">1.45</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/pca.plot-3.png" width="100%" /></p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="elliptical-fourier-analysis.html#cb103-1"></a><span class="co"># plot pca by context</span></span>
+<span id="cb103-2"><a href="elliptical-fourier-analysis.html#cb103-2"></a><span class="kw">plot_PCA</span>(pca.outlines, </span>
+<span id="cb103-3"><a href="elliptical-fourier-analysis.html#cb103-3"></a>         <span class="dt">morphospace_position =</span> <span class="st">&quot;range_axes&quot;</span>,</span>
+<span id="cb103-4"><a href="elliptical-fourier-analysis.html#cb103-4"></a>         <span class="op">~</span>context, <span class="dt">zoom =</span> <span class="fl">1.45</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/pca.plot-4.png" width="100%" /></p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="elliptical-fourier-analysis.html#cb104-1"></a><span class="co"># plot pca by temporal</span></span>
+<span id="cb104-2"><a href="elliptical-fourier-analysis.html#cb104-2"></a><span class="kw">plot_PCA</span>(pca.outlines, </span>
+<span id="cb104-3"><a href="elliptical-fourier-analysis.html#cb104-3"></a>         <span class="dt">morphospace_position =</span> <span class="st">&quot;range_axes&quot;</span>,</span>
+<span id="cb104-4"><a href="elliptical-fourier-analysis.html#cb104-4"></a>         <span class="op">~</span>temporal, <span class="dt">zoom =</span> <span class="fl">1.45</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/pca.plot-5.png" width="100%" /></p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="elliptical-fourier-analysis.html#cb105-1"></a><span class="co"># plot pca by contemp</span></span>
+<span id="cb105-2"><a href="elliptical-fourier-analysis.html#cb105-2"></a><span class="kw">plot_PCA</span>(pca.outlines, </span>
+<span id="cb105-3"><a href="elliptical-fourier-analysis.html#cb105-3"></a>         <span class="dt">morphospace_position =</span> <span class="st">&quot;range_axes&quot;</span>,</span>
+<span id="cb105-4"><a href="elliptical-fourier-analysis.html#cb105-4"></a>         <span class="op">~</span>contemp, <span class="dt">zoom =</span> <span class="fl">1.45</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/pca.plot-6.png" width="100%" /></p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="elliptical-fourier-analysis.html#cb106-1"></a><span class="co"># plot pca by contempraw</span></span>
+<span id="cb106-2"><a href="elliptical-fourier-analysis.html#cb106-2"></a><span class="kw">plot_PCA</span>(pca.outlines, </span>
+<span id="cb106-3"><a href="elliptical-fourier-analysis.html#cb106-3"></a>         <span class="dt">morphospace_position =</span> <span class="st">&quot;range_axes&quot;</span>,</span>
+<span id="cb106-4"><a href="elliptical-fourier-analysis.html#cb106-4"></a>         <span class="op">~</span>contempraw, <span class="dt">zoom =</span> <span class="fl">1.45</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/pca.plot-7.png" width="100%" /></p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="elliptical-fourier-analysis.html#cb107-1"></a><span class="co"># contribution of each pc</span></span>
+<span id="cb107-2"><a href="elliptical-fourier-analysis.html#cb107-2"></a><span class="co"># by site</span></span>
+<span id="cb107-3"><a href="elliptical-fourier-analysis.html#cb107-3"></a><span class="kw">boxplot</span>(pca.outlines, <span class="op">~</span>trinomial, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/pca.plot-8.png" width="100%" /></p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="elliptical-fourier-analysis.html#cb108-1"></a><span class="co"># by raw material</span></span>
+<span id="cb108-2"><a href="elliptical-fourier-analysis.html#cb108-2"></a><span class="kw">boxplot</span>(pca.outlines, <span class="op">~</span>raw.mat, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/pca.plot-9.png" width="100%" /></p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="elliptical-fourier-analysis.html#cb109-1"></a><span class="co"># by context</span></span>
+<span id="cb109-2"><a href="elliptical-fourier-analysis.html#cb109-2"></a><span class="kw">boxplot</span>(pca.outlines, <span class="op">~</span>context, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/pca.plot-10.png" width="100%" /></p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="elliptical-fourier-analysis.html#cb110-1"></a><span class="co"># by temporal</span></span>
+<span id="cb110-2"><a href="elliptical-fourier-analysis.html#cb110-2"></a><span class="kw">boxplot</span>(pca.outlines, <span class="op">~</span>temporal, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/pca.plot-11.png" width="100%" /></p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="elliptical-fourier-analysis.html#cb111-1"></a><span class="co"># by contemp</span></span>
+<span id="cb111-2"><a href="elliptical-fourier-analysis.html#cb111-2"></a><span class="kw">boxplot</span>(pca.outlines, <span class="op">~</span>contemp, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/pca.plot-12.png" width="100%" /></p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="elliptical-fourier-analysis.html#cb112-1"></a><span class="co"># by contempraw</span></span>
+<span id="cb112-2"><a href="elliptical-fourier-analysis.html#cb112-2"></a><span class="kw">boxplot</span>(pca.outlines, <span class="op">~</span>contempraw, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/pca.plot-13.png" width="100%" /></p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="elliptical-fourier-analysis.html#cb113-1"></a><span class="co"># mean shape + 2sd for the first 10 pcs</span></span>
+<span id="cb113-2"><a href="elliptical-fourier-analysis.html#cb113-2"></a><span class="kw">PCcontrib</span>(pca.outlines, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/pca.plot-14.png" width="100%" /></p>
+</div>
+<div id="manova-manova_pw" class="section level2">
+<h2><span class="header-section-number">5.5</span> MANOVA + MANOVA_PW</h2>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="elliptical-fourier-analysis.html#cb114-1"></a><span class="co"># manova</span></span>
+<span id="cb114-2"><a href="elliptical-fourier-analysis.html#cb114-2"></a></span>
+<span id="cb114-3"><a href="elliptical-fourier-analysis.html#cb114-3"></a><span class="co"># shape difference between sites?</span></span>
+<span id="cb114-4"><a href="elliptical-fourier-analysis.html#cb114-4"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;trinomial&#39;</span>)</span></code></pre></div>
+<pre><code>## PC axes 1 to 17 were retained</code></pre>
+<pre><code>##            Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
+## fac         9           4.3377   2.6429    153    839 &lt; 2.2e-16 ***
+## Residuals 111                                                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="elliptical-fourier-analysis.html#cb117-1"></a><span class="co"># which differ?</span></span>
+<span id="cb117-2"><a href="elliptical-fourier-analysis.html#cb117-2"></a><span class="kw">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;trinomial&#39;</span>)</span></code></pre></div>
+<pre><code>## &#39;41sa135&#39; has 3 rows, and &#39;retain&#39; is set accordingly</code></pre>
+<pre><code>## PC axes 1 to 3 were retained</code></pre>
+<pre><code>## 41cp1241cp20</code></pre>
+<pre><code>## 41cp1241cp5</code></pre>
+<pre><code>## 41cp1241hs15</code></pre>
+<pre><code>## 41cp1241na206</code></pre>
+<pre><code>## 41cp1241na49</code></pre>
+<pre><code>## 41cp1241sa135</code></pre>
+<pre><code>## 41cp1241sm193</code></pre>
+<pre><code>## 41cp1241sy280</code></pre>
+<pre><code>## 41cp1241sy43</code></pre>
+<pre><code>## 41cp2041cp5</code></pre>
+<pre><code>## 41cp2041hs15</code></pre>
+<pre><code>## 41cp2041na206</code></pre>
+<pre><code>## 41cp2041na49</code></pre>
+<pre><code>## 41cp2041sa135</code></pre>
+<pre><code>## 41cp2041sm193</code></pre>
+<pre><code>## 41cp2041sy280</code></pre>
+<pre><code>## 41cp2041sy43</code></pre>
+<pre><code>## 41cp541hs15</code></pre>
+<pre><code>## 41cp541na206</code></pre>
+<pre><code>## 41cp541na49</code></pre>
+<pre><code>## 41cp541sa135</code></pre>
+<pre><code>## 41cp541sm193</code></pre>
+<pre><code>## 41cp541sy280</code></pre>
+<pre><code>## 41cp541sy43</code></pre>
+<pre><code>## 41hs1541na206</code></pre>
+<pre><code>## 41hs1541na49</code></pre>
+<pre><code>## 41hs1541sa135</code></pre>
+<pre><code>## 41hs1541sm193</code></pre>
+<pre><code>## 41hs1541sy280</code></pre>
+<pre><code>## 41hs1541sy43</code></pre>
+<pre><code>## 41na20641na49</code></pre>
+<pre><code>## 41na20641sa135</code></pre>
+<pre><code>## 41na20641sm193</code></pre>
+<pre><code>## 41na20641sy280</code></pre>
+<pre><code>## 41na20641sy43</code></pre>
+<pre><code>## 41na4941sa135</code></pre>
+<pre><code>## 41na4941sm193</code></pre>
+<pre><code>## 41na4941sy280</code></pre>
+<pre><code>## 41na4941sy43</code></pre>
+<pre><code>## 41sa13541sm193</code></pre>
+<pre><code>## 41sa13541sy280</code></pre>
+<pre><code>## 41sa13541sy43</code></pre>
+<pre><code>## 41sm19341sy280</code></pre>
+<pre><code>## 41sm19341sy43</code></pre>
+<pre><code>## 41sy28041sy43</code></pre>
+<pre><code>## $stars.tab
+##         41cp12 41cp20 41cp5 41hs15 41na206 41na49 41sa135 41sm193 41sy280 41sy43
+## 41cp12         *      ***   **     *       ***    *       *       **      ***   
+## 41cp20                -     -      **      -      .       -       -       *     
+## 41cp5                       ***    ***     ***    **      .       .       **    
+## 41hs15                             **      ***    *       -       *       **    
+## 41na206                                    ***    **      *       **      ***   
+## 41na49                                            ***     **      -       -     
+## 41sa135                                                   -       *       **    
+## 41sm193                                                           .       *     
+## 41sy280                                                                   -     
+## 
+## $summary (see also $manovas)
+##                   Df  Pillai approx F num Df den Df    Pr(&gt;F)
+## 41cp12 - 41cp20    1 0.61237   5.2660      3     10 1.948e-02
+## 41cp12 - 41cp5     1 0.49199   7.7478      3     24 8.670e-04
+## 41cp12 - 41hs15    1 0.22871   4.8432      3     49 4.971e-03
+## 41cp12 - 41na206   1 0.53945   4.2949      3     11 3.096e-02
+## 41cp12 - 41na49    1 0.67279  19.8758      3     29 3.386e-07
+## 41cp12 - 41sa135   1 0.63763   5.2789      3      9 2.250e-02
+## 41cp12 - 41sm193   1 0.58520   5.6432      3     12 1.198e-02
+## 41cp12 - 41sy280   1 0.70645   7.2199      3      9 9.068e-03
+## 41cp12 - 41sy43    1 0.80769  16.7996      3     12 1.356e-04
+## 41cp20 - 41cp5     1 0.06095   0.3894      3     18 7.620e-01
+## 41cp20 - 41hs15    1 0.08290   1.2957      3     43 2.881e-01
+## 41cp20 - 41na206   1 0.92539  20.6719      3      5 3.014e-03
+## 41cp20 - 41na49    1 0.18324   1.7200      3     23 1.908e-01
+## 41cp20 - 41sa135   1 0.89935   8.9350      3      3 5.254e-02
+## 41cp20 - 41sm193   1 0.29029   0.8181      3      6 5.294e-01
+## 41cp20 - 41sy280   1 0.71659   2.5284      3      3 2.331e-01
+## 41cp20 - 41sy43    1 0.79306   7.6646      3      6 1.781e-02
+## 41cp5 - 41hs15     1 0.33347   9.5060      3     57 3.466e-05
+## 41cp5 - 41na206    1 0.70538  15.1633      3     19 2.809e-05
+## 41cp5 - 41na49     1 0.35520   6.7940      3     37 9.190e-04
+## 41cp5 - 41sa135    1 0.54123   6.6851      3     17 3.501e-03
+## 41cp5 - 41sm193    1 0.31243   3.0294      3     20 5.336e-02
+## 41cp5 - 41sy280    1 0.31565   2.6137      3     17 8.479e-02
+## 41cp5 - 41sy43     1 0.44285   5.2991      3     20 7.484e-03
+## 41hs15 - 41na206   1 0.23406   4.4820      3     44 7.871e-03
+## 41hs15 - 41na49    1 0.36850  12.0597      3     62 2.566e-06
+## 41hs15 - 41sa135   1 0.17842   3.0403      3     42 3.931e-02
+## 41hs15 - 41sm193   1 0.01069   0.1621      3     45 9.213e-01
+## 41hs15 - 41sy280   1 0.19735   3.4423      3     42 2.510e-02
+## 41hs15 - 41sy43    1 0.24705   4.9217      3     45 4.844e-03
+## 41na206 - 41na49   1 0.67116  16.3278      3     24 5.376e-06
+## 41na206 - 41sa135  1 0.96200  33.7582      3      4 2.672e-03
+## 41na206 - 41sm193  1 0.69869   5.4106      3      7 3.057e-02
+## 41na206 - 41sy280  1 0.97658  55.6039      3      4 1.020e-03
+## 41na206 - 41sy43   1 0.93036  31.1715      3      7 2.018e-04
+## 41na49 - 41sa135   1 0.61242  11.5874      3     22 9.207e-05
+## 41na49 - 41sm193   1 0.38773   5.2771      3     25 5.865e-03
+## 41na49 - 41sy280   1 0.02931   0.2214      3     22 8.805e-01
+## 41na49 - 41sy43    1 0.04329   0.3771      3     25 7.703e-01
+## 41sa135 - 41sm193  1 0.63812   2.9389      3      5 1.380e-01
+## 41sa135 - 41sy280  1 0.98198  36.3209      3      2 2.691e-02
+## 41sa135 - 41sy43   1 0.88331  12.6166      3      5 9.071e-03
+## 41sm193 - 41sy280  1 0.75464   5.1261      3      5 5.514e-02
+## 41sm193 - 41sy43   1 0.73789   7.5070      3      8 1.032e-02
+## 41sy280 - 41sy43   1 0.15209   0.2989      3      5 8.254e-01</code></pre>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="elliptical-fourier-analysis.html#cb166-1"></a><span class="co"># shape difference between raw.mat?</span></span>
+<span id="cb166-2"><a href="elliptical-fourier-analysis.html#cb166-2"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;raw.mat&#39;</span>)</span></code></pre></div>
+<pre><code>## PC axes 1 to 17 were retained</code></pre>
+<pre><code>##            Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
+## fac         3           1.3053   2.5508     51    299 4.955e-07 ***
+## Residuals 117                                                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="elliptical-fourier-analysis.html#cb169-1"></a><span class="co"># which differ?</span></span>
+<span id="cb169-2"><a href="elliptical-fourier-analysis.html#cb169-2"></a><span class="kw">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;raw.mat&#39;</span>)</span></code></pre></div>
+<pre><code>## &#39;jasper&#39; has 10 rows, and &#39;retain&#39; is set accordingly</code></pre>
+<pre><code>## PC axes 1 to 10 were retained</code></pre>
+<pre><code>## chertjasper</code></pre>
+<pre><code>## chertquartzite</code></pre>
+<pre><code>## cherts.wd</code></pre>
+<pre><code>## jasperquartzite</code></pre>
+<pre><code>## jaspers.wd</code></pre>
+<pre><code>## quartzites.wd</code></pre>
+<pre><code>## $stars.tab
+##           chert jasper quartzite s.wd
+## chert           *      .         *** 
+## jasper                 -         *   
+## quartzite                        *** 
+## 
+## $summary (see also $manovas)
+##                    Df Pillai approx F num Df den Df    Pr(&gt;F)
+## chert - jasper      1 0.2362    2.165     10     70 0.0301702
+## chert - quartzite   1 0.2086    1.898     10     72 0.0593607
+## chert - s.wd        1 0.2856    3.517     10     88 0.0006134
+## jasper - quartzite  1 0.6002    1.652     10     11 0.2112799
+## jasper - s.wd       1 0.5145    2.861     10     27 0.0144513
+## quartzite - s.wd    1 0.6185    4.701     10     29 0.0005089</code></pre>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="elliptical-fourier-analysis.html#cb179-1"></a><span class="co"># shape difference by context?</span></span>
+<span id="cb179-2"><a href="elliptical-fourier-analysis.html#cb179-2"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;context&#39;</span>)</span></code></pre></div>
+<pre><code>## PC axes 1 to 17 were retained</code></pre>
+<pre><code>##            Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
+## fac         1          0.49602   3.0053     17    103 0.0003024 ***
+## Residuals 119                                                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="elliptical-fourier-analysis.html#cb182-1"></a><span class="co"># shape difference by temporal?</span></span>
+<span id="cb182-2"><a href="elliptical-fourier-analysis.html#cb182-2"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;temporal&#39;</span>)</span></code></pre></div>
+<pre><code>## PC axes 1 to 17 were retained</code></pre>
+<pre><code>##            Df Hotelling-Lawley approx F num Df den Df   Pr(&gt;F)   
+## fac         2          0.64725   1.9227     34    202 0.003049 **
+## Residuals 118                                                    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="elliptical-fourier-analysis.html#cb185-1"></a><span class="co"># which differ?</span></span>
+<span id="cb185-2"><a href="elliptical-fourier-analysis.html#cb185-2"></a><span class="kw">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;temporal&#39;</span>)</span></code></pre></div>
+<pre><code>## &#39;HC&#39; has 5 rows, and &#39;retain&#39; is set accordingly</code></pre>
+<pre><code>## PC axes 1 to 5 were retained</code></pre>
+<pre><code>## HCLC</code></pre>
+<pre><code>## HCMC</code></pre>
+<pre><code>## LCMC</code></pre>
+<pre><code>## $stars.tab
+##    HC LC MC 
+## HC    ** ***
+## LC       -  
+## 
+## $summary (see also $manovas)
+##         Df  Pillai approx F num Df den Df    Pr(&gt;F)
+## HC - LC  1 0.18426    3.750      5     83 0.0041318
+## HC - MC  1 0.54178    7.331      5     31 0.0001238
+## LC - MC  1 0.07371    1.751      5    110 0.1290832</code></pre>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="elliptical-fourier-analysis.html#cb192-1"></a><span class="co"># shape difference by contemp?</span></span>
+<span id="cb192-2"><a href="elliptical-fourier-analysis.html#cb192-2"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;contemp&#39;</span>)</span></code></pre></div>
+<pre><code>## PC axes 1 to 17 were retained</code></pre>
+<pre><code>##            Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
+## fac         4           2.2251   3.2232     68    394 3.289e-13 ***
+## Residuals 116                                                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="elliptical-fourier-analysis.html#cb195-1"></a><span class="co"># which differ?</span></span>
+<span id="cb195-2"><a href="elliptical-fourier-analysis.html#cb195-2"></a><span class="kw">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;contemp&#39;</span>)</span></code></pre></div>
+<pre><code>## &#39;MC-Not&#39; has 10 rows, and &#39;retain&#39; is set accordingly</code></pre>
+<pre><code>## PC axes 1 to 10 were retained</code></pre>
+<pre><code>## HC-NotLC-Mort</code></pre>
+<pre><code>## HC-NotLC-Not</code></pre>
+<pre><code>## HC-NotMC-Mort</code></pre>
+<pre><code>## HC-NotMC-Not</code></pre>
+<pre><code>## LC-MortLC-Not</code></pre>
+<pre><code>## LC-MortMC-Mort</code></pre>
+<pre><code>## LC-MortMC-Not</code></pre>
+<pre><code>## LC-NotMC-Mort</code></pre>
+<pre><code>## LC-NotMC-Not</code></pre>
+<pre><code>## MC-MortMC-Not</code></pre>
+<pre><code>## $stars.tab
+##         HC-Not LC-Mort LC-Not MC-Mort MC-Not
+## HC-Not         -       ***    **      ***   
+## LC-Mort                ***    **      ***   
+## LC-Not                        -       -     
+## MC-Mort                               -     
+## 
+## $summary (see also $manovas)
+##                   Df Pillai approx F num Df den Df    Pr(&gt;F)
+## HC-Not - LC-Mort   1 0.1662   1.4351     10     72 1.827e-01
+## HC-Not - LC-Not    1 0.8012   7.2534     10     18 1.582e-04
+## HC-Not - MC-Mort   1 0.7029   3.7860     10     16 8.894e-03
+## HC-Not - MC-Not    1 0.8787   9.4183     10     13 1.887e-04
+## LC-Mort - LC-Not   1 0.4508   5.9928     10     73 1.434e-06
+## LC-Mort - MC-Mort  1 0.2674   2.5912     10     71 9.742e-03
+## LC-Mort - MC-Not   1 0.4813   6.3094     10     68 9.125e-07
+## LC-Not - MC-Mort   1 0.2850   0.6776     10     17 7.309e-01
+## LC-Not - MC-Not    1 0.4089   0.9687     10     14 5.081e-01
+## MC-Mort - MC-Not   1 0.3968   0.7893     10     12 6.412e-01</code></pre>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="elliptical-fourier-analysis.html#cb209-1"></a><span class="co"># shape difference by contempraw?</span></span>
+<span id="cb209-2"><a href="elliptical-fourier-analysis.html#cb209-2"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;contempraw&#39;</span>)</span></code></pre></div>
+<pre><code>## PC axes 1 to 17 were retained</code></pre>
+<pre><code>##            Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
+## fac         9            4.182   2.5481    153    839 &lt; 2.2e-16 ***
+## Residuals 111                                                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="elliptical-fourier-analysis.html#cb212-1"></a><span class="co"># which differ?</span></span>
+<span id="cb212-2"><a href="elliptical-fourier-analysis.html#cb212-2"></a><span class="kw">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;contempraw&#39;</span>)</span></code></pre></div>
+<pre><code>## &#39;HC-N-S&#39; has 3 rows, and &#39;retain&#39; is set accordingly</code></pre>
+<pre><code>## PC axes 1 to 3 were retained</code></pre>
+<pre><code>## HC-N-CHC-N-S</code></pre>
+<pre><code>## HC-N-CLC-M-C</code></pre>
+<pre><code>## HC-N-CLC-M-J</code></pre>
+<pre><code>## HC-N-CLC-M-Q</code></pre>
+<pre><code>## HC-N-CLC-N-C</code></pre>
+<pre><code>## HC-N-CLC-N-S</code></pre>
+<pre><code>## HC-N-CMC-M-S</code></pre>
+<pre><code>## HC-N-CMC-N-C</code></pre>
+<pre><code>## HC-N-CMC-N-S</code></pre>
+<pre><code>## HC-N-SLC-M-C</code></pre>
+<pre><code>## HC-N-SLC-M-J</code></pre>
+<pre><code>## HC-N-SLC-M-Q</code></pre>
+<pre><code>## HC-N-SLC-N-C</code></pre>
+<pre><code>## HC-N-SLC-N-S</code></pre>
+<pre><code>## HC-N-SMC-M-S</code></pre>
+<pre><code>## HC-N-SMC-N-C</code></pre>
+<pre><code>## HC-N-SMC-N-S</code></pre>
+<pre><code>## LC-M-CLC-M-J</code></pre>
+<pre><code>## LC-M-CLC-M-Q</code></pre>
+<pre><code>## LC-M-CLC-N-C</code></pre>
+<pre><code>## LC-M-CLC-N-S</code></pre>
+<pre><code>## LC-M-CMC-M-S</code></pre>
+<pre><code>## LC-M-CMC-N-C</code></pre>
+<pre><code>## LC-M-CMC-N-S</code></pre>
+<pre><code>## LC-M-JLC-M-Q</code></pre>
+<pre><code>## LC-M-JLC-N-C</code></pre>
+<pre><code>## LC-M-JLC-N-S</code></pre>
+<pre><code>## LC-M-JMC-M-S</code></pre>
+<pre><code>## LC-M-JMC-N-C</code></pre>
+<pre><code>## LC-M-JMC-N-S</code></pre>
+<pre><code>## LC-M-QLC-N-C</code></pre>
+<pre><code>## LC-M-QLC-N-S</code></pre>
+<pre><code>## LC-M-QMC-M-S</code></pre>
+<pre><code>## LC-M-QMC-N-C</code></pre>
+<pre><code>## LC-M-QMC-N-S</code></pre>
+<pre><code>## LC-N-CLC-N-S</code></pre>
+<pre><code>## LC-N-CMC-M-S</code></pre>
+<pre><code>## LC-N-CMC-N-C</code></pre>
+<pre><code>## LC-N-CMC-N-S</code></pre>
+<pre><code>## LC-N-SMC-M-S</code></pre>
+<pre><code>## LC-N-SMC-N-C</code></pre>
+<pre><code>## LC-N-SMC-N-S</code></pre>
+<pre><code>## MC-M-SMC-N-C</code></pre>
+<pre><code>## MC-M-SMC-N-S</code></pre>
+<pre><code>## MC-N-CMC-N-S</code></pre>
+<pre><code>## $stars.tab
+##        HC-N-C HC-N-S LC-M-C LC-M-J LC-M-Q LC-N-C LC-N-S MC-M-S MC-N-C MC-N-S
+## HC-N-C        -      -      *      -      *      ***    **     **     **    
+## HC-N-S               *      **     **     **     **     **     ***    *     
+## LC-M-C                      *      -      *      ***    ***    **     ***   
+## LC-M-J                             -      -      **     -      .      **    
+## LC-M-Q                                    *      ***    **     **     ***   
+## LC-N-C                                           -      -      -      **    
+## LC-N-S                                                  -      -      *     
+## MC-M-S                                                         -      *     
+## MC-N-C                                                                ***   
+## 
+## $summary (see also $manovas)
+##                 Df  Pillai approx F num Df den Df    Pr(&gt;F)
+## HC-N-C - HC-N-S  1 0.44264   2.6473      3     10 1.063e-01
+## HC-N-C - LC-M-C  1 0.04837   0.9149      3     54 4.399e-01
+## HC-N-C - LC-M-J  1 0.39581   3.7122      3     17 3.206e-02
+## HC-N-C - LC-M-Q  1 0.26816   2.3207      3     19 1.078e-01
+## HC-N-C - LC-N-C  1 0.55825   5.4760      3     13 1.178e-02
+## HC-N-C - LC-N-S  1 0.69055  11.9015      3     16 2.390e-04
+## HC-N-C - MC-M-S  1 0.53069   7.5387      3     20 1.451e-03
+## HC-N-C - MC-N-C  1 0.63256   8.0338      3     14 2.339e-03
+## HC-N-C - MC-N-S  1 0.77090  11.2162      3     10 1.537e-03
+## HC-N-S - LC-M-C  1 0.16982   3.1365      3     46 3.429e-02
+## HC-N-S - LC-M-J  1 0.79933  11.9500      3      9 1.718e-03
+## HC-N-S - LC-M-Q  1 0.66004   7.1189      3     11 6.303e-03
+## HC-N-S - LC-N-C  1 0.90854  16.5561      3      5 4.982e-03
+## HC-N-S - LC-N-S  1 0.80354  10.9066      3      8 3.365e-03
+## HC-N-S - MC-M-S  1 0.67759   8.4067      3     12 2.801e-03
+## HC-N-S - MC-N-C  1 0.97076  66.3913      3      6 5.410e-05
+## HC-N-S - MC-N-S  1 0.99298  94.2847      3      2 1.051e-02
+## LC-M-C - LC-M-J  1 0.15814   3.3187      3     53 2.665e-02
+## LC-M-C - LC-M-Q  1 0.09503   1.9253      3     55 1.362e-01
+## LC-M-C - LC-N-C  1 0.18799   3.7814      3     49 1.614e-02
+## LC-M-C - LC-N-S  1 0.35378   9.4895      3     52 4.210e-05
+## LC-M-C - MC-M-S  1 0.26127   6.6018      3     56 6.727e-04
+## LC-M-C - MC-N-C  1 0.27075   6.1879      3     50 1.167e-03
+## LC-M-C - MC-N-S  1 0.44054  12.0741      3     46 5.916e-06
+## LC-M-J - LC-M-Q  1 0.23197   1.8122      3     18 1.810e-01
+## LC-M-J - LC-N-C  1 0.27298   1.5019      3     12 2.641e-01
+## LC-M-J - LC-N-S  1 0.52023   5.4217      3     15 9.967e-03
+## LC-M-J - MC-M-S  1 0.19463   1.5306      3     19 2.390e-01
+## LC-M-J - MC-N-C  1 0.43772   3.3734      3     13 5.147e-02
+## LC-M-J - MC-N-S  1 0.71889   7.6719      3      9 7.513e-03
+## LC-M-Q - LC-N-C  1 0.45770   3.9386      3     14 3.137e-02
+## LC-M-Q - LC-N-S  1 0.64990  10.5191      3     17 3.798e-04
+## LC-M-Q - MC-M-S  1 0.46380   6.0549      3     21 3.887e-03
+## LC-M-Q - MC-N-C  1 0.57196   6.6812      3     15 4.402e-03
+## LC-M-Q - MC-N-S  1 0.86095  22.7030      3     11 5.138e-05
+## LC-N-C - LC-N-S  1 0.27425   1.3856      3     11 2.986e-01
+## LC-N-C - MC-M-S  1 0.05143   0.2711      3     15 8.453e-01
+## LC-N-C - MC-N-C  1 0.27134   1.1172      3      9 3.922e-01
+## LC-N-C - MC-N-S  1 0.93714  24.8492      3      5 1.972e-03
+## LC-N-S - MC-M-S  1 0.15168   1.0728      3     18 3.855e-01
+## LC-N-S - MC-N-C  1 0.14589   0.6833      3     12 5.792e-01
+## LC-N-S - MC-N-S  1 0.69696   6.1330      3      8 1.805e-02
+## MC-M-S - MC-N-C  1 0.13584   0.8383      3     16 4.925e-01
+## MC-M-S - MC-N-S  1 0.51586   4.2621      3     12 2.885e-02
+## MC-N-C - MC-N-S  1 0.94391  33.6548      3      6 3.779e-04</code></pre>
+</div>
+<div id="mean-shapes" class="section level2">
+<h2><span class="header-section-number">5.6</span> Mean shapes</h2>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="elliptical-fourier-analysis.html#cb261-1"></a><span class="co"># mean shapes</span></span>
+<span id="cb261-2"><a href="elliptical-fourier-analysis.html#cb261-2"></a></span>
+<span id="cb261-3"><a href="elliptical-fourier-analysis.html#cb261-3"></a><span class="co"># site</span></span>
+<span id="cb261-4"><a href="elliptical-fourier-analysis.html#cb261-4"></a>ms<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, <span class="op">~</span>trinomial)</span>
+<span id="cb261-5"><a href="elliptical-fourier-analysis.html#cb261-5"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.2</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/ms1-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="elliptical-fourier-analysis.html#cb262-1"></a><span class="co"># raw material</span></span>
+<span id="cb262-2"><a href="elliptical-fourier-analysis.html#cb262-2"></a>ms<span class="fl">.3</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, <span class="op">~</span>raw.mat)</span>
+<span id="cb262-3"><a href="elliptical-fourier-analysis.html#cb262-3"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.3</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/ms1-2.png" width="100%" /></p>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="elliptical-fourier-analysis.html#cb263-1"></a><span class="co"># context</span></span>
+<span id="cb263-2"><a href="elliptical-fourier-analysis.html#cb263-2"></a>ms<span class="fl">.4</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, <span class="op">~</span>context)</span>
+<span id="cb263-3"><a href="elliptical-fourier-analysis.html#cb263-3"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.4</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/ms1-3.png" width="100%" /></p>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="elliptical-fourier-analysis.html#cb264-1"></a><span class="co"># temporal</span></span>
+<span id="cb264-2"><a href="elliptical-fourier-analysis.html#cb264-2"></a>ms<span class="fl">.5</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, <span class="op">~</span>temporal)</span>
+<span id="cb264-3"><a href="elliptical-fourier-analysis.html#cb264-3"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.5</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/ms1-4.png" width="100%" /></p>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="elliptical-fourier-analysis.html#cb265-1"></a><span class="co"># contemp</span></span>
+<span id="cb265-2"><a href="elliptical-fourier-analysis.html#cb265-2"></a>ms<span class="fl">.5</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, <span class="op">~</span>contemp)</span>
+<span id="cb265-3"><a href="elliptical-fourier-analysis.html#cb265-3"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.5</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/ms1-5.png" width="100%" /></p>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="elliptical-fourier-analysis.html#cb266-1"></a><span class="co"># contempraw</span></span>
+<span id="cb266-2"><a href="elliptical-fourier-analysis.html#cb266-2"></a>ms<span class="fl">.6</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, <span class="op">~</span>contempraw)</span>
+<span id="cb266-3"><a href="elliptical-fourier-analysis.html#cb266-3"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.6</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
+<p><img src="supp_files/figure-html/ms1-6.png" width="100%" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chi-squared.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["supp.pdf", "supp.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
