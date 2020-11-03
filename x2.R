@@ -43,7 +43,7 @@ PlotXTabs(data, trinomial, raw.mat, plottype = "percent") # as percentages
 r.tab <- table(raw, con)
 ftable(r.tab)
 summary(r.tab) # zeros in table
-chisq.test(r.tab, simulate.p.value = TRUE) # simulate p-value
+chisq.test(r.tab, simulate.p.value = TRUE, B = 10000) # simulate p-value
 
 # effect size
 cramersV(r.tab)

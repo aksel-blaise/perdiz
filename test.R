@@ -34,6 +34,7 @@ norm.outlines <- data.out %>%
   coo_rotate() %>% 
   coo_center()
 
+pile(norm.outlines)
 #####
 # calibrate how many harmonics needed
 calibrate_harmonicpower_efourier(norm.outlines, 
@@ -43,7 +44,7 @@ calibrate_harmonicpower_efourier(norm.outlines,
 calibrate_reconstructions_efourier(norm.outlines, 
                                    range = 1:11)
 
-# generate efa outlines with 23 harmonics
+# generate efa outlines with 11 harmonics
 efa.outlines <- efourier(norm.outlines, 
                          nb.h = 11, 
                          norm = TRUE)
@@ -61,6 +62,7 @@ plot_PCA(pca.outlines,
          morphospace_position = "range_axes",
          ~trinomial, zoom = 1.45)
 
+
 # plot pca by raw material
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
@@ -74,7 +76,7 @@ plot_PCA(pca.outlines,
 # plot pca by temporal
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
-         ~temporal, zoom = 1.45)
+         ~temporal, zoom = 1.2)
 
 # plot pca by contemp
 plot_PCA(pca.outlines, 
