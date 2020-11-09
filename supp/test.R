@@ -15,6 +15,7 @@ att.data$context <- as.factor(att.data$context)
 att.data$temporal <- as.factor(att.data$temporal)
 att.data$trinomial <- as.factor(att.data$trinomial)
 att.data$raw.mat <- as.factor(att.data$raw.mat)
+att.data$conraw <- as.factor(att.data$conraw)
 att.data$contemp <- as.factor(att.data$contemp)
 att.data$contempraw <- as.factor(att.data$contempraw)
 
@@ -60,33 +61,27 @@ scree_plot(pca.outlines)
 # plot pca by site
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
-         ~trinomial, zoom = 1.25)
-
+         ~trinomial, zoom = 1.55)
 
 # plot pca by raw material
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
-         ~raw.mat, zoom = 1.25)
+         ~raw.mat, zoom = 1.55)
 
-# plot pca by context
+# plot pca by conraw
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
-         ~context, zoom = 1.25)
-
-# plot pca by temporal
-plot_PCA(pca.outlines, 
-         morphospace_position = "range_axes",
-         ~temporal, zoom = 1.25)
+         ~conraw, zoom = 1.55)
 
 # plot pca by contemp
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
-         ~contemp, zoom = 1.25)
+         ~contemp, zoom = 1.55)
 
 # plot pca by contempraw
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
-         ~contempraw, zoom = 1.25)
+         ~contempraw, zoom = 1.55)
 
 # mean shape + 2sd for the first 10 pcs
 PCcontrib(pca.outlines, nax = 1:5)
@@ -105,13 +100,9 @@ MANOVA(pca.outlines, 'raw.mat')
 # which differ?
 MANOVA_PW(pca.outlines, 'raw.mat')
 
-# shape difference by context?
-MANOVA(pca.outlines, 'context')
-
-# shape difference between temporal?
-MANOVA(pca.outlines, 'temporal')
-# which differ?
-MANOVA_PW(pca.outlines, 'temporal')
+# shape difference by conraw?
+MANOVA(pca.outlines, 'conraw')
+MANOVA_PW(pca.outlines, 'conraw')
 
 # shape difference by contemp?
 MANOVA(pca.outlines, 'contemp')
@@ -134,12 +125,8 @@ plot_MSHAPES(ms.2, size = 0.75)
 ms.3 <- MSHAPES(efa.outlines, ~raw.mat)
 plot_MSHAPES(ms.3, size = 0.75)
 
-# context
-ms.4 <- MSHAPES(efa.outlines, ~context)
-plot_MSHAPES(ms.4, size = 0.75)
-
-# temporal
-ms.5 <- MSHAPES(efa.outlines, ~temporal)
+# conraw
+ms.5 <- MSHAPES(efa.outlines, ~conraw)
 plot_MSHAPES(ms.5, size = 0.75)
 
 # contemp
