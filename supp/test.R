@@ -58,11 +58,6 @@ pca.outlines <- PCA(efa.outlines)
 # pca 
 scree_plot(pca.outlines)
 
-# plot pca by site
-plot_PCA(pca.outlines, 
-         morphospace_position = "range_axes",
-         ~trinomial, zoom = 1.55)
-
 # plot pca by raw material
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
@@ -90,11 +85,6 @@ PCcontrib(pca.outlines, nax = 1:5)
 ## confirmatory analysis
 # manova
 
-# shape difference between sites?
-MANOVA(pca.outlines, 'trinomial')
-# which differ?
-MANOVA_PW(pca.outlines, 'trinomial')
-
 # shape difference between raw.mat?
 MANOVA(pca.outlines, 'raw.mat')
 # which differ?
@@ -116,10 +106,6 @@ MANOVA_PW(pca.outlines, 'contempraw')
 
 #####
 # calculate mean shapes + comparisons
-
-# site
-ms.2 <- MSHAPES(efa.outlines, ~trinomial)
-plot_MSHAPES(ms.2, size = 0.75)
 
 # raw material
 ms.3 <- MSHAPES(efa.outlines, ~raw.mat)
