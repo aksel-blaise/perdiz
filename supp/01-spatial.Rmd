@@ -1,6 +1,6 @@
 # Spatial
 
-```{r map, echo=TRUE, out.width = "100%", dpi = 300, echo=TRUE, eval=FALSE, warning=FALSE}
+```{r map, echo=TRUE, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # load packages
 library(ggplot2)
 library(sf)
@@ -46,7 +46,7 @@ ggplot(data = world) +
             fontface = "italic", size = 2) +
   geom_text_repel(data = archcentroids, aes(x = lng, y = lat, label = arch), 
                   fontface = "bold", 
-                  nudge_x = c(0,1,-0.9,-0.3,-0.25,1), 
+                  nudge_x = c(0,1,-0.25,-0.25,-0.25,1), 
                   nudge_y = c(0.5,0,-0.5,-0.5,-0.25,0.01), 
                   color = "#003366", 
                   size = 2.5) +
