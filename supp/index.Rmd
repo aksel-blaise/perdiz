@@ -1,5 +1,5 @@
 --- 
-title: "Supplemental materials for: Shape as a function of raw material + context? A preliminary analysis of Perdiz arrow point shape from the southern Caddo area"
+title: "Supplemental materials for: Shape as a function of time + raw material + burial context: A preliminary analysis of Perdiz arrow points from the southern Caddo area"
 author: "Robert Z. Selden, Jr."
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -18,17 +18,17 @@ This volume is written in **Markdown**, and includes all analysis code employed 
 
 ## Primary findings
 
-* first
-* second
-* third
+* Perdiz arrow point shape differs by time
+* Perdiz arrow point shape differs by raw material
+* Perdiz arrow point shape differs by burial context
 
 ## Acknowledgments
 
-I extend my gratitude to the Caddo Tribe of Oklahoma and the Anthropology and Archaeology Laboratory at Stephen F. Austin State University for the requisite permissions and access needed to generate the 3D scans of the Gahagan bifaces. Thanks to Harry J. Shafer, Jeffrey S. Girard, and Hiram F. (Pete) Gregory for comments on manuscripts associated with stone tool shapes. Thanks also to Dean C. Adams, Michael L. Collyer, Emma Sherratt, Lauren Butaric, and Kersten Bergstrom for their constructive criticisms, comments, and suggestions throughout the development of this research program, and to the editors and anonymous reviewers for their comments and constructive criticisms, which further improved the manuscript.
+I extend my gratitude to the Caddo Tribe of Oklahoma and the Anthropology and Archaeology Laboratory at Stephen F. Austin State University for the requisite permissions and access needed to generate scans of Perdiz points from the Turner collection. Thanks to Harry J. Shafer, Jeffrey S. Girard, and Hiram F. (Pete) Gregory for comments on manuscripts associated with stone tool shapes. Thanks also to Dean C. Adams, Michael L. Collyer, Emma Sherratt, Lauren Butaric, and Kersten Bergstrom for their constructive criticisms, comments, and suggestions throughout the development of this research program, and to the editors and anonymous reviewers for their comments and constructive criticisms, which further improved the manuscript.
 
 ## Funding
 
-Components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to the author from the National Center for Preservation Technology and Training (NCPTT), and additional grants to the author from the Caddo Tribe of Oklahoma and the National Forests and Grasslands in Texas (15-PA-11081300-033 and 20-PA-11081300-074).
+Components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to RZS from the National Center for Preservation Technology and Training (NCPTT), and additional grants to RZS from the Caddo Tribe of Oklahoma and the National Forests and Grasslands in Texas (15-PA-11081300-033 and 20-PA-11081300-074).
 
 ## Data management
 

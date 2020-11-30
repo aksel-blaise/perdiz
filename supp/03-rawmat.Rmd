@@ -20,19 +20,22 @@ site <- data$trinomial # site
 raw.con <- ggplot(data, aes(raw)) +
   geom_bar(aes(fill = con))+
   scale_fill_manual(values = wes_palette("Moonrise2")) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
   labs(x = 'Raw Material', y = 'Count')
 
 # barplot of raw material count by temporal
 raw.temp <- ggplot(data, aes(raw)) +
   geom_bar(aes(fill = temp))+
   scale_fill_manual(values = wes_palette("Moonrise2")) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
   labs(x = 'Raw Material', y = 'Count')
 
 # barplot of raw material count by site
 raw.site <- ggplot(data, aes(trinomial)) +
   geom_bar(aes(fill = raw))+
   scale_fill_manual(values = wes_palette("Moonrise2")) +
-  labs(x = 'Raw Material', y = 'Count')
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(x = 'Site', y = 'Count')
 
 # render figure
 raw.figure <- ggarrange(raw.site,
