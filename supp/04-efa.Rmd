@@ -16,10 +16,8 @@ att.data <- read.csv("perdiz.csv", header = TRUE, as.is = TRUE)
 
 # attribute to factor
 att.data$temporal <- as.factor(att.data$temporal)
-att.data$context <- as.factor(att.data$context)
 att.data$raw.mat <- as.factor(att.data$raw.mat)
-att.data$contemp <- as.factor(att.data$contemp)
-att.data$contempraw <- as.factor(att.data$contempraw)
+att.data$context <- as.factor(att.data$context)
 ```
 
 ## Generate outlines
@@ -66,6 +64,19 @@ pca.outlines <- PCA(efa.outlines)
 # pca 
 scree_plot(pca.outlines)
 
+# plot pca by temporal
+plot(pca.outlines,
+     pos.shp = "range_axes",
+     ~temporal,
+     chull = TRUE,
+     morphospace = TRUE,
+     labelsgroups = TRUE,
+     cex.labelsgroups = 0.5,
+     rect.labelsgroups = TRUE,
+     rug = TRUE,
+     grid = TRUE,
+     zoom = 0.95)
+
 # plot pca by raw material
 plot(pca.outlines,
      pos.shp = "range_axes",
@@ -92,45 +103,6 @@ plot(pca.outlines,
      grid = TRUE,
      zoom = 0.95)
 
-# plot pca by temporal
-plot(pca.outlines,
-     pos.shp = "range_axes",
-     ~temporal,
-     chull = TRUE,
-     morphospace = TRUE,
-     labelsgroups = TRUE,
-     cex.labelsgroups = 0.5,
-     rect.labelsgroups = TRUE,
-     rug = TRUE,
-     grid = TRUE,
-     zoom = 0.95)
-
-# plot pca by contemp
-plot(pca.outlines,
-     pos.shp = "range_axes",
-     ~contemp,
-     chull = TRUE,
-     morphospace = TRUE,
-     labelsgroups = TRUE,
-     cex.labelsgroups = 0.5,
-     rect.labelsgroups = TRUE,
-     rug = TRUE,
-     grid = TRUE,
-     zoom = 0.95)
-
-# plot pca by contempraw
-plot(pca.outlines,
-     pos.shp = "range_axes",
-     ~contempraw,
-     chull = TRUE,
-     morphospace = TRUE,
-     labelsgroups = TRUE,
-     cex.labelsgroups = 0.5,
-     rect.labelsgroups = TRUE,
-     rug = TRUE,
-     grid = TRUE,
-     zoom = 0.95)
-
 # mean shape + 2sd for the first 10 pcs
 PCcontrib(pca.outlines, nax = 1:5)
 ```
@@ -140,6 +112,11 @@ PCcontrib(pca.outlines, nax = 1:5)
 ```{r manova, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # manova
 
+# shape difference by temporal?
+MANOVA(pca.outlines, 'temporal')
+# which differ?
+MANOVA_PW(pca.outlines, 'temporal')
+
 # shape difference between raw.mat?
 MANOVA(pca.outlines, 'raw.mat')
 # which differ?
@@ -147,21 +124,6 @@ MANOVA_PW(pca.outlines, 'raw.mat')
 
 # shape difference by context?
 MANOVA(pca.outlines, 'context')
-
-# shape difference by temporal?
-MANOVA(pca.outlines, 'temporal')
-# which differ?
-MANOVA_PW(pca.outlines, 'temporal')
-
-# shape difference by contemp?
-MANOVA(pca.outlines, 'contemp')
-# which differ?
-MANOVA_PW(pca.outlines, 'contemp')
-
-# shape difference by contempraw?
-MANOVA(pca.outlines, 'contempraw')
-# which differ?
-MANOVA_PW(pca.outlines, 'contempraw')
 ```
 
 ## Mean shapes
@@ -169,23 +131,15 @@ MANOVA_PW(pca.outlines, 'contempraw')
 ```{r ms1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # mean shapes
 
+# temporal
+ms.1 <- MSHAPES(efa.outlines, ~temporal)
+plot_MSHAPES(ms.1, size = 0.75)
+
 # raw material
-ms.3 <- MSHAPES(efa.outlines, ~raw.mat)
-plot_MSHAPES(ms.3, size = 0.75)
+ms.2 <- MSHAPES(efa.outlines, ~raw.mat)
+plot_MSHAPES(ms.2, size = 0.75)
 
 # context
-ms.4 <- MSHAPES(efa.outlines, ~context)
-plot_MSHAPES(ms.4, size = 0.75)
-
-# temporal
-ms.5 <- MSHAPES(efa.outlines, ~temporal)
-plot_MSHAPES(ms.5, size = 0.75)
-
-# contemp
-ms.5 <- MSHAPES(efa.outlines, ~contemp)
-plot_MSHAPES(ms.5, size = 0.75)
-
-# contempraw
-ms.6 <- MSHAPES(efa.outlines, ~contempraw)
-plot_MSHAPES(ms.6, size = 0.75)
+ms.3 <- MSHAPES(efa.outlines, ~context)
+plot_MSHAPES(ms.3, size = 0.75)
 ```
