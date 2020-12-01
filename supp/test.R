@@ -5,19 +5,16 @@ library(here)
 library(Momocs)
 
 # read images
-jpg.list <- list.files(here("/img.perdiz"), full.names = TRUE)
+jpg.list <- list.files(here("img.perdiz"), full.names = TRUE)
 
 # read attribute data
 att.data <- read.csv("perdiz.csv", header = TRUE, as.is = TRUE)
 
 # attribute to factor
-att.data$context <- as.factor(att.data$context)
+# attribute to factor
 att.data$temporal <- as.factor(att.data$temporal)
-att.data$trinomial <- as.factor(att.data$trinomial)
 att.data$raw.mat <- as.factor(att.data$raw.mat)
-att.data$conraw <- as.factor(att.data$conraw)
-att.data$contemp <- as.factor(att.data$contemp)
-att.data$contempraw <- as.factor(att.data$contempraw)
+att.data$context <- as.factor(att.data$context)
 
 #####
 # generate outlines
@@ -58,25 +55,73 @@ pca.outlines <- PCA(efa.outlines)
 # pca 
 scree_plot(pca.outlines)
 
+# plot pca by temporal
+plot(pca.outlines,
+     pos.shp = "range_axes",
+     ~temporal,
+     chull = TRUE,
+     morphospace = TRUE,
+     labelsgroups = TRUE,
+     cex.labelsgroups = 0.5,
+     rect.labelsgroups = TRUE,
+     rug = TRUE,
+     grid = TRUE,
+     zoom = 0.95)
+
+# plot pca by raw material
+plot(pca.outlines,
+     pos.shp = "range_axes",
+     ~raw.mat,
+     chull = TRUE,
+     morphospace = TRUE,
+     labelsgroups = TRUE,
+     cex.labelsgroups = 0.5,
+     rect.labelsgroups = TRUE,
+     rug = TRUE,
+     grid = TRUE,
+     zoom = 0.95)
+
+# plot pca by context
+plot(pca.outlines,
+     pos.shp = "range_axes",
+     ~context,
+     chull = TRUE,
+     morphospace = TRUE,
+     labelsgroups = TRUE,
+     cex.labelsgroups = 0.5,
+     rect.labelsgroups = TRUE,
+     rug = TRUE,
+     grid = TRUE,
+     zoom = 0.95)
+
+# plot pca by temporal
+plot_PCA(pca.outlines, 
+         morphospace_position = "range_axes",
+         palette = pal_seq_viridis,
+         chullfilled = TRUE,
+         ~temporal,
+         center_origin = TRUE,
+         zoom = 1.55)
+
 # plot pca by raw material
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
-         ~raw.mat, zoom = 1.55)
+         palette = pal_seq_viridis,
+         chullfilled = TRUE,
+         ~raw.mat,
+         center_origin = TRUE,
+         zoom = 1.55)
 
-# plot pca by conraw
+# plot pca by burial context
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
-         ~conraw, zoom = 1.55)
-
-# plot pca by contemp
-plot_PCA(pca.outlines, 
-         morphospace_position = "range_axes",
-         ~contemp, zoom = 1.55)
-
-# plot pca by contempraw
-plot_PCA(pca.outlines, 
-         morphospace_position = "range_axes",
-         ~contempraw, zoom = 1.55)
+         palette = pal_seq_viridis,
+         chullfilled = TRUE,
+         ~context, 
+         center_origin = TRUE,
+         axesnames = TRUE,
+         box = TRUE,
+         zoom = 1.55)
 
 # mean shape + 2sd for the first 10 pcs
 PCcontrib(pca.outlines, nax = 1:5)
@@ -85,40 +130,32 @@ PCcontrib(pca.outlines, nax = 1:5)
 ## confirmatory analysis
 # manova
 
+# shape difference between temporal periods?
+MANOVA(pca.outlines, 'temporal')
+# which differ?
+MANOVA_PW(pca.outlines, 'temporal')
+
 # shape difference between raw.mat?
 MANOVA(pca.outlines, 'raw.mat')
 # which differ?
 MANOVA_PW(pca.outlines, 'raw.mat')
 
-# shape difference by conraw?
-MANOVA(pca.outlines, 'conraw')
-MANOVA_PW(pca.outlines, 'conraw')
-
-# shape difference by contemp?
-MANOVA(pca.outlines, 'contemp')
-# which differ?
-MANOVA_PW(pca.outlines, 'contemp')
-
-# shape difference by contempraw?
-MANOVA(pca.outlines, 'contempraw')
-# which differ?
-MANOVA_PW(pca.outlines, 'contempraw')
+# shape difference by burial context?
+MANOVA(pca.outlines, 'context')
 
 #####
 # calculate mean shapes + comparisons
 
+# mean shapes
+
+# temporal
+ms.1 <- MSHAPES(efa.outlines, ~temporal)
+plot_MSHAPES(ms.1, size = 0.75)
+
 # raw material
-ms.3 <- MSHAPES(efa.outlines, ~raw.mat)
+ms.2 <- MSHAPES(efa.outlines, ~raw.mat)
+plot_MSHAPES(ms.2, size = 0.75)
+
+# context
+ms.3 <- MSHAPES(efa.outlines, ~context)
 plot_MSHAPES(ms.3, size = 0.75)
-
-# conraw
-ms.5 <- MSHAPES(efa.outlines, ~conraw)
-plot_MSHAPES(ms.5, size = 0.75)
-
-# contemp
-ms.5 <- MSHAPES(efa.outlines, ~contemp)
-plot_MSHAPES(ms.5, size = 0.75)
-
-# contempraw
-ms.6 <- MSHAPES(efa.outlines, ~contempraw)
-plot_MSHAPES(ms.6, size = 0.75)
