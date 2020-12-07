@@ -24,7 +24,7 @@
 <meta name="author" content="Robert Z. Selden, Jr." />
 
 
-<meta name="date" content="2020-12-02" />
+<meta name="date" content="2020-12-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -176,36 +176,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="temporal" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Temporal</h1>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="temporal.html#cb10-1"></a><span class="co"># load ggplot2</span></span>
-<span id="cb10-2"><a href="temporal.html#cb10-2"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb10-3"><a href="temporal.html#cb10-3"></a><span class="kw">library</span>(wesanderson)</span>
-<span id="cb10-4"><a href="temporal.html#cb10-4"></a></span>
-<span id="cb10-5"><a href="temporal.html#cb10-5"></a><span class="co"># temporal attributes</span></span>
-<span id="cb10-6"><a href="temporal.html#cb10-6"></a>pal &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>, <span class="dv">10</span>, <span class="dt">type =</span> <span class="st">&quot;continuous&quot;</span>)</span>
-<span id="cb10-7"><a href="temporal.html#cb10-7"></a></span>
-<span id="cb10-8"><a href="temporal.html#cb10-8"></a><span class="co"># gantt chart of relative dates for perdiz arrow points</span></span>
-<span id="cb10-9"><a href="temporal.html#cb10-9"></a>temp&lt;-<span class="kw">data.frame</span>(<span class="dt">Site =</span> <span class="kw">c</span>(<span class="st">&#39;Tuck Carpenter&#39;</span>, <span class="st">&#39;Johns&#39;</span>, <span class="st">&#39;BJ Horton&#39;</span>, <span class="st">&#39;Pine Tree Mound&#39;</span>, <span class="st">&#39;Washington Square Mound&#39;</span>, <span class="st">&#39;Spradley&#39;</span>, <span class="st">&#39;Jack Walton&#39;</span>, <span class="st">&#39;Redwine&#39;</span>, <span class="st">&#39;Old Timers&#39;</span>, <span class="st">&#39;Sybs Site&#39;</span>),</span>
-<span id="cb10-10"><a href="temporal.html#cb10-10"></a>                 <span class="dt">Date_Range_CE =</span> <span class="kw">c</span>(<span class="dv">1430</span>,<span class="dv">1430</span>,<span class="dv">1500</span>,<span class="dv">1300</span>,<span class="dv">1238</span>,<span class="dv">1680</span>,<span class="dv">1200</span>,<span class="dv">1300</span>,<span class="dv">1400</span>,<span class="dv">1400</span>), <span class="co"># in years CE</span></span>
-<span id="cb10-11"><a href="temporal.html#cb10-11"></a>                 <span class="dt">end =</span> <span class="kw">c</span>(<span class="dv">1500</span>,<span class="dv">1600</span>,<span class="dv">1550</span>,<span class="dv">1650</span>,<span class="dv">1445</span>,<span class="dv">1725</span>,<span class="dv">1400</span>,<span class="dv">1454</span>,<span class="dv">1680</span>,<span class="dv">1575</span>) <span class="co"># in years CE</span></span>
-<span id="cb10-12"><a href="temporal.html#cb10-12"></a>)</span>
-<span id="cb10-13"><a href="temporal.html#cb10-13"></a></span>
-<span id="cb10-14"><a href="temporal.html#cb10-14"></a><span class="co"># reorder types by beginning of relative date range</span></span>
-<span id="cb10-15"><a href="temporal.html#cb10-15"></a>temp<span class="op">$</span>Site &lt;-<span class="st"> </span><span class="kw">factor</span>(temp<span class="op">$</span>Site, <span class="dt">levels =</span> temp<span class="op">$</span>Site[<span class="kw">order</span>(temp<span class="op">$</span>Date_Range_CE)])</span>
-<span id="cb10-16"><a href="temporal.html#cb10-16"></a><span class="co"># arrange figure</span></span>
-<span id="cb10-17"><a href="temporal.html#cb10-17"></a>type.time &lt;-<span class="st"> </span><span class="kw">ggplot</span>(temp, </span>
-<span id="cb10-18"><a href="temporal.html#cb10-18"></a>                    <span class="kw">aes</span>(<span class="dt">x =</span> Date_Range_CE, </span>
-<span id="cb10-19"><a href="temporal.html#cb10-19"></a>                        <span class="dt">xend =</span> end, </span>
-<span id="cb10-20"><a href="temporal.html#cb10-20"></a>                        <span class="dt">y =</span> <span class="kw">factor</span>(Site,</span>
-<span id="cb10-21"><a href="temporal.html#cb10-21"></a>                                   <span class="dt">levels =</span> <span class="kw">rev</span>(<span class="kw">levels</span>(<span class="kw">factor</span>(Site)))), </span>
-<span id="cb10-22"><a href="temporal.html#cb10-22"></a>                        <span class="dt">yend =</span> Site, </span>
-<span id="cb10-23"><a href="temporal.html#cb10-23"></a>                        <span class="dt">color =</span> Site)) <span class="op">+</span></span>
-<span id="cb10-24"><a href="temporal.html#cb10-24"></a><span class="st">  </span><span class="kw">geom_segment</span>(<span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span></span>
-<span id="cb10-25"><a href="temporal.html#cb10-25"></a><span class="st">  </span><span class="kw">scale_colour_manual</span>(<span class="dt">values =</span> pal) <span class="op">+</span></span>
-<span id="cb10-26"><a href="temporal.html#cb10-26"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></span>
-<span id="cb10-27"><a href="temporal.html#cb10-27"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Site&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Date Range CE&quot;</span>)</span>
-<span id="cb10-28"><a href="temporal.html#cb10-28"></a></span>
-<span id="cb10-29"><a href="temporal.html#cb10-29"></a><span class="co"># render figure</span></span>
-<span id="cb10-30"><a href="temporal.html#cb10-30"></a>type.time</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="temporal.html#cb13-1"></a><span class="co"># load ggplot2</span></span>
+<span id="cb13-2"><a href="temporal.html#cb13-2"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb13-3"><a href="temporal.html#cb13-3"></a><span class="kw">library</span>(wesanderson)</span>
+<span id="cb13-4"><a href="temporal.html#cb13-4"></a></span>
+<span id="cb13-5"><a href="temporal.html#cb13-5"></a><span class="co"># temporal attributes</span></span>
+<span id="cb13-6"><a href="temporal.html#cb13-6"></a>pal &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>, <span class="dv">20</span>, <span class="dt">type =</span> <span class="st">&quot;continuous&quot;</span>)</span>
+<span id="cb13-7"><a href="temporal.html#cb13-7"></a></span>
+<span id="cb13-8"><a href="temporal.html#cb13-8"></a><span class="co"># gantt chart of relative dates for perdiz arrow points</span></span>
+<span id="cb13-9"><a href="temporal.html#cb13-9"></a>temp&lt;-<span class="kw">data.frame</span>(<span class="dt">Site =</span> <span class="kw">c</span>(<span class="st">&#39;41SM442&#39;</span>,<span class="st">&#39;41AN51, Pace McDonald&#39;</span>,<span class="st">&#39;41AN115&#39;</span>,<span class="st">&#39;41CP5, Tuck Carpenter&#39;</span>,<span class="st">&#39;41CP12, Johns&#39;</span>,<span class="st">&#39;41CP20, BJ Horton&#39;</span>,<span class="st">&#39;41CP220, Kitchen Branch&#39;</span>,<span class="st">&#39;41CP495, Sam D. Carpenter Bottom&#39;</span>,<span class="st">&#39;41HS15, Pine Tree Mound&#39;</span>,<span class="st">&#39;41HS235, Keasler&#39;</span>,<span class="st">&#39;41HS269, C. D. Marsh&#39;</span>,<span class="st">&#39;Hickory Creek #2&#39;</span>,<span class="st">&#39;41NA49, Washington Square Mound&#39;</span>, <span class="st">&#39;41NA206, Spradley&#39;</span>, <span class="st">&#39;41SA135, Jack Walton&#39;</span>,<span class="st">&#39;41SM55, Bryan Hardy&#39;</span>,<span class="st">&#39;41SM193, Redwine&#39;</span>,<span class="st">&#39;41SM195, Wolf&#39;</span>,<span class="st">&#39;41SY43, Old Timers&#39;</span>,<span class="st">&#39;41SY280, Sybs Site&#39;</span>),</span>
+<span id="cb13-10"><a href="temporal.html#cb13-10"></a>                 <span class="dt">Date_Range_CE =</span> <span class="kw">c</span>(<span class="dv">900</span>,<span class="dv">1250</span>,<span class="dv">900</span>,<span class="dv">1430</span>,<span class="dv">1430</span>,<span class="dv">1500</span>,<span class="dv">1400</span>,<span class="dv">1500</span>,<span class="dv">1300</span>,<span class="dv">1500</span>,<span class="dv">1250</span>,<span class="dv">1400</span>,<span class="dv">1238</span>,<span class="dv">1680</span>,<span class="dv">1200</span>,<span class="dv">1297</span>,<span class="dv">1300</span>,<span class="dv">1315</span>,<span class="dv">1400</span>,<span class="dv">1400</span>), <span class="co"># in years CE</span></span>
+<span id="cb13-11"><a href="temporal.html#cb13-11"></a>                 <span class="dt">end =</span> <span class="kw">c</span>(<span class="dv">1200</span>,<span class="dv">1450</span>,<span class="dv">1680</span>,<span class="dv">1500</span>,<span class="dv">1600</span>,<span class="dv">1550</span>,<span class="dv">1499</span>,<span class="dv">1550</span>,<span class="dv">1650</span>,<span class="dv">1680</span>,<span class="dv">1450</span>,<span class="dv">1499</span>,<span class="dv">1445</span>,<span class="dv">1725</span>,<span class="dv">1400</span>,<span class="dv">1391</span>,<span class="dv">1454</span>,<span class="dv">1440</span>,<span class="dv">1680</span>,<span class="dv">1590</span>) <span class="co"># in years CE</span></span>
+<span id="cb13-12"><a href="temporal.html#cb13-12"></a>)</span>
+<span id="cb13-13"><a href="temporal.html#cb13-13"></a></span>
+<span id="cb13-14"><a href="temporal.html#cb13-14"></a><span class="co"># reorder types by beginning of relative date range</span></span>
+<span id="cb13-15"><a href="temporal.html#cb13-15"></a>temp<span class="op">$</span>Site &lt;-<span class="st"> </span><span class="kw">factor</span>(temp<span class="op">$</span>Site, <span class="dt">levels =</span> temp<span class="op">$</span>Site[<span class="kw">order</span>(temp<span class="op">$</span>Date_Range_CE)])</span>
+<span id="cb13-16"><a href="temporal.html#cb13-16"></a><span class="co"># arrange figure</span></span>
+<span id="cb13-17"><a href="temporal.html#cb13-17"></a>type.time &lt;-<span class="st"> </span><span class="kw">ggplot</span>(temp, </span>
+<span id="cb13-18"><a href="temporal.html#cb13-18"></a>                    <span class="kw">aes</span>(<span class="dt">x =</span> Date_Range_CE, </span>
+<span id="cb13-19"><a href="temporal.html#cb13-19"></a>                        <span class="dt">xend =</span> end, </span>
+<span id="cb13-20"><a href="temporal.html#cb13-20"></a>                        <span class="dt">y =</span> <span class="kw">factor</span>(Site,</span>
+<span id="cb13-21"><a href="temporal.html#cb13-21"></a>                                   <span class="dt">levels =</span> <span class="kw">rev</span>(<span class="kw">levels</span>(<span class="kw">factor</span>(Site)))), </span>
+<span id="cb13-22"><a href="temporal.html#cb13-22"></a>                        <span class="dt">yend =</span> Site, </span>
+<span id="cb13-23"><a href="temporal.html#cb13-23"></a>                        <span class="dt">color =</span> Site)) <span class="op">+</span></span>
+<span id="cb13-24"><a href="temporal.html#cb13-24"></a><span class="st">  </span><span class="kw">geom_segment</span>(<span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span></span>
+<span id="cb13-25"><a href="temporal.html#cb13-25"></a><span class="st">  </span><span class="kw">scale_colour_manual</span>(<span class="dt">values =</span> pal) <span class="op">+</span></span>
+<span id="cb13-26"><a href="temporal.html#cb13-26"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></span>
+<span id="cb13-27"><a href="temporal.html#cb13-27"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Site&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Date Range CE&quot;</span>)</span>
+<span id="cb13-28"><a href="temporal.html#cb13-28"></a></span>
+<span id="cb13-29"><a href="temporal.html#cb13-29"></a><span class="co"># render figure</span></span>
+<span id="cb13-30"><a href="temporal.html#cb13-30"></a>type.time</span></code></pre></div>
 <p><img src="supp_files/figure-html/temp-1.png" width="100%" /></p>
 
 </div>
