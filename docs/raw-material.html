@@ -176,53 +176,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="raw-material" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Raw material</h1>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="raw-material.html#cb14-1"></a><span class="co"># qualitative data for Perdiz points</span></span>
-<span id="cb14-2"><a href="raw-material.html#cb14-2"></a><span class="kw">library</span>(here)</span>
-<span id="cb14-3"><a href="raw-material.html#cb14-3"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb14-4"><a href="raw-material.html#cb14-4"></a><span class="kw">library</span>(wesanderson)</span>
-<span id="cb14-5"><a href="raw-material.html#cb14-5"></a><span class="kw">library</span>(ggpubr)</span>
-<span id="cb14-6"><a href="raw-material.html#cb14-6"></a></span>
-<span id="cb14-7"><a href="raw-material.html#cb14-7"></a><span class="co"># read attribute data</span></span>
-<span id="cb14-8"><a href="raw-material.html#cb14-8"></a>data &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;perdiz.csv&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">as.is =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb14-9"><a href="raw-material.html#cb14-9"></a></span>
-<span id="cb14-10"><a href="raw-material.html#cb14-10"></a>raw &lt;-<span class="st"> </span>data<span class="op">$</span>raw.mat <span class="co"># raw material</span></span>
-<span id="cb14-11"><a href="raw-material.html#cb14-11"></a>con &lt;-<span class="st"> </span>data<span class="op">$</span>context <span class="co"># burial context</span></span>
-<span id="cb14-12"><a href="raw-material.html#cb14-12"></a>temp &lt;-<span class="st"> </span>data<span class="op">$</span>temporal <span class="co"># temporal period</span></span>
-<span id="cb14-13"><a href="raw-material.html#cb14-13"></a>site &lt;-<span class="st"> </span>data<span class="op">$</span>trinomial <span class="co"># site</span></span>
-<span id="cb14-14"><a href="raw-material.html#cb14-14"></a></span>
-<span id="cb14-15"><a href="raw-material.html#cb14-15"></a><span class="co">#####</span></span>
-<span id="cb14-16"><a href="raw-material.html#cb14-16"></a><span class="co"># barplot of raw material count by burial context</span></span>
-<span id="cb14-17"><a href="raw-material.html#cb14-17"></a>raw.con &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(raw)) <span class="op">+</span></span>
-<span id="cb14-18"><a href="raw-material.html#cb14-18"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> con))<span class="op">+</span></span>
-<span id="cb14-19"><a href="raw-material.html#cb14-19"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="op">+</span></span>
-<span id="cb14-20"><a href="raw-material.html#cb14-20"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">vjust =</span> <span class="fl">0.5</span>, <span class="dt">hjust=</span><span class="dv">1</span>)) <span class="op">+</span></span>
-<span id="cb14-21"><a href="raw-material.html#cb14-21"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&#39;Raw Material&#39;</span>, <span class="dt">y =</span> <span class="st">&#39;Count&#39;</span>)</span>
-<span id="cb14-22"><a href="raw-material.html#cb14-22"></a></span>
-<span id="cb14-23"><a href="raw-material.html#cb14-23"></a><span class="co"># barplot of raw material count by temporal</span></span>
-<span id="cb14-24"><a href="raw-material.html#cb14-24"></a>raw.temp &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(raw)) <span class="op">+</span></span>
-<span id="cb14-25"><a href="raw-material.html#cb14-25"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> temp))<span class="op">+</span></span>
-<span id="cb14-26"><a href="raw-material.html#cb14-26"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="op">+</span></span>
-<span id="cb14-27"><a href="raw-material.html#cb14-27"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">vjust =</span> <span class="fl">0.5</span>, <span class="dt">hjust=</span><span class="dv">1</span>)) <span class="op">+</span></span>
-<span id="cb14-28"><a href="raw-material.html#cb14-28"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&#39;Raw Material&#39;</span>, <span class="dt">y =</span> <span class="st">&#39;Count&#39;</span>)</span>
-<span id="cb14-29"><a href="raw-material.html#cb14-29"></a></span>
-<span id="cb14-30"><a href="raw-material.html#cb14-30"></a><span class="co"># barplot of raw material count by site</span></span>
-<span id="cb14-31"><a href="raw-material.html#cb14-31"></a>raw.site &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(trinomial)) <span class="op">+</span></span>
-<span id="cb14-32"><a href="raw-material.html#cb14-32"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> raw))<span class="op">+</span></span>
-<span id="cb14-33"><a href="raw-material.html#cb14-33"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="op">+</span></span>
-<span id="cb14-34"><a href="raw-material.html#cb14-34"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">vjust =</span> <span class="fl">0.5</span>, <span class="dt">hjust=</span><span class="dv">1</span>)) <span class="op">+</span></span>
-<span id="cb14-35"><a href="raw-material.html#cb14-35"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&#39;Site&#39;</span>, <span class="dt">y =</span> <span class="st">&#39;Count&#39;</span>)</span>
-<span id="cb14-36"><a href="raw-material.html#cb14-36"></a></span>
-<span id="cb14-37"><a href="raw-material.html#cb14-37"></a><span class="co"># render figure</span></span>
-<span id="cb14-38"><a href="raw-material.html#cb14-38"></a>raw.figure &lt;-<span class="st"> </span><span class="kw">ggarrange</span>(raw.site,</span>
-<span id="cb14-39"><a href="raw-material.html#cb14-39"></a>                        <span class="kw">ggarrange</span>(raw.con,raw.temp,</span>
-<span id="cb14-40"><a href="raw-material.html#cb14-40"></a>                                  <span class="dt">ncol =</span> <span class="dv">2</span>, </span>
-<span id="cb14-41"><a href="raw-material.html#cb14-41"></a>                                  <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;b&quot;</span>,<span class="st">&quot;c&quot;</span>)),</span>
-<span id="cb14-42"><a href="raw-material.html#cb14-42"></a>                        <span class="dt">nrow =</span> <span class="dv">2</span>,</span>
-<span id="cb14-43"><a href="raw-material.html#cb14-43"></a>                        <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>)</span>
-<span id="cb14-44"><a href="raw-material.html#cb14-44"></a>                        )</span>
-<span id="cb14-45"><a href="raw-material.html#cb14-45"></a></span>
-<span id="cb14-46"><a href="raw-material.html#cb14-46"></a><span class="co"># plot figure</span></span>
-<span id="cb14-47"><a href="raw-material.html#cb14-47"></a>raw.figure</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="raw-material.html#cb9-1"></a><span class="co"># qualitative data for Perdiz points</span></span>
+<span id="cb9-2"><a href="raw-material.html#cb9-2"></a><span class="kw">library</span>(here)</span>
+<span id="cb9-3"><a href="raw-material.html#cb9-3"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb9-4"><a href="raw-material.html#cb9-4"></a><span class="kw">library</span>(wesanderson)</span>
+<span id="cb9-5"><a href="raw-material.html#cb9-5"></a><span class="kw">library</span>(ggpubr)</span>
+<span id="cb9-6"><a href="raw-material.html#cb9-6"></a></span>
+<span id="cb9-7"><a href="raw-material.html#cb9-7"></a><span class="co"># read attribute data</span></span>
+<span id="cb9-8"><a href="raw-material.html#cb9-8"></a>data &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;perdiz.csv&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">as.is =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb9-9"><a href="raw-material.html#cb9-9"></a></span>
+<span id="cb9-10"><a href="raw-material.html#cb9-10"></a>raw &lt;-<span class="st"> </span>data<span class="op">$</span>raw.mat <span class="co"># raw material</span></span>
+<span id="cb9-11"><a href="raw-material.html#cb9-11"></a>con &lt;-<span class="st"> </span>data<span class="op">$</span>context <span class="co"># burial context</span></span>
+<span id="cb9-12"><a href="raw-material.html#cb9-12"></a>temp &lt;-<span class="st"> </span>data<span class="op">$</span>temporal <span class="co"># temporal period</span></span>
+<span id="cb9-13"><a href="raw-material.html#cb9-13"></a>site &lt;-<span class="st"> </span>data<span class="op">$</span>trinomial <span class="co"># site</span></span>
+<span id="cb9-14"><a href="raw-material.html#cb9-14"></a></span>
+<span id="cb9-15"><a href="raw-material.html#cb9-15"></a><span class="co">#####</span></span>
+<span id="cb9-16"><a href="raw-material.html#cb9-16"></a><span class="co"># barplot of raw material count by burial context</span></span>
+<span id="cb9-17"><a href="raw-material.html#cb9-17"></a>raw.con &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(raw)) <span class="op">+</span></span>
+<span id="cb9-18"><a href="raw-material.html#cb9-18"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> con))<span class="op">+</span></span>
+<span id="cb9-19"><a href="raw-material.html#cb9-19"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="op">+</span></span>
+<span id="cb9-20"><a href="raw-material.html#cb9-20"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">vjust =</span> <span class="fl">0.5</span>, <span class="dt">hjust=</span><span class="dv">1</span>)) <span class="op">+</span></span>
+<span id="cb9-21"><a href="raw-material.html#cb9-21"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&#39;Raw Material&#39;</span>, <span class="dt">y =</span> <span class="st">&#39;Count&#39;</span>)</span>
+<span id="cb9-22"><a href="raw-material.html#cb9-22"></a></span>
+<span id="cb9-23"><a href="raw-material.html#cb9-23"></a><span class="co"># barplot of raw material count by temporal</span></span>
+<span id="cb9-24"><a href="raw-material.html#cb9-24"></a>raw.temp &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(raw)) <span class="op">+</span></span>
+<span id="cb9-25"><a href="raw-material.html#cb9-25"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> temp))<span class="op">+</span></span>
+<span id="cb9-26"><a href="raw-material.html#cb9-26"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="op">+</span></span>
+<span id="cb9-27"><a href="raw-material.html#cb9-27"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">vjust =</span> <span class="fl">0.5</span>, <span class="dt">hjust=</span><span class="dv">1</span>)) <span class="op">+</span></span>
+<span id="cb9-28"><a href="raw-material.html#cb9-28"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&#39;Raw Material&#39;</span>, <span class="dt">y =</span> <span class="st">&#39;Count&#39;</span>)</span>
+<span id="cb9-29"><a href="raw-material.html#cb9-29"></a></span>
+<span id="cb9-30"><a href="raw-material.html#cb9-30"></a><span class="co"># barplot of raw material count by site</span></span>
+<span id="cb9-31"><a href="raw-material.html#cb9-31"></a>raw.site &lt;-<span class="st"> </span><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(trinomial)) <span class="op">+</span></span>
+<span id="cb9-32"><a href="raw-material.html#cb9-32"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> raw))<span class="op">+</span></span>
+<span id="cb9-33"><a href="raw-material.html#cb9-33"></a><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="op">+</span></span>
+<span id="cb9-34"><a href="raw-material.html#cb9-34"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">vjust =</span> <span class="fl">0.5</span>, <span class="dt">hjust=</span><span class="dv">1</span>)) <span class="op">+</span></span>
+<span id="cb9-35"><a href="raw-material.html#cb9-35"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&#39;Site&#39;</span>, <span class="dt">y =</span> <span class="st">&#39;Count&#39;</span>)</span>
+<span id="cb9-36"><a href="raw-material.html#cb9-36"></a></span>
+<span id="cb9-37"><a href="raw-material.html#cb9-37"></a><span class="co"># render figure</span></span>
+<span id="cb9-38"><a href="raw-material.html#cb9-38"></a>raw.figure &lt;-<span class="st"> </span><span class="kw">ggarrange</span>(raw.site,</span>
+<span id="cb9-39"><a href="raw-material.html#cb9-39"></a>                        <span class="kw">ggarrange</span>(raw.con,raw.temp,</span>
+<span id="cb9-40"><a href="raw-material.html#cb9-40"></a>                                  <span class="dt">ncol =</span> <span class="dv">2</span>, </span>
+<span id="cb9-41"><a href="raw-material.html#cb9-41"></a>                                  <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;b&quot;</span>,<span class="st">&quot;c&quot;</span>)),</span>
+<span id="cb9-42"><a href="raw-material.html#cb9-42"></a>                        <span class="dt">nrow =</span> <span class="dv">2</span>,</span>
+<span id="cb9-43"><a href="raw-material.html#cb9-43"></a>                        <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>)</span>
+<span id="cb9-44"><a href="raw-material.html#cb9-44"></a>                        )</span>
+<span id="cb9-45"><a href="raw-material.html#cb9-45"></a></span>
+<span id="cb9-46"><a href="raw-material.html#cb9-46"></a><span class="co"># plot figure</span></span>
+<span id="cb9-47"><a href="raw-material.html#cb9-47"></a>raw.figure</span></code></pre></div>
 <p><img src="supp_files/figure-html/raw-1.png" width="100%" /></p>
 
 </div>
