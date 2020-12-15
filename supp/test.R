@@ -1,18 +1,18 @@
-# qualitative data for Perdiz points
+# qualitative plots ----
 library(here)
 library(tidyverse)
 library(wesanderson)
 library(ggpubr)
 
-# read attribute data
+## read attribute data ----
 data <- read.csv("perdiz.csv", header = TRUE, as.is = TRUE)
-
+ 
 raw <- data$raw.mat # raw material
 con <- data$context # burial context
 temp <- data$temporal # temporal period
 site <- data$trinomial # site
 
-#####
+# barplots qual ----
 # barplot of raw material count by burial context
 raw.con <- ggplot(data, aes(raw)) +
   geom_bar(aes(fill = con))+
@@ -44,7 +44,7 @@ raw.figure <- ggarrange(raw.site,
 # plot figure
 raw.figure
 
-#####
+# temporal plots ----
 # load ggplot2
 library(ggplot2)
 library(wesanderson)
@@ -76,7 +76,7 @@ type.time <- ggplot(temp,
 # render figure
 type.time
 
-#####
+# elliptical fourier analysis ----
 # load packages
 devtools::install_github("MomX/Momocs")
 library(here)
@@ -89,12 +89,10 @@ jpg.list <- list.files(here("img.perdiz"), full.names = TRUE)
 att.data <- read.csv("perdiz.csv", header = TRUE, as.is = TRUE)
 
 # attribute to factor
-# attribute to factor
 att.data$temporal <- as.factor(att.data$temporal)
 att.data$raw.mat <- as.factor(att.data$raw.mat)
 att.data$context <- as.factor(att.data$context)
 
-#####
 # generate outlines
 outlines <- jpg.list %>%
   import_jpg()
@@ -111,7 +109,7 @@ norm.outlines <- data.out %>%
   coo_center()
 
 pile(norm.outlines)
-#####
+
 # calibrate how many harmonics needed
 calibrate_harmonicpower_efourier(norm.outlines, 
                                  nb.h = 30)
@@ -128,8 +126,8 @@ efa.outlines <- efourier(norm.outlines,
 # use efa.outlines for pca
 pca.outlines <- PCA(efa.outlines)
 
-#####
-## exploratory analysis
+
+## efa exploratory analysis ----
 # pca 
 scree_plot(pca.outlines)
 
@@ -204,8 +202,7 @@ plot_PCA(pca.outlines,
 # mean shape + 2sd for the first 10 pcs
 PCcontrib(pca.outlines, nax = 1:5)
 
-#####
-## confirmatory analysis
+## efa confirmatory analysis ----
 # manova
 
 # shape difference between temporal periods?
@@ -221,8 +218,7 @@ MANOVA_PW(pca.outlines, 'raw.mat')
 # shape difference by burial context?
 MANOVA(pca.outlines, 'context')
 
-#####
-# calculate mean shapes + comparisons
+## mean shapes ----
 
 # mean shapes
 

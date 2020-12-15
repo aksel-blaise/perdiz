@@ -24,7 +24,7 @@
 <meta name="author" content="Robert Z. Selden, Jr." />
 
 
-<meta name="date" content="2020-12-07" />
+<meta name="date" content="2020-12-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -178,23 +178,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 1</span> Spatial</h1>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="spatial.html#cb1-1"></a><span class="co"># load packages</span></span>
 <span id="cb1-2"><a href="spatial.html#cb1-2"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb1-3"><a href="spatial.html#cb1-3"></a><span class="kw">library</span>(sf)</span>
-<span id="cb1-4"><a href="spatial.html#cb1-4"></a><span class="kw">library</span>(rnaturalearth)</span>
-<span id="cb1-5"><a href="spatial.html#cb1-5"></a><span class="kw">library</span>(rnaturalearthdata)</span>
-<span id="cb1-6"><a href="spatial.html#cb1-6"></a><span class="kw">library</span>(ggrepel)</span>
-<span id="cb1-7"><a href="spatial.html#cb1-7"></a><span class="kw">library</span>(ggspatial)</span>
-<span id="cb1-8"><a href="spatial.html#cb1-8"></a><span class="kw">library</span>(maps)</span>
-<span id="cb1-9"><a href="spatial.html#cb1-9"></a><span class="kw">library</span>(tools)</span>
-<span id="cb1-10"><a href="spatial.html#cb1-10"></a></span>
-<span id="cb1-11"><a href="spatial.html#cb1-11"></a><span class="co"># build map</span></span>
-<span id="cb1-12"><a href="spatial.html#cb1-12"></a>world &lt;-<span class="st"> </span><span class="kw">ne_countries</span>(<span class="dt">scale =</span> <span class="st">&quot;medium&quot;</span>, </span>
-<span id="cb1-13"><a href="spatial.html#cb1-13"></a>                      <span class="dt">returnclass =</span> <span class="st">&quot;sf&quot;</span>)</span>
-<span id="cb1-14"><a href="spatial.html#cb1-14"></a><span class="kw">class</span>(world)</span></code></pre></div>
+<span id="cb1-3"><a href="spatial.html#cb1-3"></a><span class="kw">library</span>(sf)</span></code></pre></div>
+<pre><code>## Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 6.3.1</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="spatial.html#cb3-1"></a><span class="kw">library</span>(rnaturalearth)</span>
+<span id="cb3-2"><a href="spatial.html#cb3-2"></a><span class="kw">library</span>(rnaturalearthdata)</span>
+<span id="cb3-3"><a href="spatial.html#cb3-3"></a><span class="kw">library</span>(ggrepel)</span>
+<span id="cb3-4"><a href="spatial.html#cb3-4"></a><span class="kw">library</span>(ggspatial)</span>
+<span id="cb3-5"><a href="spatial.html#cb3-5"></a><span class="kw">library</span>(maps)</span>
+<span id="cb3-6"><a href="spatial.html#cb3-6"></a><span class="kw">library</span>(tools)</span>
+<span id="cb3-7"><a href="spatial.html#cb3-7"></a></span>
+<span id="cb3-8"><a href="spatial.html#cb3-8"></a><span class="co"># build map</span></span>
+<span id="cb3-9"><a href="spatial.html#cb3-9"></a>world &lt;-<span class="st"> </span><span class="kw">ne_countries</span>(<span class="dt">scale =</span> <span class="st">&quot;medium&quot;</span>, </span>
+<span id="cb3-10"><a href="spatial.html#cb3-10"></a>                      <span class="dt">returnclass =</span> <span class="st">&quot;sf&quot;</span>)</span>
+<span id="cb3-11"><a href="spatial.html#cb3-11"></a><span class="kw">class</span>(world)</span></code></pre></div>
 <pre><code>## [1] &quot;sf&quot;         &quot;data.frame&quot;</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="spatial.html#cb3-1"></a>states &lt;-<span class="st"> </span><span class="kw">st_as_sf</span>(<span class="kw">map</span>(<span class="st">&quot;state&quot;</span>, </span>
-<span id="cb3-2"><a href="spatial.html#cb3-2"></a>                       <span class="dt">plot =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb3-3"><a href="spatial.html#cb3-3"></a>                       <span class="dt">fill =</span> <span class="ot">TRUE</span>))</span>
-<span id="cb3-4"><a href="spatial.html#cb3-4"></a><span class="kw">head</span>(states)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="spatial.html#cb5-1"></a>states &lt;-<span class="st"> </span><span class="kw">st_as_sf</span>(<span class="kw">map</span>(<span class="st">&quot;state&quot;</span>, </span>
+<span id="cb5-2"><a href="spatial.html#cb5-2"></a>                       <span class="dt">plot =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb5-3"><a href="spatial.html#cb5-3"></a>                       <span class="dt">fill =</span> <span class="ot">TRUE</span>))</span>
+<span id="cb5-4"><a href="spatial.html#cb5-4"></a><span class="kw">head</span>(states)</span></code></pre></div>
 <pre><code>## Simple feature collection with 6 features and 1 field
 ## geometry type:  MULTIPOLYGON
 ## dimension:      XY
@@ -207,10 +208,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4  california MULTIPOLYGON (((-120.006 42...
 ## 5    colorado MULTIPOLYGON (((-102.0552 4...
 ## 6 connecticut MULTIPOLYGON (((-73.49902 4...</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="spatial.html#cb5-1"></a>states &lt;-<span class="st"> </span><span class="kw">cbind</span>(states, </span>
-<span id="cb5-2"><a href="spatial.html#cb5-2"></a>                <span class="kw">st_coordinates</span>(<span class="kw">st_centroid</span>(states)))</span>
-<span id="cb5-3"><a href="spatial.html#cb5-3"></a>states<span class="op">$</span>ID &lt;-<span class="st"> </span><span class="kw">toTitleCase</span>(states<span class="op">$</span>ID)</span>
-<span id="cb5-4"><a href="spatial.html#cb5-4"></a><span class="kw">head</span>(states)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="spatial.html#cb7-1"></a>states &lt;-<span class="st"> </span><span class="kw">cbind</span>(states, </span>
+<span id="cb7-2"><a href="spatial.html#cb7-2"></a>                <span class="kw">st_coordinates</span>(<span class="kw">st_centroid</span>(states)))</span>
+<span id="cb7-3"><a href="spatial.html#cb7-3"></a>states<span class="op">$</span>ID &lt;-<span class="st"> </span><span class="kw">toTitleCase</span>(states<span class="op">$</span>ID)</span>
+<span id="cb7-4"><a href="spatial.html#cb7-4"></a><span class="kw">head</span>(states)</span></code></pre></div>
 <pre><code>## Simple feature collection with 6 features and 3 fields
 ## geometry type:  MULTIPOLYGON
 ## dimension:      XY
@@ -223,49 +224,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4  California -119.60154 37.26901 MULTIPOLYGON (((-120.006 42...
 ## 5    Colorado -105.55251 38.99797 MULTIPOLYGON (((-102.0552 4...
 ## 6 Connecticut  -72.72598 41.62566 MULTIPOLYGON (((-73.49902 4...</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="spatial.html#cb7-1"></a>archcentroids &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">arch =</span> <span class="kw">c</span>(<span class="st">&quot;Anderson&quot;</span>,<span class="st">&quot;Camp&quot;</span>,<span class="st">&quot;Harrison&quot;</span>,<span class="st">&quot;Houston&quot;</span>,<span class="st">&quot;Nacogdoches&quot;</span>,<span class="st">&quot;San Augustine&quot;</span>,<span class="st">&quot;Smith&quot;</span>,<span class="st">&quot;Shelby&quot;</span>),</span>
-<span id="cb7-2"><a href="spatial.html#cb7-2"></a>                            <span class="dt">lat =</span> <span class="kw">c</span>(<span class="fl">31.81</span>, <span class="fl">32.97</span>, <span class="fl">32.55</span>, <span class="fl">31.32</span>, <span class="fl">31.61</span>, <span class="fl">31.4</span>, <span class="fl">32.38</span>, <span class="fl">31.79</span>),</span>
-<span id="cb7-3"><a href="spatial.html#cb7-3"></a>                            <span class="dt">lng =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">95.65</span>, <span class="fl">-94.98</span>, <span class="fl">-94.37</span>, <span class="fl">-95.43</span>, <span class="fl">-94.61</span>, <span class="fl">-94.18</span>, <span class="fl">-95.27</span>, <span class="fl">-94.14</span>))</span>
-<span id="cb7-4"><a href="spatial.html#cb7-4"></a>states<span class="op">$</span>nudge_x &lt;-<span class="st"> </span><span class="fl">-0.55</span></span>
-<span id="cb7-5"><a href="spatial.html#cb7-5"></a>states<span class="op">$</span>nudge_x[states<span class="op">$</span>ID <span class="op">==</span><span class="st"> &quot;Texas&quot;</span>] &lt;-<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb7-6"><a href="spatial.html#cb7-6"></a>states<span class="op">$</span>nudge_x[states<span class="op">$</span>ID <span class="op">==</span><span class="st"> &quot;Mississippi&quot;</span>] &lt;-<span class="st"> </span><span class="fl">-0.1</span></span>
-<span id="cb7-7"><a href="spatial.html#cb7-7"></a>states<span class="op">$</span>nudge_y &lt;-<span class="st"> </span><span class="fl">-0.01</span></span>
-<span id="cb7-8"><a href="spatial.html#cb7-8"></a>states<span class="op">$</span>nudge_y[states<span class="op">$</span>ID <span class="op">==</span><span class="st"> &quot;Louisiana&quot;</span>] &lt;-<span class="st"> </span><span class="fl">-0.25</span></span>
-<span id="cb7-9"><a href="spatial.html#cb7-9"></a>states<span class="op">$</span>nudge_y[states<span class="op">$</span>ID <span class="op">==</span><span class="st"> &quot;Arkansas&quot;</span>] &lt;-<span class="st"> </span><span class="dv">-1</span></span>
-<span id="cb7-10"><a href="spatial.html#cb7-10"></a></span>
-<span id="cb7-11"><a href="spatial.html#cb7-11"></a><span class="co"># plot map</span></span>
-<span id="cb7-12"><a href="spatial.html#cb7-12"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> world) <span class="op">+</span></span>
-<span id="cb7-13"><a href="spatial.html#cb7-13"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">fill =</span> <span class="st">&quot;#FFFFCC&quot;</span>) <span class="op">+</span></span>
-<span id="cb7-14"><a href="spatial.html#cb7-14"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> states, </span>
-<span id="cb7-15"><a href="spatial.html#cb7-15"></a>          <span class="dt">fill =</span> <span class="ot">NA</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb7-16"><a href="spatial.html#cb7-16"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">data =</span> states, </span>
-<span id="cb7-17"><a href="spatial.html#cb7-17"></a>            <span class="kw">aes</span>(X, Y, <span class="dt">label =</span> ID), </span>
-<span id="cb7-18"><a href="spatial.html#cb7-18"></a>            <span class="dt">nudge_x =</span> states<span class="op">$</span>nudge_x, </span>
-<span id="cb7-19"><a href="spatial.html#cb7-19"></a>            <span class="dt">nudge_y =</span> states<span class="op">$</span>nudge_y, </span>
-<span id="cb7-20"><a href="spatial.html#cb7-20"></a>            <span class="dt">fontface =</span> <span class="st">&quot;italic&quot;</span>, <span class="dt">size =</span> <span class="dv">2</span>) <span class="op">+</span></span>
-<span id="cb7-21"><a href="spatial.html#cb7-21"></a><span class="st">  </span><span class="kw">geom_text_repel</span>(<span class="dt">data =</span> archcentroids, <span class="kw">aes</span>(<span class="dt">x =</span> lng, <span class="dt">y =</span> lat, <span class="dt">label =</span> arch), </span>
-<span id="cb7-22"><a href="spatial.html#cb7-22"></a>                  <span class="dt">fontface =</span> <span class="st">&quot;bold&quot;</span>, </span>
-<span id="cb7-23"><a href="spatial.html#cb7-23"></a>                  <span class="dt">nudge_x =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.6</span>,<span class="dv">0</span>,<span class="fl">0.75</span>,<span class="op">-</span><span class="fl">0.6</span>,<span class="dv">0</span>,<span class="fl">1.25</span>,<span class="op">-</span><span class="fl">0.6</span>,<span class="fl">0.6</span>), </span>
-<span id="cb7-24"><a href="spatial.html#cb7-24"></a>                  <span class="dt">nudge_y =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="op">-</span><span class="fl">0.6</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>), </span>
-<span id="cb7-25"><a href="spatial.html#cb7-25"></a>                  <span class="dt">color =</span> <span class="st">&quot;#003366&quot;</span>, </span>
-<span id="cb7-26"><a href="spatial.html#cb7-26"></a>                  <span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span></span>
-<span id="cb7-27"><a href="spatial.html#cb7-27"></a><span class="st">  </span><span class="kw">coord_sf</span>(<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">98</span>, <span class="dv">-89</span>), </span>
-<span id="cb7-28"><a href="spatial.html#cb7-28"></a>           <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">30</span>, <span class="fl">34.5</span>), </span>
-<span id="cb7-29"><a href="spatial.html#cb7-29"></a>           <span class="dt">expand =</span> <span class="ot">TRUE</span>) <span class="op">+</span></span>
-<span id="cb7-30"><a href="spatial.html#cb7-30"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Perdiz Arrow Point Sample Locations&quot;</span>, </span>
-<span id="cb7-31"><a href="spatial.html#cb7-31"></a>          <span class="dt">subtitle =</span> <span class="st">&quot;(archaeological site locations redacted)&quot;</span>) <span class="op">+</span></span>
-<span id="cb7-32"><a href="spatial.html#cb7-32"></a><span class="st">  </span><span class="kw">annotation_scale</span>(<span class="dt">location =</span> <span class="st">&quot;bl&quot;</span>, </span>
-<span id="cb7-33"><a href="spatial.html#cb7-33"></a>                   <span class="dt">width_hint =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
-<span id="cb7-34"><a href="spatial.html#cb7-34"></a><span class="st">  </span><span class="kw">annotation_north_arrow</span>(<span class="dt">location =</span> <span class="st">&quot;bl&quot;</span>, </span>
-<span id="cb7-35"><a href="spatial.html#cb7-35"></a>                         <span class="dt">which_north =</span> <span class="st">&quot;true&quot;</span>, </span>
-<span id="cb7-36"><a href="spatial.html#cb7-36"></a>                         <span class="dt">pad_x =</span> <span class="kw">unit</span>(<span class="fl">0.01</span>, <span class="st">&quot;in&quot;</span>), </span>
-<span id="cb7-37"><a href="spatial.html#cb7-37"></a>                         <span class="dt">pad_y =</span> <span class="kw">unit</span>(<span class="fl">0.2</span>, <span class="st">&quot;in&quot;</span>),</span>
-<span id="cb7-38"><a href="spatial.html#cb7-38"></a>                         <span class="dt">style =</span> north_arrow_fancy_orienteering) <span class="op">+</span></span>
-<span id="cb7-39"><a href="spatial.html#cb7-39"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major =</span> <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="kw">gray</span>(<span class="fl">0.5</span>), </span>
-<span id="cb7-40"><a href="spatial.html#cb7-40"></a>                                        <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>, </span>
-<span id="cb7-41"><a href="spatial.html#cb7-41"></a>                                        <span class="dt">size =</span> <span class="fl">0.5</span>), </span>
-<span id="cb7-42"><a href="spatial.html#cb7-42"></a>        <span class="dt">panel.background =</span> <span class="kw">element_rect</span>(<span class="dt">fill =</span> <span class="st">&quot;aliceblue&quot;</span>)) <span class="op">+</span></span>
-<span id="cb7-43"><a href="spatial.html#cb7-43"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Longitude&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Latitude&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="spatial.html#cb9-1"></a>archcentroids &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">arch =</span> <span class="kw">c</span>(<span class="st">&quot;Anderson&quot;</span>,<span class="st">&quot;Camp&quot;</span>,<span class="st">&quot;Harrison&quot;</span>,<span class="st">&quot;Houston&quot;</span>,<span class="st">&quot;Nacogdoches&quot;</span>,<span class="st">&quot;San Augustine&quot;</span>,<span class="st">&quot;Smith&quot;</span>,<span class="st">&quot;Shelby&quot;</span>),</span>
+<span id="cb9-2"><a href="spatial.html#cb9-2"></a>                            <span class="dt">lat =</span> <span class="kw">c</span>(<span class="fl">31.81</span>, <span class="fl">32.97</span>, <span class="fl">32.55</span>, <span class="fl">31.32</span>, <span class="fl">31.61</span>, <span class="fl">31.4</span>, <span class="fl">32.38</span>, <span class="fl">31.79</span>),</span>
+<span id="cb9-3"><a href="spatial.html#cb9-3"></a>                            <span class="dt">lng =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">95.65</span>, <span class="fl">-94.98</span>, <span class="fl">-94.37</span>, <span class="fl">-95.43</span>, <span class="fl">-94.61</span>, <span class="fl">-94.18</span>, <span class="fl">-95.27</span>, <span class="fl">-94.14</span>))</span>
+<span id="cb9-4"><a href="spatial.html#cb9-4"></a>states<span class="op">$</span>nudge_x &lt;-<span class="st"> </span><span class="fl">-0.55</span></span>
+<span id="cb9-5"><a href="spatial.html#cb9-5"></a>states<span class="op">$</span>nudge_x[states<span class="op">$</span>ID <span class="op">==</span><span class="st"> &quot;Texas&quot;</span>] &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb9-6"><a href="spatial.html#cb9-6"></a>states<span class="op">$</span>nudge_x[states<span class="op">$</span>ID <span class="op">==</span><span class="st"> &quot;Mississippi&quot;</span>] &lt;-<span class="st"> </span><span class="fl">-0.1</span></span>
+<span id="cb9-7"><a href="spatial.html#cb9-7"></a>states<span class="op">$</span>nudge_y &lt;-<span class="st"> </span><span class="fl">-0.01</span></span>
+<span id="cb9-8"><a href="spatial.html#cb9-8"></a>states<span class="op">$</span>nudge_y[states<span class="op">$</span>ID <span class="op">==</span><span class="st"> &quot;Louisiana&quot;</span>] &lt;-<span class="st"> </span><span class="fl">-0.25</span></span>
+<span id="cb9-9"><a href="spatial.html#cb9-9"></a>states<span class="op">$</span>nudge_y[states<span class="op">$</span>ID <span class="op">==</span><span class="st"> &quot;Arkansas&quot;</span>] &lt;-<span class="st"> </span><span class="dv">-1</span></span>
+<span id="cb9-10"><a href="spatial.html#cb9-10"></a></span>
+<span id="cb9-11"><a href="spatial.html#cb9-11"></a><span class="co"># plot map</span></span>
+<span id="cb9-12"><a href="spatial.html#cb9-12"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> world) <span class="op">+</span></span>
+<span id="cb9-13"><a href="spatial.html#cb9-13"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">fill =</span> <span class="st">&quot;#FFFFCC&quot;</span>) <span class="op">+</span></span>
+<span id="cb9-14"><a href="spatial.html#cb9-14"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> states, </span>
+<span id="cb9-15"><a href="spatial.html#cb9-15"></a>          <span class="dt">fill =</span> <span class="ot">NA</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb9-16"><a href="spatial.html#cb9-16"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">data =</span> states, </span>
+<span id="cb9-17"><a href="spatial.html#cb9-17"></a>            <span class="kw">aes</span>(X, Y, <span class="dt">label =</span> ID), </span>
+<span id="cb9-18"><a href="spatial.html#cb9-18"></a>            <span class="dt">nudge_x =</span> states<span class="op">$</span>nudge_x, </span>
+<span id="cb9-19"><a href="spatial.html#cb9-19"></a>            <span class="dt">nudge_y =</span> states<span class="op">$</span>nudge_y, </span>
+<span id="cb9-20"><a href="spatial.html#cb9-20"></a>            <span class="dt">fontface =</span> <span class="st">&quot;italic&quot;</span>, <span class="dt">size =</span> <span class="dv">2</span>) <span class="op">+</span></span>
+<span id="cb9-21"><a href="spatial.html#cb9-21"></a><span class="st">  </span><span class="kw">geom_text_repel</span>(<span class="dt">data =</span> archcentroids, <span class="kw">aes</span>(<span class="dt">x =</span> lng, <span class="dt">y =</span> lat, <span class="dt">label =</span> arch), </span>
+<span id="cb9-22"><a href="spatial.html#cb9-22"></a>                  <span class="dt">fontface =</span> <span class="st">&quot;bold&quot;</span>, </span>
+<span id="cb9-23"><a href="spatial.html#cb9-23"></a>                  <span class="dt">nudge_x =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.6</span>,<span class="dv">0</span>,<span class="fl">0.75</span>,<span class="op">-</span><span class="fl">0.6</span>,<span class="dv">0</span>,<span class="fl">1.25</span>,<span class="op">-</span><span class="fl">0.6</span>,<span class="fl">0.6</span>), </span>
+<span id="cb9-24"><a href="spatial.html#cb9-24"></a>                  <span class="dt">nudge_y =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="op">-</span><span class="fl">0.6</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>), </span>
+<span id="cb9-25"><a href="spatial.html#cb9-25"></a>                  <span class="dt">color =</span> <span class="st">&quot;#003366&quot;</span>, </span>
+<span id="cb9-26"><a href="spatial.html#cb9-26"></a>                  <span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span></span>
+<span id="cb9-27"><a href="spatial.html#cb9-27"></a><span class="st">  </span><span class="kw">coord_sf</span>(<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">98</span>, <span class="dv">-89</span>), </span>
+<span id="cb9-28"><a href="spatial.html#cb9-28"></a>           <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">30</span>, <span class="fl">34.5</span>), </span>
+<span id="cb9-29"><a href="spatial.html#cb9-29"></a>           <span class="dt">expand =</span> <span class="ot">TRUE</span>) <span class="op">+</span></span>
+<span id="cb9-30"><a href="spatial.html#cb9-30"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Perdiz Arrow Point Sample Locations&quot;</span>, </span>
+<span id="cb9-31"><a href="spatial.html#cb9-31"></a>          <span class="dt">subtitle =</span> <span class="st">&quot;(archaeological site locations redacted)&quot;</span>) <span class="op">+</span></span>
+<span id="cb9-32"><a href="spatial.html#cb9-32"></a><span class="st">  </span><span class="kw">annotation_scale</span>(<span class="dt">location =</span> <span class="st">&quot;bl&quot;</span>, </span>
+<span id="cb9-33"><a href="spatial.html#cb9-33"></a>                   <span class="dt">width_hint =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
+<span id="cb9-34"><a href="spatial.html#cb9-34"></a><span class="st">  </span><span class="kw">annotation_north_arrow</span>(<span class="dt">location =</span> <span class="st">&quot;bl&quot;</span>, </span>
+<span id="cb9-35"><a href="spatial.html#cb9-35"></a>                         <span class="dt">which_north =</span> <span class="st">&quot;true&quot;</span>, </span>
+<span id="cb9-36"><a href="spatial.html#cb9-36"></a>                         <span class="dt">pad_x =</span> <span class="kw">unit</span>(<span class="fl">0.01</span>, <span class="st">&quot;in&quot;</span>), </span>
+<span id="cb9-37"><a href="spatial.html#cb9-37"></a>                         <span class="dt">pad_y =</span> <span class="kw">unit</span>(<span class="fl">0.2</span>, <span class="st">&quot;in&quot;</span>),</span>
+<span id="cb9-38"><a href="spatial.html#cb9-38"></a>                         <span class="dt">style =</span> north_arrow_fancy_orienteering) <span class="op">+</span></span>
+<span id="cb9-39"><a href="spatial.html#cb9-39"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.major =</span> <span class="kw">element_line</span>(<span class="dt">color =</span> <span class="kw">gray</span>(<span class="fl">0.5</span>), </span>
+<span id="cb9-40"><a href="spatial.html#cb9-40"></a>                                        <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>, </span>
+<span id="cb9-41"><a href="spatial.html#cb9-41"></a>                                        <span class="dt">size =</span> <span class="fl">0.5</span>), </span>
+<span id="cb9-42"><a href="spatial.html#cb9-42"></a>        <span class="dt">panel.background =</span> <span class="kw">element_rect</span>(<span class="dt">fill =</span> <span class="st">&quot;aliceblue&quot;</span>)) <span class="op">+</span></span>
+<span id="cb9-43"><a href="spatial.html#cb9-43"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Longitude&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Latitude&quot;</span>)</span></code></pre></div>
 <p><img src="supp_files/figure-html/map-1.png" width="100%" /></p>
 
 </div>
