@@ -1,5 +1,5 @@
 --- 
-title: "Supplemental materials for: Shape as a function of time + raw material + burial context: A preliminary analysis of Perdiz arrow points from the southern Caddo area"
+title: "Supplemental materials for: Shape as a function of time + raw material + burial context: An exploratory analysis of Perdiz arrow points from the southern Caddo area"
 author: "Robert Z. Selden, Jr."
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
