@@ -23,10 +23,9 @@ states <- cbind(states,
                 st_coordinates(st_centroid(states)))
 states$ID <- toTitleCase(states$ID)
 head(states)
-archcentroids <- data.frame(arch = c("Camp County", "Harrison County", "Nacogdoches County", 
-                                     "San Augustine County", "Smith County", "Shelby County"), 
-                            lat = c(32.97, 32.55, 31.61, 31.4, 32.38, 31.79), 
-                            lng = c(-94.98, -94.37, -94.61, -94.18, -95.27, -94.14))
+archcentroids <- data.frame(arch = c("Anderson","Camp","Harrison","Houston","Nacogdoches","San Augustine","Smith","Shelby"),
+                            lat = c(31.81, 32.97, 32.55, 31.32, 31.61, 31.4, 32.38, 31.79),
+                            lng = c(-95.65, -94.98, -94.37, -95.43, -94.61, -94.18, -95.27, -94.14))
 states$nudge_x <- -0.55
 states$nudge_x[states$ID == "Texas"] <- 2
 states$nudge_x[states$ID == "Mississippi"] <- -0.1
@@ -46,8 +45,8 @@ ggplot(data = world) +
             fontface = "italic", size = 2) +
   geom_text_repel(data = archcentroids, aes(x = lng, y = lat, label = arch), 
                   fontface = "bold", 
-                  nudge_x = c(0,1,-0.25,-0.25,-0.25,1), 
-                  nudge_y = c(0.5,0,-0.5,-0.5,-0.25,0.01), 
+                  nudge_x = c(-0.6,0,0.75,-0.6,0,1.25,-0.6,0.6), 
+                  nudge_y = c(0,0.5,0,0,-0.6,0,0,0), 
                   color = "#003366", 
                   size = 2.5) +
   coord_sf(xlim = c(-98, -89), 
