@@ -1,0 +1,10 @@
+
+\section*{Biographical note}
+
+\textbf{Robert Z. Selden, Jr.} is a Research Associate in the Heritage Research Center at Stephen F. Austin State University, Research Fellow in the Virtual Curation Laboratory at Virginia Commonwealth University, and Associate Professor in the Cultural Heritage Department at Jean Monnet University. He currently serves as the editor of the Index of Texas Archaeology, moderator at SocArXiv, and an instructor for The Carpentries. His research is focused at the confluence of archaeology, computer science, engineering, art, and the humanities.
+
+\textbf{John E. Dockall} is a Staff Archeologist at Cox|McLain Environmental Consulting, Inc. His archeological and historic preservation experience includes survey, testing and data recovery projects conducted in support of NEPA studies, NHPA Section 106 and NRHP nominations. John has more than three decades of experience in the CRM industry and has participated in or led field work in Hawaii, New Mexico, Texas, Louisiana and Mississippi, Belize and Jordan. His experience includes multiple levels of social complexity and includes Lower, Middle and Upper Paleolithic, Mayan, Western and Eastern Pacific, and Archaic, Late Prehistoric and Historic North America.
+
+\textbf{C. Britt Bousman} is ...
+
+\textbf{Timothy K. Perttula} is Manager of Archeological \& Environmental Consultants, LLC (Austin, Texas), a CRM firm specializing in Caddo archaeological research. He has been involved in CRM and Caddo archaeological research for 45+ years. He currently also serves as editor of the Bulletin of the Texas Archeological Society and the Journal of Northeast Texas Archaeology as well as co-editor of La Tierra. His principal research interests are Caddo community organization and structure and the study of Caddo ceramic technology and style.
