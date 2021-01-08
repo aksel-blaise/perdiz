@@ -173,31 +173,38 @@ plot(pca.outlines,
 # plot pca by temporal
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
-         palette = pal_seq_viridis,
+         palette = pal_qual_solarized,
          chullfilled = TRUE,
          ~temporal,
+         axesnames = TRUE,
+         morphospace = TRUE,
+         eigen = TRUE,
          center_origin = TRUE,
-         zoom = 1.55)
+         zoom = 1.25)
 
 # plot pca by raw material
-plot_PCA(pca.outlines, 
+plot_PCA(pca.outlines,
          morphospace_position = "range_axes",
-         palette = pal_seq_viridis,
+         palette = pal_qual_solarized,
          chullfilled = TRUE,
          ~raw.mat,
+         axesnames = TRUE,
+         morphospace = TRUE,
+         eigen = TRUE,
          center_origin = TRUE,
-         zoom = 1.55)
+         zoom = 1.25)
 
 # plot pca by burial context
 plot_PCA(pca.outlines, 
          morphospace_position = "range_axes",
-         palette = pal_seq_viridis,
+         palette = pal_qual_solarized,
          chullfilled = TRUE,
-         ~context, 
-         center_origin = TRUE,
+         ~context,
          axesnames = TRUE,
-         box = TRUE,
-         zoom = 1.55)
+         morphospace = TRUE,
+         eigen = TRUE,
+         center_origin = TRUE,
+         zoom = 1.25)
 
 # mean shape + 2sd for the first 10 pcs
 PCcontrib(pca.outlines, nax = 1:5)
