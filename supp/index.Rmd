@@ -1,5 +1,5 @@
 --- 
-title: "Supplemental materials for: Shape as a function of time + raw material + burial context: An exploratory analysis of Perdiz arrow points from the southern Caddo area"
+title: "Supplemental materials for: Shape as a function of time + raw material + burial context? An exploratory analysis of Perdiz arrow points in the southern Caddo area"
 author: "Robert Z. Selden, Jr."
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -24,7 +24,7 @@ This volume is written in **Markdown**, and includes all analysis code employed 
 
 ## Acknowledgments
 
-I extend my gratitude to the Caddo Nation of Oklahoma and the Anthropology and Archaeology Laboratory at Stephen F. Austin State University for the requisite permissions and access needed to generate scans of Perdiz points from the Turner collection. Thanks to Harry J. Shafer, Jeffrey S. Girard, and Hiram F. (Pete) Gregory for comments on manuscripts associated with stone tool shape. Thanks also to Dean C. Adams, Michael L. Collyer, Emma Sherratt, Lauren Butaric, and Kersten Bergstrom for their constructive criticisms, comments, and suggestions throughout the development of this research programme, and to the editors and anonymous reviewers for their comments and constructive criticisms, which further improved the manuscript.
+I extend my gratitude to the Caddo Nation of Oklahoma and the Anthropology and Archaeology Laboratory at Stephen F. Austin State University for the requisite permissions and access needed to generate scans of Perdiz points from the Turner collection. Thanks to Harry J. Shafer, Jeffrey S. Girard, and Hiram F. (Pete) Gregory for comments on manuscripts associated with stone tool shape. Thanks also to Dean C. Adams, Michael L. Collyer, Emma Sherratt, Lauren Butaric, and Kersten Bergstrom for their constructive criticisms, comments, and suggestions throughout the development of this research programme, and to the editors and anonymous reviewers for their comments and constructive criticisms, which improved the manuscript.
 
 ## Funding
 
