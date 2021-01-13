@@ -18,6 +18,8 @@ att.data <- read.csv("perdiz.csv", header = TRUE, as.is = TRUE)
 att.data$temporal <- as.factor(att.data$temporal)
 att.data$raw.mat <- as.factor(att.data$raw.mat)
 att.data$context <- as.factor(att.data$context)
+
+knitr::kable((att.data[, 1:5]), "pipe", caption = "Qualitative data for Perdiz arrow point sample.")
 ```
 
 ## Generate outlines
