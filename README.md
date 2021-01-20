@@ -10,7 +10,7 @@
 
 ## Acknowledgments
 
-I extend my gratitude to the Caddo Nation of Oklahoma and the Anthropology and Archaeology Laboratory at Stephen F. Austin State University for the requisite permissions and access needed to generate scans of Perdiz points from the Turner collection. Thanks to Harry J. Shafer, Jeffrey S. Girard, and Hiram F. (Pete) Gregory for comments on manuscripts associated with stone tool shape. Thanks also to Dean C. Adams, Michael L. Collyer, Emma Sherratt, Lauren Butaric, and Kersten Bergstrom for their constructive criticisms, comments, and suggestions throughout the development of this research programme, and to the editors and anonymous reviewers for their comments and constructive criticisms, which further improved the manuscript.
+We express our gratitude to the Caddo Nation of Oklahoma and the Anthropology and Archaeology Laboratory at Stephen F. Austin State University for the requisite permissions and access to the NAGPRA items from the Washington Square Mound site and Turner collection. Thanks to Dan McGregor for information on Pisgah Ridge chert, and to Christian S. Hoggard, David K. Thulman, Michael J. O'Brien, Scott W. Hammerstedt, and Julian A. Sitters, as well as the editors and reviewers for their comments and constructive criticisms that further improved the manuscript.
 
 ## Funding
 
