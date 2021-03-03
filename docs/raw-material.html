@@ -139,6 +139,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>0.2</b> Acknowledgments</a></li>
 <li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#funding"><i class="fa fa-check"></i><b>0.3</b> Funding</a></li>
 <li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#data-management"><i class="fa fa-check"></i><b>0.4</b> Data management</a></li>
+<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#colophon"><i class="fa fa-check"></i><b>0.5</b> Colophon</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="perdiz-arrow-point-sample.html"><a href="perdiz-arrow-point-sample.html"><i class="fa fa-check"></i><b>1</b> Perdiz arrow point sample</a>
 <ul>
@@ -198,10 +199,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="raw-material" class="section level1" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Raw material</h1>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="raw-material.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># qualitative data for Perdiz points</span></span>
-<span id="cb11-2"><a href="raw-material.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="raw-material.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># qualitative data for Perdiz points</span></span>
+<span id="cb15-2"><a href="raw-material.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code></pre></div>
 <pre><code>## here() starts at D:/github/perdiz/supp</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="raw-material.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="raw-material.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <pre><code>## -- Attaching packages ---------------------------------------------- tidyverse 1.3.0 --</code></pre>
 <pre><code>## v tibble  3.1.0     v dplyr   1.0.4
 ## v tidyr   1.1.2     v stringr 1.4.0
@@ -211,50 +212,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()
 ## x purrr::map()    masks maps::map()</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="raw-material.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wesanderson)</span>
-<span id="cb17-2"><a href="raw-material.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
-<span id="cb17-3"><a href="raw-material.html#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="raw-material.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># read attribute data</span></span>
-<span id="cb17-5"><a href="raw-material.html#cb17-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;perdiz.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">as.is =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb17-6"><a href="raw-material.html#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="raw-material.html#cb17-7" aria-hidden="true" tabindex="-1"></a>raw <span class="ot">&lt;-</span> data<span class="sc">$</span>raw.mat <span class="co"># raw material</span></span>
-<span id="cb17-8"><a href="raw-material.html#cb17-8" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> data<span class="sc">$</span>context <span class="co"># burial context</span></span>
-<span id="cb17-9"><a href="raw-material.html#cb17-9" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> data<span class="sc">$</span>temporal <span class="co"># temporal period</span></span>
-<span id="cb17-10"><a href="raw-material.html#cb17-10" aria-hidden="true" tabindex="-1"></a>site <span class="ot">&lt;-</span> data<span class="sc">$</span>trinomial <span class="co"># site</span></span>
-<span id="cb17-11"><a href="raw-material.html#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-12"><a href="raw-material.html#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="do">#####</span></span>
-<span id="cb17-13"><a href="raw-material.html#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co"># barplot of raw material count by burial context</span></span>
-<span id="cb17-14"><a href="raw-material.html#cb17-14" aria-hidden="true" tabindex="-1"></a>raw.con <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(raw)) <span class="sc">+</span></span>
-<span id="cb17-15"><a href="raw-material.html#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> con))<span class="sc">+</span></span>
-<span id="cb17-16"><a href="raw-material.html#cb17-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb17-17"><a href="raw-material.html#cb17-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb17-18"><a href="raw-material.html#cb17-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Raw Material&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Count&#39;</span>)</span>
-<span id="cb17-19"><a href="raw-material.html#cb17-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-20"><a href="raw-material.html#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="co"># barplot of raw material count by temporal</span></span>
-<span id="cb17-21"><a href="raw-material.html#cb17-21" aria-hidden="true" tabindex="-1"></a>raw.temp <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(raw)) <span class="sc">+</span></span>
-<span id="cb17-22"><a href="raw-material.html#cb17-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> temp))<span class="sc">+</span></span>
-<span id="cb17-23"><a href="raw-material.html#cb17-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb17-24"><a href="raw-material.html#cb17-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb17-25"><a href="raw-material.html#cb17-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Raw Material&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Count&#39;</span>)</span>
-<span id="cb17-26"><a href="raw-material.html#cb17-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-27"><a href="raw-material.html#cb17-27" aria-hidden="true" tabindex="-1"></a><span class="co"># barplot of raw material count by site</span></span>
-<span id="cb17-28"><a href="raw-material.html#cb17-28" aria-hidden="true" tabindex="-1"></a>raw.site <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(trinomial)) <span class="sc">+</span></span>
-<span id="cb17-29"><a href="raw-material.html#cb17-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> raw))<span class="sc">+</span></span>
-<span id="cb17-30"><a href="raw-material.html#cb17-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb17-31"><a href="raw-material.html#cb17-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb17-32"><a href="raw-material.html#cb17-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Site&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Count&#39;</span>)</span>
-<span id="cb17-33"><a href="raw-material.html#cb17-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-34"><a href="raw-material.html#cb17-34" aria-hidden="true" tabindex="-1"></a><span class="co"># render figure</span></span>
-<span id="cb17-35"><a href="raw-material.html#cb17-35" aria-hidden="true" tabindex="-1"></a>raw.figure <span class="ot">&lt;-</span> <span class="fu">ggarrange</span>(raw.site,</span>
-<span id="cb17-36"><a href="raw-material.html#cb17-36" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">ggarrange</span>(raw.con,raw.temp,</span>
-<span id="cb17-37"><a href="raw-material.html#cb17-37" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">ncol =</span> <span class="dv">2</span>, </span>
-<span id="cb17-38"><a href="raw-material.html#cb17-38" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;b&quot;</span>,<span class="st">&quot;c&quot;</span>)),</span>
-<span id="cb17-39"><a href="raw-material.html#cb17-39" aria-hidden="true" tabindex="-1"></a>                        <span class="at">nrow =</span> <span class="dv">2</span>,</span>
-<span id="cb17-40"><a href="raw-material.html#cb17-40" aria-hidden="true" tabindex="-1"></a>                        <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>)</span>
-<span id="cb17-41"><a href="raw-material.html#cb17-41" aria-hidden="true" tabindex="-1"></a>                        )</span>
-<span id="cb17-42"><a href="raw-material.html#cb17-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-43"><a href="raw-material.html#cb17-43" aria-hidden="true" tabindex="-1"></a><span class="co"># plot figure</span></span>
-<span id="cb17-44"><a href="raw-material.html#cb17-44" aria-hidden="true" tabindex="-1"></a>raw.figure</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="raw-material.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wesanderson)</span>
+<span id="cb21-2"><a href="raw-material.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb21-3"><a href="raw-material.html#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="raw-material.html#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># read attribute data</span></span>
+<span id="cb21-5"><a href="raw-material.html#cb21-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;perdiz.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">as.is =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb21-6"><a href="raw-material.html#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="raw-material.html#cb21-7" aria-hidden="true" tabindex="-1"></a>raw <span class="ot">&lt;-</span> data<span class="sc">$</span>raw.mat <span class="co"># raw material</span></span>
+<span id="cb21-8"><a href="raw-material.html#cb21-8" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> data<span class="sc">$</span>context <span class="co"># burial context</span></span>
+<span id="cb21-9"><a href="raw-material.html#cb21-9" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> data<span class="sc">$</span>temporal <span class="co"># temporal period</span></span>
+<span id="cb21-10"><a href="raw-material.html#cb21-10" aria-hidden="true" tabindex="-1"></a>site <span class="ot">&lt;-</span> data<span class="sc">$</span>trinomial <span class="co"># site</span></span>
+<span id="cb21-11"><a href="raw-material.html#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="raw-material.html#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="do">#####</span></span>
+<span id="cb21-13"><a href="raw-material.html#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="co"># barplot of raw material count by burial context</span></span>
+<span id="cb21-14"><a href="raw-material.html#cb21-14" aria-hidden="true" tabindex="-1"></a>raw.con <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(raw)) <span class="sc">+</span></span>
+<span id="cb21-15"><a href="raw-material.html#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> con))<span class="sc">+</span></span>
+<span id="cb21-16"><a href="raw-material.html#cb21-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb21-17"><a href="raw-material.html#cb21-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb21-18"><a href="raw-material.html#cb21-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Raw Material&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Count&#39;</span>)</span>
+<span id="cb21-19"><a href="raw-material.html#cb21-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-20"><a href="raw-material.html#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="co"># barplot of raw material count by temporal</span></span>
+<span id="cb21-21"><a href="raw-material.html#cb21-21" aria-hidden="true" tabindex="-1"></a>raw.temp <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(raw)) <span class="sc">+</span></span>
+<span id="cb21-22"><a href="raw-material.html#cb21-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> temp))<span class="sc">+</span></span>
+<span id="cb21-23"><a href="raw-material.html#cb21-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb21-24"><a href="raw-material.html#cb21-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb21-25"><a href="raw-material.html#cb21-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Raw Material&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Count&#39;</span>)</span>
+<span id="cb21-26"><a href="raw-material.html#cb21-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-27"><a href="raw-material.html#cb21-27" aria-hidden="true" tabindex="-1"></a><span class="co"># barplot of raw material count by site</span></span>
+<span id="cb21-28"><a href="raw-material.html#cb21-28" aria-hidden="true" tabindex="-1"></a>raw.site <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(trinomial)) <span class="sc">+</span></span>
+<span id="cb21-29"><a href="raw-material.html#cb21-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> raw))<span class="sc">+</span></span>
+<span id="cb21-30"><a href="raw-material.html#cb21-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb21-31"><a href="raw-material.html#cb21-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb21-32"><a href="raw-material.html#cb21-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Site&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Count&#39;</span>)</span>
+<span id="cb21-33"><a href="raw-material.html#cb21-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-34"><a href="raw-material.html#cb21-34" aria-hidden="true" tabindex="-1"></a><span class="co"># render figure</span></span>
+<span id="cb21-35"><a href="raw-material.html#cb21-35" aria-hidden="true" tabindex="-1"></a>raw.figure <span class="ot">&lt;-</span> <span class="fu">ggarrange</span>(raw.site,</span>
+<span id="cb21-36"><a href="raw-material.html#cb21-36" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">ggarrange</span>(raw.con,raw.temp,</span>
+<span id="cb21-37"><a href="raw-material.html#cb21-37" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">ncol =</span> <span class="dv">2</span>, </span>
+<span id="cb21-38"><a href="raw-material.html#cb21-38" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;b&quot;</span>,<span class="st">&quot;c&quot;</span>)),</span>
+<span id="cb21-39"><a href="raw-material.html#cb21-39" aria-hidden="true" tabindex="-1"></a>                        <span class="at">nrow =</span> <span class="dv">2</span>,</span>
+<span id="cb21-40"><a href="raw-material.html#cb21-40" aria-hidden="true" tabindex="-1"></a>                        <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>)</span>
+<span id="cb21-41"><a href="raw-material.html#cb21-41" aria-hidden="true" tabindex="-1"></a>                        )</span>
+<span id="cb21-42"><a href="raw-material.html#cb21-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-43"><a href="raw-material.html#cb21-43" aria-hidden="true" tabindex="-1"></a><span class="co"># plot figure</span></span>
+<span id="cb21-44"><a href="raw-material.html#cb21-44" aria-hidden="true" tabindex="-1"></a>raw.figure</span></code></pre></div>
 <p><img src="supp_files/figure-html/raw-1.png" width="100%" /></p>
 
 </div>

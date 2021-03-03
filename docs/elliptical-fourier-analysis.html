@@ -139,6 +139,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>0.2</b> Acknowledgments</a></li>
 <li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#funding"><i class="fa fa-check"></i><b>0.3</b> Funding</a></li>
 <li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#data-management"><i class="fa fa-check"></i><b>0.4</b> Data management</a></li>
+<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#colophon"><i class="fa fa-check"></i><b>0.5</b> Colophon</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="perdiz-arrow-point-sample.html"><a href="perdiz-arrow-point-sample.html"><i class="fa fa-check"></i><b>1</b> Perdiz arrow point sample</a>
 <ul>
@@ -200,10 +201,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 5</span> Elliptical Fourier Analysis</h1>
 <div id="load-packages-data" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Load packages + data</h2>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="elliptical-fourier-analysis.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
-<span id="cb18-2"><a href="elliptical-fourier-analysis.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(&quot;MomX/Momocs&quot;)</span></span>
-<span id="cb18-3"><a href="elliptical-fourier-analysis.html#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb18-4"><a href="elliptical-fourier-analysis.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Momocs)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="elliptical-fourier-analysis.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
+<span id="cb22-2"><a href="elliptical-fourier-analysis.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(&quot;MomX/Momocs&quot;)</span></span>
+<span id="cb22-3"><a href="elliptical-fourier-analysis.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb22-4"><a href="elliptical-fourier-analysis.html#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Momocs)</span></code></pre></div>
 <pre><code>## 
 ## Attaching package: &#39;Momocs&#39;</code></pre>
 <pre><code>## The following object is masked from &#39;package:ggpubr&#39;:
@@ -219,18 +220,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## The following object is masked from &#39;package:stats&#39;:
 ## 
 ##     filter</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="elliptical-fourier-analysis.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read images</span></span>
-<span id="cb24-2"><a href="elliptical-fourier-analysis.html#cb24-2" aria-hidden="true" tabindex="-1"></a>jpg.list <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="fu">here</span>(<span class="st">&quot;img.perdiz&quot;</span>), <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb24-3"><a href="elliptical-fourier-analysis.html#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="elliptical-fourier-analysis.html#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># read attribute data</span></span>
-<span id="cb24-5"><a href="elliptical-fourier-analysis.html#cb24-5" aria-hidden="true" tabindex="-1"></a>att.data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;perdiz.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">as.is =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb24-6"><a href="elliptical-fourier-analysis.html#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-7"><a href="elliptical-fourier-analysis.html#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># attribute to factor</span></span>
-<span id="cb24-8"><a href="elliptical-fourier-analysis.html#cb24-8" aria-hidden="true" tabindex="-1"></a>att.data<span class="sc">$</span>temporal <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(att.data<span class="sc">$</span>temporal)</span>
-<span id="cb24-9"><a href="elliptical-fourier-analysis.html#cb24-9" aria-hidden="true" tabindex="-1"></a>att.data<span class="sc">$</span>raw.mat <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(att.data<span class="sc">$</span>raw.mat)</span>
-<span id="cb24-10"><a href="elliptical-fourier-analysis.html#cb24-10" aria-hidden="true" tabindex="-1"></a>att.data<span class="sc">$</span>context <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(att.data<span class="sc">$</span>context)</span>
-<span id="cb24-11"><a href="elliptical-fourier-analysis.html#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-12"><a href="elliptical-fourier-analysis.html#cb24-12" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>((att.data[, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]), <span class="st">&quot;pipe&quot;</span>, <span class="at">caption =</span> <span class="st">&quot;Qualitative data for Perdiz arrow point sample.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="elliptical-fourier-analysis.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read images</span></span>
+<span id="cb28-2"><a href="elliptical-fourier-analysis.html#cb28-2" aria-hidden="true" tabindex="-1"></a>jpg.list <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="fu">here</span>(<span class="st">&quot;img.perdiz&quot;</span>), <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb28-3"><a href="elliptical-fourier-analysis.html#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="elliptical-fourier-analysis.html#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># read attribute data</span></span>
+<span id="cb28-5"><a href="elliptical-fourier-analysis.html#cb28-5" aria-hidden="true" tabindex="-1"></a>att.data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;perdiz.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">as.is =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb28-6"><a href="elliptical-fourier-analysis.html#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="elliptical-fourier-analysis.html#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># attribute to factor</span></span>
+<span id="cb28-8"><a href="elliptical-fourier-analysis.html#cb28-8" aria-hidden="true" tabindex="-1"></a>att.data<span class="sc">$</span>temporal <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(att.data<span class="sc">$</span>temporal)</span>
+<span id="cb28-9"><a href="elliptical-fourier-analysis.html#cb28-9" aria-hidden="true" tabindex="-1"></a>att.data<span class="sc">$</span>raw.mat <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(att.data<span class="sc">$</span>raw.mat)</span>
+<span id="cb28-10"><a href="elliptical-fourier-analysis.html#cb28-10" aria-hidden="true" tabindex="-1"></a>att.data<span class="sc">$</span>context <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(att.data<span class="sc">$</span>context)</span>
+<span id="cb28-11"><a href="elliptical-fourier-analysis.html#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-12"><a href="elliptical-fourier-analysis.html#cb28-12" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>((att.data[, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]), <span class="st">&quot;pipe&quot;</span>, <span class="at">caption =</span> <span class="st">&quot;Qualitative data for Perdiz arrow point sample.&quot;</span>)</span></code></pre></div>
 <table>
 <caption>(#tab:load.packages)Qualitative data for Perdiz arrow point sample.</caption>
 <thead>
@@ -1242,9 +1243,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="generate-outlines" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Generate outlines</h2>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="elliptical-fourier-analysis.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate outlines</span></span>
-<span id="cb25-2"><a href="elliptical-fourier-analysis.html#cb25-2" aria-hidden="true" tabindex="-1"></a>outlines <span class="ot">&lt;-</span> jpg.list <span class="sc">%&gt;%</span></span>
-<span id="cb25-3"><a href="elliptical-fourier-analysis.html#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">import_jpg</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="elliptical-fourier-analysis.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate outlines</span></span>
+<span id="cb29-2"><a href="elliptical-fourier-analysis.html#cb29-2" aria-hidden="true" tabindex="-1"></a>outlines <span class="ot">&lt;-</span> jpg.list <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a href="elliptical-fourier-analysis.html#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">import_jpg</span>()</span></code></pre></div>
 <pre><code>## Extracting 142.jpg outlines...</code></pre>
 <pre><code>## [ 1 / 142 ]  489.jpg
 ## [ 2 / 142 ]  490.jpg
@@ -1388,22 +1389,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [ 140 / 142 ]  sy43-4.jpg
 ## [ 141 / 142 ]  sy43-5.jpg
 ## [ 142 / 142 ]  sy43-6.jpg</code></pre>
-<pre><code>## Done in 18.6 secs</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="elliptical-fourier-analysis.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add attributes</span></span>
-<span id="cb29-2"><a href="elliptical-fourier-analysis.html#cb29-2" aria-hidden="true" tabindex="-1"></a>data.out <span class="ot">&lt;-</span> <span class="fu">Out</span>(outlines, </span>
-<span id="cb29-3"><a href="elliptical-fourier-analysis.html#cb29-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">fac =</span> att.data)</span>
-<span id="cb29-4"><a href="elliptical-fourier-analysis.html#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-5"><a href="elliptical-fourier-analysis.html#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co"># scale, align, rotate, and center specimens</span></span>
-<span id="cb29-6"><a href="elliptical-fourier-analysis.html#cb29-6" aria-hidden="true" tabindex="-1"></a>norm.outlines <span class="ot">&lt;-</span> data.out <span class="sc">%&gt;%</span> </span>
-<span id="cb29-7"><a href="elliptical-fourier-analysis.html#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coo_scale</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb29-8"><a href="elliptical-fourier-analysis.html#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coo_align</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb29-9"><a href="elliptical-fourier-analysis.html#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coo_center</span>()</span></code></pre></div>
+<pre><code>## Done in 20.4 secs</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="elliptical-fourier-analysis.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add attributes</span></span>
+<span id="cb33-2"><a href="elliptical-fourier-analysis.html#cb33-2" aria-hidden="true" tabindex="-1"></a>data.out <span class="ot">&lt;-</span> <span class="fu">Out</span>(outlines, </span>
+<span id="cb33-3"><a href="elliptical-fourier-analysis.html#cb33-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">fac =</span> att.data)</span>
+<span id="cb33-4"><a href="elliptical-fourier-analysis.html#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="elliptical-fourier-analysis.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co"># scale, align, rotate, and center specimens</span></span>
+<span id="cb33-6"><a href="elliptical-fourier-analysis.html#cb33-6" aria-hidden="true" tabindex="-1"></a>norm.outlines <span class="ot">&lt;-</span> data.out <span class="sc">%&gt;%</span> </span>
+<span id="cb33-7"><a href="elliptical-fourier-analysis.html#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coo_scale</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb33-8"><a href="elliptical-fourier-analysis.html#cb33-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coo_align</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb33-9"><a href="elliptical-fourier-analysis.html#cb33-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coo_center</span>()</span></code></pre></div>
 </div>
 <div id="calibrate-harmonic-efa" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Calibrate harmonic + EFA</h2>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="elliptical-fourier-analysis.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calibrate how many harmonics needed</span></span>
-<span id="cb30-2"><a href="elliptical-fourier-analysis.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">calibrate_harmonicpower_efourier</span>(norm.outlines, </span>
-<span id="cb30-3"><a href="elliptical-fourier-analysis.html#cb30-3" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">nb.h =</span> <span class="dv">30</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="elliptical-fourier-analysis.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calibrate how many harmonics needed</span></span>
+<span id="cb34-2"><a href="elliptical-fourier-analysis.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">calibrate_harmonicpower_efourier</span>(norm.outlines, </span>
+<span id="cb34-3"><a href="elliptical-fourier-analysis.html#cb34-3" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">nb.h =</span> <span class="dv">30</span>)</span></code></pre></div>
 <pre><code>## $gg</code></pre>
 <p><img src="supp_files/figure-html/cal.harm-1.png" width="100%" /></p>
 <pre><code>## 
@@ -1553,55 +1554,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $minh
 ##   90%   95%   99% 99.9% 
 ##     6     7    11    23</code></pre>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="elliptical-fourier-analysis.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 11 harmonics needed to capture 99 percent of variation</span></span>
-<span id="cb33-2"><a href="elliptical-fourier-analysis.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">calibrate_reconstructions_efourier</span>(norm.outlines, </span>
-<span id="cb33-3"><a href="elliptical-fourier-analysis.html#cb33-3" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">range =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="elliptical-fourier-analysis.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 11 harmonics needed to capture 99 percent of variation</span></span>
+<span id="cb37-2"><a href="elliptical-fourier-analysis.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">calibrate_reconstructions_efourier</span>(norm.outlines, </span>
+<span id="cb37-3"><a href="elliptical-fourier-analysis.html#cb37-3" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">range =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>)</span></code></pre></div>
 <p><img src="supp_files/figure-html/cal.harm-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="elliptical-fourier-analysis.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate efa outlines with 11 harmonics</span></span>
-<span id="cb34-2"><a href="elliptical-fourier-analysis.html#cb34-2" aria-hidden="true" tabindex="-1"></a>efa.outlines <span class="ot">&lt;-</span> <span class="fu">efourier</span>(norm.outlines, </span>
-<span id="cb34-3"><a href="elliptical-fourier-analysis.html#cb34-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">nb.h =</span> <span class="dv">11</span>, </span>
-<span id="cb34-4"><a href="elliptical-fourier-analysis.html#cb34-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">norm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb34-5"><a href="elliptical-fourier-analysis.html#cb34-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-6"><a href="elliptical-fourier-analysis.html#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="co"># use efa.outlines for pca</span></span>
-<span id="cb34-7"><a href="elliptical-fourier-analysis.html#cb34-7" aria-hidden="true" tabindex="-1"></a>pca.outlines <span class="ot">&lt;-</span> <span class="fu">PCA</span>(efa.outlines)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="elliptical-fourier-analysis.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate efa outlines with 11 harmonics</span></span>
+<span id="cb38-2"><a href="elliptical-fourier-analysis.html#cb38-2" aria-hidden="true" tabindex="-1"></a>efa.outlines <span class="ot">&lt;-</span> <span class="fu">efourier</span>(norm.outlines, </span>
+<span id="cb38-3"><a href="elliptical-fourier-analysis.html#cb38-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">nb.h =</span> <span class="dv">11</span>, </span>
+<span id="cb38-4"><a href="elliptical-fourier-analysis.html#cb38-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">norm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb38-5"><a href="elliptical-fourier-analysis.html#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="elliptical-fourier-analysis.html#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="co"># use efa.outlines for pca</span></span>
+<span id="cb38-7"><a href="elliptical-fourier-analysis.html#cb38-7" aria-hidden="true" tabindex="-1"></a>pca.outlines <span class="ot">&lt;-</span> <span class="fu">PCA</span>(efa.outlines)</span></code></pre></div>
 </div>
 <div id="pca" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> PCA</h2>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="elliptical-fourier-analysis.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pca </span></span>
-<span id="cb35-2"><a href="elliptical-fourier-analysis.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scree_plot</span>(pca.outlines)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="elliptical-fourier-analysis.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pca </span></span>
+<span id="cb39-2"><a href="elliptical-fourier-analysis.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scree_plot</span>(pca.outlines)</span></code></pre></div>
 <p><img src="supp_files/figure-html/pca.plot-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="elliptical-fourier-analysis.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by temporal</span></span>
-<span id="cb36-2"><a href="elliptical-fourier-analysis.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pca.outlines,</span>
-<span id="cb36-3"><a href="elliptical-fourier-analysis.html#cb36-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">pos.shp =</span> <span class="st">&quot;range_axes&quot;</span>,</span>
-<span id="cb36-4"><a href="elliptical-fourier-analysis.html#cb36-4" aria-hidden="true" tabindex="-1"></a>     <span class="sc">~</span>temporal,</span>
-<span id="cb36-5"><a href="elliptical-fourier-analysis.html#cb36-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">chull =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb36-6"><a href="elliptical-fourier-analysis.html#cb36-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">morphospace =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb36-7"><a href="elliptical-fourier-analysis.html#cb36-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">labelsgroups =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb36-8"><a href="elliptical-fourier-analysis.html#cb36-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.labelsgroups =</span> <span class="fl">0.5</span>,</span>
-<span id="cb36-9"><a href="elliptical-fourier-analysis.html#cb36-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">rect.labelsgroups =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb36-10"><a href="elliptical-fourier-analysis.html#cb36-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">rug =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb36-11"><a href="elliptical-fourier-analysis.html#cb36-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">grid =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb36-12"><a href="elliptical-fourier-analysis.html#cb36-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">zoom =</span> <span class="fl">0.95</span>)</span></code></pre></div>
-<pre><code>## will be deprecated soon, see ?plot_PCA</code></pre>
-<p><img src="supp_files/figure-html/pca.plot-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="elliptical-fourier-analysis.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by raw material</span></span>
-<span id="cb38-2"><a href="elliptical-fourier-analysis.html#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pca.outlines,</span>
-<span id="cb38-3"><a href="elliptical-fourier-analysis.html#cb38-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">pos.shp =</span> <span class="st">&quot;range_axes&quot;</span>,</span>
-<span id="cb38-4"><a href="elliptical-fourier-analysis.html#cb38-4" aria-hidden="true" tabindex="-1"></a>     <span class="sc">~</span>raw.mat,</span>
-<span id="cb38-5"><a href="elliptical-fourier-analysis.html#cb38-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">chull =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb38-6"><a href="elliptical-fourier-analysis.html#cb38-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">morphospace =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb38-7"><a href="elliptical-fourier-analysis.html#cb38-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">labelsgroups =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb38-8"><a href="elliptical-fourier-analysis.html#cb38-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.labelsgroups =</span> <span class="fl">0.5</span>,</span>
-<span id="cb38-9"><a href="elliptical-fourier-analysis.html#cb38-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">rect.labelsgroups =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb38-10"><a href="elliptical-fourier-analysis.html#cb38-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">rug =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb38-11"><a href="elliptical-fourier-analysis.html#cb38-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">grid =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb38-12"><a href="elliptical-fourier-analysis.html#cb38-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">zoom =</span> <span class="fl">0.95</span>)</span></code></pre></div>
-<pre><code>## will be deprecated soon, see ?plot_PCA</code></pre>
-<p><img src="supp_files/figure-html/pca.plot-3.png" width="100%" /></p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="elliptical-fourier-analysis.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by context</span></span>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="elliptical-fourier-analysis.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by temporal</span></span>
 <span id="cb40-2"><a href="elliptical-fourier-analysis.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pca.outlines,</span>
 <span id="cb40-3"><a href="elliptical-fourier-analysis.html#cb40-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">pos.shp =</span> <span class="st">&quot;range_axes&quot;</span>,</span>
-<span id="cb40-4"><a href="elliptical-fourier-analysis.html#cb40-4" aria-hidden="true" tabindex="-1"></a>     <span class="sc">~</span>context,</span>
+<span id="cb40-4"><a href="elliptical-fourier-analysis.html#cb40-4" aria-hidden="true" tabindex="-1"></a>     <span class="sc">~</span>temporal,</span>
 <span id="cb40-5"><a href="elliptical-fourier-analysis.html#cb40-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">chull =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb40-6"><a href="elliptical-fourier-analysis.html#cb40-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">morphospace =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb40-7"><a href="elliptical-fourier-analysis.html#cb40-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">labelsgroups =</span> <span class="cn">TRUE</span>,</span>
@@ -1611,25 +1584,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb40-11"><a href="elliptical-fourier-analysis.html#cb40-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">grid =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb40-12"><a href="elliptical-fourier-analysis.html#cb40-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">zoom =</span> <span class="fl">0.95</span>)</span></code></pre></div>
 <pre><code>## will be deprecated soon, see ?plot_PCA</code></pre>
+<p><img src="supp_files/figure-html/pca.plot-2.png" width="100%" /></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="elliptical-fourier-analysis.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by raw material</span></span>
+<span id="cb42-2"><a href="elliptical-fourier-analysis.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pca.outlines,</span>
+<span id="cb42-3"><a href="elliptical-fourier-analysis.html#cb42-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">pos.shp =</span> <span class="st">&quot;range_axes&quot;</span>,</span>
+<span id="cb42-4"><a href="elliptical-fourier-analysis.html#cb42-4" aria-hidden="true" tabindex="-1"></a>     <span class="sc">~</span>raw.mat,</span>
+<span id="cb42-5"><a href="elliptical-fourier-analysis.html#cb42-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">chull =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb42-6"><a href="elliptical-fourier-analysis.html#cb42-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">morphospace =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb42-7"><a href="elliptical-fourier-analysis.html#cb42-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">labelsgroups =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb42-8"><a href="elliptical-fourier-analysis.html#cb42-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.labelsgroups =</span> <span class="fl">0.5</span>,</span>
+<span id="cb42-9"><a href="elliptical-fourier-analysis.html#cb42-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">rect.labelsgroups =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb42-10"><a href="elliptical-fourier-analysis.html#cb42-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">rug =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb42-11"><a href="elliptical-fourier-analysis.html#cb42-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">grid =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb42-12"><a href="elliptical-fourier-analysis.html#cb42-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">zoom =</span> <span class="fl">0.95</span>)</span></code></pre></div>
+<pre><code>## will be deprecated soon, see ?plot_PCA</code></pre>
+<p><img src="supp_files/figure-html/pca.plot-3.png" width="100%" /></p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="elliptical-fourier-analysis.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by context</span></span>
+<span id="cb44-2"><a href="elliptical-fourier-analysis.html#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pca.outlines,</span>
+<span id="cb44-3"><a href="elliptical-fourier-analysis.html#cb44-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">pos.shp =</span> <span class="st">&quot;range_axes&quot;</span>,</span>
+<span id="cb44-4"><a href="elliptical-fourier-analysis.html#cb44-4" aria-hidden="true" tabindex="-1"></a>     <span class="sc">~</span>context,</span>
+<span id="cb44-5"><a href="elliptical-fourier-analysis.html#cb44-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">chull =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb44-6"><a href="elliptical-fourier-analysis.html#cb44-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">morphospace =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb44-7"><a href="elliptical-fourier-analysis.html#cb44-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">labelsgroups =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb44-8"><a href="elliptical-fourier-analysis.html#cb44-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">cex.labelsgroups =</span> <span class="fl">0.5</span>,</span>
+<span id="cb44-9"><a href="elliptical-fourier-analysis.html#cb44-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">rect.labelsgroups =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb44-10"><a href="elliptical-fourier-analysis.html#cb44-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">rug =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb44-11"><a href="elliptical-fourier-analysis.html#cb44-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">grid =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb44-12"><a href="elliptical-fourier-analysis.html#cb44-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">zoom =</span> <span class="fl">0.95</span>)</span></code></pre></div>
+<pre><code>## will be deprecated soon, see ?plot_PCA</code></pre>
 <p><img src="supp_files/figure-html/pca.plot-4.png" width="100%" /></p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="elliptical-fourier-analysis.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean shape + 2sd for the first 10 pcs</span></span>
-<span id="cb42-2"><a href="elliptical-fourier-analysis.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">PCcontrib</span>(pca.outlines, <span class="at">nax =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="elliptical-fourier-analysis.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean shape + 2sd for the first 10 pcs</span></span>
+<span id="cb46-2"><a href="elliptical-fourier-analysis.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">PCcontrib</span>(pca.outlines, <span class="at">nax =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
 <p><img src="supp_files/figure-html/pca.plot-5.png" width="100%" /></p>
 </div>
 <div id="manova-manova_pw" class="section level2" number="5.5">
 <h2><span class="header-section-number">5.5</span> MANOVA + MANOVA_PW</h2>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="elliptical-fourier-analysis.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># manova</span></span>
-<span id="cb43-2"><a href="elliptical-fourier-analysis.html#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-3"><a href="elliptical-fourier-analysis.html#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># shape difference by temporal?</span></span>
-<span id="cb43-4"><a href="elliptical-fourier-analysis.html#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="fu">MANOVA</span>(pca.outlines, <span class="st">&#39;temporal&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="elliptical-fourier-analysis.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># manova</span></span>
+<span id="cb47-2"><a href="elliptical-fourier-analysis.html#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="elliptical-fourier-analysis.html#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co"># shape difference by temporal?</span></span>
+<span id="cb47-4"><a href="elliptical-fourier-analysis.html#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">MANOVA</span>(pca.outlines, <span class="st">&#39;temporal&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 18 were retained</code></pre>
 <pre><code>##            Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
 ## fac         2           1.8209   6.1202     36    242 &lt; 2.2e-16 ***
 ## Residuals 139                                                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="elliptical-fourier-analysis.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># which differ?</span></span>
-<span id="cb46-2"><a href="elliptical-fourier-analysis.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;temporal&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="elliptical-fourier-analysis.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># which differ?</span></span>
+<span id="cb50-2"><a href="elliptical-fourier-analysis.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;temporal&#39;</span>)</span></code></pre></div>
 <pre><code>## &#39;HC&#39; has 5 rows, and &#39;retain&#39; is set accordingly</code></pre>
 <pre><code>## PC axes 1 to 5 were retained</code></pre>
 <pre><code>## HCLC</code></pre>
@@ -1645,16 +1646,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## HC - LC  1 0.3343    8.737      5     87 9.561e-07
 ## HC - MC  1 0.7120   23.739      5     48 6.203e-12
 ## LC - MC  1 0.3237   12.538      5    131 5.950e-10</code></pre>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="elliptical-fourier-analysis.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># shape difference between raw.mat?</span></span>
-<span id="cb53-2"><a href="elliptical-fourier-analysis.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">MANOVA</span>(pca.outlines, <span class="st">&#39;raw.mat&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="elliptical-fourier-analysis.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># shape difference between raw.mat?</span></span>
+<span id="cb57-2"><a href="elliptical-fourier-analysis.html#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">MANOVA</span>(pca.outlines, <span class="st">&#39;raw.mat&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 18 were retained</code></pre>
 <pre><code>##            Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
 ## fac         2          0.77286   2.5977     36    242 9.226e-06 ***
 ## Residuals 139                                                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="elliptical-fourier-analysis.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># which differ?</span></span>
-<span id="cb56-2"><a href="elliptical-fourier-analysis.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;raw.mat&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="elliptical-fourier-analysis.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># which differ?</span></span>
+<span id="cb60-2"><a href="elliptical-fourier-analysis.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;raw.mat&#39;</span>)</span></code></pre></div>
 <pre><code>## &#39;quartzite&#39; has 17 rows, and &#39;retain&#39; is set accordingly</code></pre>
 <pre><code>## PC axes 1 to 17 were retained</code></pre>
 <pre><code>## chertquartzite</code></pre>
@@ -1670,8 +1671,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## chert - quartzite  1 0.2997    2.341     17     93 0.0050567
 ## chert - s.wd       1 0.3057    2.771     17    107 0.0007521
 ## quartzite - s.wd   1 0.5650    2.292     17     30 0.0228460</code></pre>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="elliptical-fourier-analysis.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># shape difference by context?</span></span>
-<span id="cb63-2"><a href="elliptical-fourier-analysis.html#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">MANOVA</span>(pca.outlines, <span class="st">&#39;context&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="elliptical-fourier-analysis.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># shape difference by context?</span></span>
+<span id="cb67-2"><a href="elliptical-fourier-analysis.html#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">MANOVA</span>(pca.outlines, <span class="st">&#39;context&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 18 were retained</code></pre>
 <pre><code>##            Df Hotelling-Lawley approx F num Df den Df   Pr(&gt;F)    
 ## fac         1           0.6106   4.1724     18    123 8.86e-07 ***
@@ -1681,19 +1682,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="mean-shapes" class="section level2" number="5.6">
 <h2><span class="header-section-number">5.6</span> Mean shapes</h2>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="elliptical-fourier-analysis.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean shapes</span></span>
-<span id="cb66-2"><a href="elliptical-fourier-analysis.html#cb66-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-3"><a href="elliptical-fourier-analysis.html#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="co"># temporal</span></span>
-<span id="cb66-4"><a href="elliptical-fourier-analysis.html#cb66-4" aria-hidden="true" tabindex="-1"></a>ms<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">MSHAPES</span>(efa.outlines, <span class="sc">~</span>temporal)</span>
-<span id="cb66-5"><a href="elliptical-fourier-analysis.html#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_MSHAPES</span>(ms<span class="fl">.1</span>, <span class="at">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="elliptical-fourier-analysis.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean shapes</span></span>
+<span id="cb70-2"><a href="elliptical-fourier-analysis.html#cb70-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-3"><a href="elliptical-fourier-analysis.html#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="co"># temporal</span></span>
+<span id="cb70-4"><a href="elliptical-fourier-analysis.html#cb70-4" aria-hidden="true" tabindex="-1"></a>ms<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">MSHAPES</span>(efa.outlines, <span class="sc">~</span>temporal)</span>
+<span id="cb70-5"><a href="elliptical-fourier-analysis.html#cb70-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_MSHAPES</span>(ms<span class="fl">.1</span>, <span class="at">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
 <p><img src="supp_files/figure-html/ms1-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="elliptical-fourier-analysis.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># raw material</span></span>
-<span id="cb67-2"><a href="elliptical-fourier-analysis.html#cb67-2" aria-hidden="true" tabindex="-1"></a>ms<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">MSHAPES</span>(efa.outlines, <span class="sc">~</span>raw.mat)</span>
-<span id="cb67-3"><a href="elliptical-fourier-analysis.html#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_MSHAPES</span>(ms<span class="fl">.2</span>, <span class="at">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="elliptical-fourier-analysis.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># raw material</span></span>
+<span id="cb71-2"><a href="elliptical-fourier-analysis.html#cb71-2" aria-hidden="true" tabindex="-1"></a>ms<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">MSHAPES</span>(efa.outlines, <span class="sc">~</span>raw.mat)</span>
+<span id="cb71-3"><a href="elliptical-fourier-analysis.html#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_MSHAPES</span>(ms<span class="fl">.2</span>, <span class="at">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
 <p><img src="supp_files/figure-html/ms1-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="elliptical-fourier-analysis.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># context</span></span>
-<span id="cb68-2"><a href="elliptical-fourier-analysis.html#cb68-2" aria-hidden="true" tabindex="-1"></a>ms<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">MSHAPES</span>(efa.outlines, <span class="sc">~</span>context)</span>
-<span id="cb68-3"><a href="elliptical-fourier-analysis.html#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_MSHAPES</span>(ms<span class="fl">.3</span>, <span class="at">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="elliptical-fourier-analysis.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># context</span></span>
+<span id="cb72-2"><a href="elliptical-fourier-analysis.html#cb72-2" aria-hidden="true" tabindex="-1"></a>ms<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">MSHAPES</span>(efa.outlines, <span class="sc">~</span>context)</span>
+<span id="cb72-3"><a href="elliptical-fourier-analysis.html#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_MSHAPES</span>(ms<span class="fl">.3</span>, <span class="at">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
 <p><img src="supp_files/figure-html/ms1-3.png" width="100%" /></p>
 
 </div>

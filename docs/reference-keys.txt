@@ -2,6 +2,7 @@ primary-findings
 acknowledgments
 funding
 data-management
+colophon
 perdiz-arrow-point-sample
 an51-pace-mcdonald
 an115
