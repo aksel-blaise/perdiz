@@ -1,11 +1,6 @@
 --- 
-<<<<<<< HEAD
-title: "Supplemental materials for: Shape as a function of time + raw material + burial context? An exploratory analysis of Perdiz arrow points from the ancestral Caddo area of the American Southeast"
-author: "Robert Z. Selden, Jr."
-=======
 title: "Supplemental materials for: Shape as a function of time + raw material + burial context? An exploratory analysis of Perdiz arrow points in the southern Caddo area"
 author: "Robert Z. Selden, Jr., John E. Dockall, C. Britt Bousman, and Timothy K. Perttula"
->>>>>>> 374bf4c04c1af42a53793c24e3f9c3c793f4684f
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -29,11 +24,7 @@ This volume is written in **Markdown**, and includes all analysis code employed 
 
 ## Acknowledgments
 
-<<<<<<< HEAD
-We express our gratitude to the Caddo Nation of Oklahoma and the Anthropology and Archaeology Laboratory at Stephen F. Austin State University for the requisite permissions and access to the NAGPRA items from the Washington Square Mound site and Turner collection. Thanks to Dan McGregor for information on Pisgah Ridge chert, and to Christian S. Hoggard, David K. Thulman, Michael J. O'Brien, Scott W. Hammerstedt, and Julian A. Sitters, as well as the editors and reviewers for their comments and constructive criticisms that further improved the manuscript. 
-=======
-We express our gratitude to the Caddo Nation of Oklahoma and the Anthropology and Archaeology Laboratory at Stephen F. Austin State University for the requisite permissions and access to the NAGPRA items from the Washington Square Mound site and Turner collection. Thanks to Dan McGregor for information on Pisgah Ridge chert, and to Christian S. Hoggard, David K. Thulman, Michael J. O'Brien, Scott W. Hammerstedt, and Julian A. Sitters, as well as the editors and reviewers for their comments and constructive criticisms that further improved the manuscript.
->>>>>>> 374bf4c04c1af42a53793c24e3f9c3c793f4684f
+We express our gratitude to the Caddo Nation of Oklahoma and the Anthropology and Archaeology Laboratory at Stephen F. Austin State University for the requisite permissions and access to the NAGPRA items from the Washington Square Mound site and Turner collection. Thanks to Dan McGregor for information on Pisgah Ridge chert, and to Christian S. Hoggard, David K. Thulman, Michael J. O'Brien, and Scott W. Hammerstedt, as well as the editors and reviewers for their comments and constructive criticisms that further improved the manuscript.
 
 ## Funding
 
