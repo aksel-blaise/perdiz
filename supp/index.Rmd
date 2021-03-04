@@ -1,5 +1,5 @@
 --- 
-title: "Supplemental materials for: Shape as a function of time + raw material + burial context? An exploratory analysis of Perdiz arrow points in the southern Caddo area"
+title: "Supplemental materials for paper: Shape as a function of time + raw material + burial context? An exploratory analysis of Perdiz arrow points from the ancestral Caddo area of the American Southeast"
 author: "Robert Z. Selden, Jr., John E. Dockall, C. Britt Bousman, and Timothy K. Perttula"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -15,6 +15,8 @@ description: "Shape analysis of Perdiz points."
 >Reproducibility---the ability to recompute results---and replicability---the chances other experimenters will achieve a consistent result---are two foundational characteristics of successful scientific research [@RN20918].
 
 This volume is written in **Markdown**, and includes all analysis code employed in the study, providing a means for others to reproduce (exactly) those results discussed and expounded upon in the following chapters. The replicable nature of this undertaking provides a means for others to critically assess and evaluate the various analytical components of this study [@RN20915;@RN20916;@RN20917], which is a necessary requirement for the production of reliable knowledge. Typology is the topic of this particular undertaking, and typological assignments provide the requisite foundation for many of the assumptions, inferences, and interpretations that archaeologists regularly make. Diagnostic types---whether functional, decorative, morphological, or chronological [@RN20847]---are of considerable import in formulating archaeological interpretations.
+
+This exploratory study assesses whether Perdiz arrow points differ in shape by 1) _time_ as a means of identifying whether abrupt or gradual shape changes occur in Perdiz arrow points through the Middle, Late, and Historic Caddo periods, 2) _raw material_ as a means of identifying whether Perdiz arrow point shape differs if produced using chert, quartzite, or silicified wood, and 3) _burial context_ as a potential means of exploring design intent.
 
 ## Primary findings
 
