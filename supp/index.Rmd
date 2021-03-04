@@ -38,7 +38,7 @@ The analysis code associated with this project can be accessed through this docu
 
 ## Colophon
 
-This version of the analysis was generated on `r Sys.time()` using the following computational environment and dependencies: 
+This version of the analysis was generated on `r Sys.time()` using the following computational environment and dependencies:
 
 ```{r colophon, cache = FALSE}
 # what R packages and versions were used?
