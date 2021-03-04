@@ -1,5 +1,11 @@
 # perdiz
 
+![](img/perdiz.jpg)
+
+Temporal assignments carry substantive weight, and archaeologists regularly assume that artefacts from discrete temporal units may differ in ways that convey changes in preference or behaviour. Similarly, archaeologists regularly assume that raw material differences articulate with stone tool morphology, and the role of differential raw material quality and preference associated with Caddo lithic technology remains largely unexplored. Whether a particular artefact is found in or outside of burial contexts is a sensitive and regularly discussed topic in the archaeological literature, providing valuable insights related to prehistoric burial practices, as well as generational shifts in aesthetics, design, and raw material preferences. These assumptions were tested using geometric morphometrics, yielding results in support of the hypothesis that Perdiz arrow point shape is protean, and that significant differences existed in shape by time, raw material, and burial context.
+
+This exploratory study assesses whether Perdiz arrow points differ in shape by 1) _time_ as a means of identifying whether abrupt or gradual shape changes occur in Perdiz arrow points through the Middle, Late, and Historic Caddo periods, 2) _raw material_ as a means of identifying whether Perdiz arrow point shape differs if produced using chert, quartzite, or silicified wood, and 3) _burial context_ as a potential means of exploring design intent.
+
 [https://aksel-blaise.github.io/perdiz/](https://aksel-blaise.github.io/perdiz/)
 
 ## Primary findings
